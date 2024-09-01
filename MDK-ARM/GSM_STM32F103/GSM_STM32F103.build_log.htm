@@ -1,0 +1,109 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: kave rafie, ravis, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.34.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.34.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+C:\Users\kave\Desktop\Ravis_Kave\ravis_shared\GSM\GSM_STM32F103\MDK-ARM\GSM_STM32F103.uvprojx
+Project File Date:  08/20/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'GSM_STM32F103'
+compiling main.c...
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(6): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(7): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(8): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(10): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(19): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Src/main.c(39): warning:  #223-D: function "xTaskCreate" declared implicitly
+  	xTaskCreate(Vtask1,"task1",100,NULL,1,NULL);
+../Core/Src/main.c(42): warning:  #223-D: function "vTaskStartScheduler" declared implicitly
+  	vTaskStartScheduler();
+../Core/Src/main.c: 18 warnings, 0 errors
+linking...
+Program Size: Code=10732 RO-data=284 RW-data=140 ZI-data=8708  
+FromELF: creating hex file...
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 18 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.ARM_Compiler.1.7.2.pack
+                Keil.ARM_Compiler.1.7.2
+                Keil ARM Compiler extensions for ARM Compiler 5 and ARM Compiler 6
+   * Component: STDOUT Variant: User Version: 1.2.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_GSM_STM32F103
+  C:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include
+  C:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
+      Source file:   Template\stdout_USART.c
+      Source file:   Source\retarget_io.c
+      Source file:   Template\stdout_user.c
+      Source file:   Template\stdout_display.c
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>
