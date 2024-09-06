@@ -8,9 +8,17 @@ void Vtask1( void *pvParameters ){
 	 for( ;; ){
 		 
 		 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
-		 osDelay(500);
+		 osDelay(100);
 		 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5);
 		 i++;
+		 
+		/* USART2->DR='a';
+		 USART1->DR='b';
+		 
+		 char str[10]="{asd}";
+		 puts(str);*/
+		 
+		 
 	 }
 	
 }
@@ -19,7 +27,8 @@ void Vtask2( void *pvParameters ){
 	
 		for( ;; ){
 		 
-		 osDelay(1);
+		 osDelay(10);
+			
 	 }
 	
 }
@@ -36,15 +45,19 @@ int main(void)
 	Hardware_init();
 	Software_init();
 	
+	/*while(1){
+		 
+		USART1->DR='A';
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
+  }*/
+	
 	xTaskCreate(Vtask1,"task1",100,NULL,1,NULL);
 	xTaskCreate(Vtask2,"task2",100,NULL,1,NULL);
 	
 	vTaskStartScheduler();
 	
-  while (1)
-  {
 
-  }
 
 }
 

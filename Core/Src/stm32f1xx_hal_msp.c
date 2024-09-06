@@ -8,6 +8,9 @@ extern DMA_HandleTypeDef hdma_usart2_tx;
 extern DMA_HandleTypeDef hdma_usart3_rx;
 extern DMA_HandleTypeDef hdma_usart3_tx;
 
+extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
+extern UART_HandleTypeDef huart3;
 
 void HAL_MspInit(void)
 {
@@ -19,6 +22,11 @@ void HAL_MspInit(void)
   HAL_NVIC_SetPriority(PendSV_IRQn, 15, 0);
 
   __HAL_AFIO_REMAP_SWJ_NOJTAG();
+	
+	HAL_UART_MspInit(&huart1);
+	HAL_UART_MspInit(&huart2);
+	HAL_UART_MspInit(&huart3);
+	
 
 }
 

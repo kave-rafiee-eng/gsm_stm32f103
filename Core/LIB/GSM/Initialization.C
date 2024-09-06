@@ -5,6 +5,11 @@ void Hardware_init( void ){
 	
 	SystemClock_INI();
 	GPIO_INI();
+	
+	UART1_INI();
+	UART2_INI();
+
+
 }
 
 

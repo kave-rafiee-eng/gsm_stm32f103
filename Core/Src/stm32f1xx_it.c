@@ -81,18 +81,27 @@ void DMA1_Channel7_IRQHandler(void)
 
 }
 
+char u_data=0;
+char u2_data=0;
 
 void USART1_IRQHandler(void)
 {
-
+	if(LL_USART_IsActiveFlag_RXNE(USART1) && LL_USART_IsEnabledIT_RXNE(USART1))
+	{		
+		u_data=LL_USART_ReceiveData8(USART1);
+		USART2->DR=u_data;
+	}
   HAL_UART_IRQHandler(&huart1);
-
 }
 
 
 void USART2_IRQHandler(void)
 {
-
+	if(LL_USART_IsActiveFlag_RXNE(USART2) && LL_USART_IsEnabledIT_RXNE(USART2))
+	{		
+		u2_data=LL_USART_ReceiveData8(USART2);
+		USART1->DR=u2_data;
+	}
   HAL_UART_IRQHandler(&huart2);
 
 }

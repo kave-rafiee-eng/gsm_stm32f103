@@ -9,7 +9,7 @@ void UART1_INI(void)
 {
 
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 38400;
+  huart1.Init.BaudRate = 9600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -21,6 +21,11 @@ void UART1_INI(void)
     Error_Handler();
   }
 
+	LL_USART_EnableIT_RXNE(USART1);
+
+	NVIC_SetPriority(USART1_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),1, 1));
+  NVIC_EnableIRQ(USART1_IRQn);
+	
 }
 
 void UART2_INI(void)

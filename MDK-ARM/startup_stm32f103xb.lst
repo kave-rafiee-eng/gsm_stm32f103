@@ -475,12 +475,11 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=gsm_stm32f103\startup_stm32f103xb.d -ogsm_stm32f103\startup_stm32f
-103xb.o -I../Core/Inc -I.\RTE\_GSM_STM32F103 -IC:\Users\kave\AppData\Local\Arm\
-Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include -IC:\Users\kave\AppData\Local\Arm\Pack
-s\Keil\STM32F1xx_DFP\2.4.1\Device\Include --predefine="__EVAL SETA 1" --predefi
-ne="__UVISION_VERSION SETA 534" --predefine="_RTE_ SETA 1" --predefine="STM32F1
-0X_MD SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f103xb.lst startup
-_stm32f103xb.s
+103xb.o -I../Core/Inc -I.\RTE\_GSM_STM32F103 -IC:\Users\kave240G\AppData\Local\
+Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include -IC:\Users\kave240G\AppData\Local\
+Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include --predefine="__UVISION_VERSIO
+N SETA 534" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1" --pred
+efine="_RTE_ SETA 1" --list=startup_stm32f103xb.lst startup_stm32f103xb.s
 
 
 
@@ -1206,4 +1205,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-410 symbols in table
+409 symbols in table
