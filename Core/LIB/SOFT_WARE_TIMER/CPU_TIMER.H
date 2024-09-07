@@ -6,7 +6,8 @@
 #define tbr_g1_LED_BLANK 0 
 #define tbr_g1_SEC_MAN 1 
 #define tbr_g1_SW_READ 2 
-#define tbr_g1_UART_CAN 3 
+#define tbr_g1_TEST 3
+
 
 //-------------------------------------------CPU_TIMER_CONFIG
 

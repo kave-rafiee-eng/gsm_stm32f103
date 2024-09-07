@@ -49,6 +49,8 @@ gsm_stm32f103\main.o: ../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h
 gsm_stm32f103\main.o: ../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h
 gsm_stm32f103\main.o: ../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h
 gsm_stm32f103\main.o: ../Core/Inc/../LIB/GSM/Initialization.H
+gsm_stm32f103\main.o: ../Core/Inc/../LIB/GSM/test.H
+gsm_stm32f103\main.o: ../Core/Inc/../LIB/GSM/JSON/json.H
 gsm_stm32f103\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 gsm_stm32f103\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 gsm_stm32f103\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

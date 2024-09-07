@@ -58,6 +58,8 @@
 "gsm_stm32f103\usart.o"
 "gsm_stm32f103\dma.o"
 "gsm_stm32f103\initialization.o"
+"gsm_stm32f103\test.o"
+"gsm_stm32f103\json.o"
 "gsm_stm32f103\retarget_io.o"
 --strict --scatter "GSM_STM32F103\GSM_STM32F103.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

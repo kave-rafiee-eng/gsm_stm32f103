@@ -4,6 +4,9 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
+
+extern struct 	UART_DATA esp_data;
+
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart1_tx;
 extern DMA_HandleTypeDef hdma_usart2_rx;
@@ -94,13 +97,26 @@ void USART1_IRQHandler(void)
   HAL_UART_IRQHandler(&huart1);
 }
 
+volatile char start_get=0;
 
-void USART2_IRQHandler(void)
+void USART2_IRQHandler(void) // esp
 {
 	if(LL_USART_IsActiveFlag_RXNE(USART2) && LL_USART_IsEnabledIT_RXNE(USART2))
 	{		
-		u2_data=LL_USART_ReceiveData8(USART2);
-		USART1->DR=u2_data;
+		u2_data = LL_USART_ReceiveData8(USART2);
+		if( u2_data == '{' )start_get=1;
+
+		if( start_get == 1 ){
+			
+			esp_data.BUF[esp_data.BUF_I] = u2_data;
+			esp_data.BUF_I++;
+			
+			if( u2_data == '}' )start_get=2;
+			
+		}
+		
+		if( esp_data.BUF_I >= UART_BUF_SIZE )esp_data.BUF_I=0;
+
 	}
   HAL_UART_IRQHandler(&huart2);
 

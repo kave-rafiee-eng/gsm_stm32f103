@@ -2,22 +2,23 @@
 #include "main.h"
 #include "cmsis_os.h"
 
-int i=0;
+int time_esp=0;
 void Vtask1( void *pvParameters ){ 
 	
 	 for( ;; ){
 		 
-		 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
-		 osDelay(100);
-		 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5);
-		 i++;
+		 //test();
 		 
-		/* USART2->DR='a';
-		 USART1->DR='b';
-		 
-		 char str[10]="{asd}";
-		 puts(str);*/
-		 
+
+			 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
+			 osDelay(200);
+			 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5);
+			
+			 time_esp++;
+			 if( time_esp >  10 ) { time_esp=0;
+				 send_to_esp2();
+			 }
+			
 		 
 	 }
 	
@@ -27,8 +28,8 @@ void Vtask2( void *pvParameters ){
 	
 		for( ;; ){
 		 
-		 osDelay(10);
-			
+		 osDelay(3000);
+			test_modbus();
 	 }
 	
 }

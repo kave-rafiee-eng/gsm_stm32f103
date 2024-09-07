@@ -49,3 +49,5 @@ gsm_stm32f103\stm32f1xx_hal_msp.o: ../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h
 gsm_stm32f103\stm32f1xx_hal_msp.o: ../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h
 gsm_stm32f103\stm32f1xx_hal_msp.o: ../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h
 gsm_stm32f103\stm32f1xx_hal_msp.o: ../Core/Inc/../LIB/GSM/Initialization.H
+gsm_stm32f103\stm32f1xx_hal_msp.o: ../Core/Inc/../LIB/GSM/test.H
+gsm_stm32f103\stm32f1xx_hal_msp.o: ../Core/Inc/../LIB/GSM/JSON/json.H

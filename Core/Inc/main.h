@@ -47,6 +47,8 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/ //GSM
 #include "../LIB/GSM/Initialization.H"
+#include "../LIB/GSM/test.H"
+#include "../LIB/GSM/JSON/json.H"
 
 void Error_Handler(void);
 
