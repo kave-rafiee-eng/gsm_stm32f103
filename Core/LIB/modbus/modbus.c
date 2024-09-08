@@ -28,7 +28,7 @@ char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code 
 	tx_buf[6+world_count] = tx_crc ; //CRC H
 	tx_buf[7+world_count] = tx_crc >> 8 ; //CRC L	
 	
-	for(i=0;i<world_count+8;i++){
+	for(i=0;i<world_count+9;i++){
 		MODBUS_ADVANCE_RS(1);
 			stdout_putchar(tx_buf[i]);
 		MODBUS_ADVANCE_RS(0);
@@ -61,7 +61,7 @@ char modbus_master_write_register_SINGLE(uint8_t slave_addres , uint8_t fc_code 
 
 
 
-
+/*
 uint16_t crc_rx_check; uint8_t crc_rx_check_h;  uint8_t crc_rx_check_l;
 
 char modbus_master_read_reginter( uint8_t slave_addres , uint8_t fc_code , uint16_t start_addres , uint16_t world_count , uint16_t *return_data ){
@@ -125,32 +125,11 @@ char modbus_master_read_reginter( uint8_t slave_addres , uint8_t fc_code , uint1
 }
 
 
-void modbus_master_1ms(){
-	
-	if( modbus.TIME_OUT > 0 )modbus.TIME_OUT ++;
-	
-}
 
-void modbus_master_read_reginter_it(){
-	
-	modbus.buf_rx[ modbus.buf_rx_index ] = LL_USART_ReceiveData8(USART2);	
-	
-	modbus.buf_rx_index ++;
-	
-}
+
 
 char modbus_time_out_get(){
 	
-	/*modbus.buf_rx_index=0;  modbus.TIME_OUT=1;
-	
-	while( modbus.TIME_OUT > 0 ){	
-			if( modbus.buf_rx_index > 0 )return 1;
-			if( modbus.TIME_OUT > 100 ) return 0;
-	}*/
-	
-	while( esp_data.BUF_I == 0 ){
-		HAL_Delay(10);
-	}
 	
 }
 
@@ -158,39 +137,4 @@ char modbus_time_out_get(){
 
 char start=0;
 char error=0;
-/*
-void modbus_test(){
-	
-	if( start == 1 ){
-		
-		error = modbus_master_read_reginter(1,4,1,5,modbus.buf_data);
-		//modbus_write_register_single();
-	}
-	
-	start=0;
-	
-}*/
-
-/*
-char modbus_slave_manage( char buf_data){
-	
-	if( SLAVE_ADD == modbus.buf_rx[0] &&  FC_READ_WRITE_TO_SLAVE_SINGLE == modbus.buf_rx[1]  ){
-		
-		slave_start_add = (modbus.buf_rx[2]<<8) + modbus.buf_rx[3];
-		slave_data_get = (modbus.buf_rx[4]<<8) + modbus.buf_rx[5];
-		slave_crc_get = (modbus.buf_rx[7]<<8) + modbus.buf_rx[6];
-		
-		slave_crc_calculate = CRC_16(modbus.buf_rx,6);
-		if( slave_crc_calculate == slave_crc_get ){
-				modbus_slave.address = slave_start_add;
-				modbus_slave.data = slave_data_get;
-				return 1;
-		}
-		else return -1;
-	}
-	else if( SLAVE_ADD == modbus.buf_rx[0] &&  FC_READ_FROM_SLAVE == modbus.buf_rx[1] ){
-		
-	}
-	else 0;
-}
 */

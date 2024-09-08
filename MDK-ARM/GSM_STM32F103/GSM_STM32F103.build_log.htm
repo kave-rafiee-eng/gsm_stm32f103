@@ -22,33 +22,15 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 C:\Users\kave\Desktop\Ravis_Kave\ravis_shared\GSM\GSM_STM32F103\MDK-ARM\GSM_STM32F103.uvprojx
-Project File Date:  09/07/2024
+Project File Date:  09/08/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'GSM_STM32F103'
 compiling main.c...
-../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
-  void modbus_master_1ms();
-../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
-  char modbus_time_out_get();
-../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
-  void modbus_master_read_reginter_it();
-../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
-  void modbus_test();
-../Core/Inc/../LIB/MODBUS/modbus.h(42): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(20): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(21): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
 ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
   #endif
-../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(20): warning:  #1-D: last line of file ends without a newline
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
   void MX_CAN_Init();
@@ -60,29 +42,1221 @@ compiling main.c...
   #endif
 ../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
   #endif /* __INITIALIZATION_H */
-../Core/Inc/../LIB/GSM/test.H(7): warning:  #1-D: last line of file ends without a newline
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
   #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
 ../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
   void json_get_data_dma();
 ../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
   void read_protocol_json();
 ../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
   void reset_json();
-../Core/Inc/../LIB/GSM/JSON/json.H(41): warning:  #1-D: last line of file ends without a newline
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
   #endif /* __JSON_H */
-../Core/Src/main.c(19): warning:  #223-D: function "send_to_esp2" declared implicitly
-  				 send_to_esp2();
-../Core/Src/main.c(32): warning:  #223-D: function "test_modbus" declared implicitly
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+../Core/Src/main.c(30): warning:  #223-D: function "test_modbus" declared implicitly
   			test_modbus();
-../Core/Src/main.c(56): warning:  #223-D: function "xTaskCreate" declared implicitly
+../Core/Src/main.c(54): warning:  #223-D: function "xTaskCreate" declared implicitly
   	xTaskCreate(Vtask1,"task1",100,NULL,1,NULL);
-../Core/Src/main.c(59): warning:  #223-D: function "vTaskStartScheduler" declared implicitly
+../Core/Src/main.c(57): warning:  #223-D: function "vTaskStartScheduler" declared implicitly
   	vTaskStartScheduler();
-../Core/Src/main.c: 25 warnings, 0 errors
+../Core/Src/main.c: 31 warnings, 0 errors
+compiling stm32f1xx_it.c...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+../Core/Src/stm32f1xx_it.c: 28 warnings, 0 errors
+compiling freertos.c...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+../Core/Src/freertos.c: 28 warnings, 0 errors
+compiling stdout_user.c...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+stdout_user.c: 28 warnings, 0 errors
+compiling CRC.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\modbus\CRC.C(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Core\LIB\modbus\CRC.C: 29 warnings, 0 errors
+compiling stm32f1xx_hal_msp.c...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+../Core/Src/stm32f1xx_hal_msp.c: 28 warnings, 0 errors
+compiling modbus_slave.c...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\modbus\modbus_slave.c(21): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
+  		slave_crc_calculate = CRC_16(modbus.buf_rx,5);
+..\Core\LIB\modbus\modbus_slave.c(27): warning:  #68-D: integer conversion resulted in a change of sign
+  		else return -1;
+..\Core\LIB\modbus\modbus_slave.c(35): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "unsigned char *"
+  		slave_crc_calculate = CRC_16(modbus.buf_rx,6+slave_data_count);
+..\Core\LIB\modbus\modbus_slave.c(39): warning:  #223-D: function "memset" declared implicitly
+  			memset(modbus_slave.buf,0,UART_BUF_SIZE);
+..\Core\LIB\modbus\modbus_slave.c(50): warning:  #174-D: expression has no effect
+  	else 0;
+..\Core\LIB\modbus\modbus_slave.c(51): warning:  #940-D: missing return statement at end of non-void function "modbus_slave_manage" 
+  }
+..\Core\LIB\modbus\modbus_slave.c: 34 warnings, 0 errors
+compiling modbus.c...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\modbus\modbus.c(32): warning:  #188-D: enumerated type mixed with another type
+  		MODBUS_ADVANCE_RS(1);
+..\Core\LIB\modbus\modbus.c(33): warning:  #223-D: function "stdout_putchar" declared implicitly
+  			stdout_putchar(tx_buf[i]);
+..\Core\LIB\modbus\modbus.c(34): warning:  #188-D: enumerated type mixed with another type
+  		MODBUS_ADVANCE_RS(0);
+..\Core\LIB\modbus\modbus.c(37): warning:  #940-D: missing return statement at end of non-void function "modbus_master_write_register_MULTI" 
+  }
+..\Core\LIB\modbus\modbus.c(56): warning:  #188-D: enumerated type mixed with another type
+  		MODBUS_ADVANCE_RS(1);
+..\Core\LIB\modbus\modbus.c(57): warning:  #223-D: function "stdout_putchar" declared implicitly
+  			stdout_putchar(tx_buf[i]);
+..\Core\LIB\modbus\modbus.c(58): warning:  #188-D: enumerated type mixed with another type
+  		MODBUS_ADVANCE_RS(0);
+..\Core\LIB\modbus\modbus.c(60): warning:  #940-D: missing return statement at end of non-void function "modbus_master_write_register_SINGLE" 
+  }
+..\Core\LIB\modbus\modbus.c(117): warning:  #9-D: nested comment is not allowed
+  				//*(return_data+i) = ( modbus.buf_rx[3+(i*2)] << 8 | modbus.buf_rx[4+(i*2)] );
+..\Core\LIB\modbus\modbus.c(140): warning:  #1-D: last line of file ends without a newline
+  */
+..\Core\LIB\modbus\modbus.c: 38 warnings, 0 errors
+compiling CPU_TIMER.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\SOFT_WARE_TIMER\CPU_TIMER.C(88): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\LIB\SOFT_WARE_TIMER\CPU_TIMER.C: 29 warnings, 0 errors
+compiling CAN.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\STM32f1_Peripheral\CAN.C: 28 warnings, 0 errors
+compiling Clock.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\STM32f1_Peripheral\Clock.C: 28 warnings, 0 errors
+compiling GPIO.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\STM32f1_Peripheral\GPIO.C(45): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\LIB\STM32f1_Peripheral\GPIO.C: 29 warnings, 0 errors
+compiling TIMER.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\STM32f1_Peripheral\TIMER.C: 28 warnings, 0 errors
+compiling DMA.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\STM32f1_Peripheral\DMA.C: 28 warnings, 0 errors
+compiling USART.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\STM32f1_Peripheral\USART.C(55): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\LIB\STM32f1_Peripheral\USART.C: 29 warnings, 0 errors
+compiling Initialization.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\GSM\Initialization.C: 28 warnings, 0 errors
+compiling test.c...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\GSM\test.c(28): warning:  #188-D: enumerated type mixed with another type
+  	MODBUS_ADVANCE_RS(0);
+..\Core\LIB\GSM\test.c(32): warning:  #223-D: function "strlen" declared implicitly
+  		modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF),esp.BUF);
+..\Core\LIB\GSM\test.c(32): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+  		modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF),esp.BUF);
+..\Core\LIB\GSM\test.c(55): warning:  #223-D: function "strcpy" declared implicitly
+  	strcpy(json.document,modbus_slave.buf,UART_BUF_SIZE);
+..\Core\LIB\GSM\test.c(87): warning:  #9-D: nested comment is not allowed
+  					/*if( strcmp(json_protocol.name_w1,travel_time_addres) == 0 ){ // write travel_time_addres	
+..\Core\LIB\GSM\test.c(111): warning:  #9-D: nested comment is not allowed
+  					/*if( strcmp(json_protocol.name_r1,travel_time_addres) == 0 ){ // read travel_time_addres	
+..\Core\LIB\GSM\test.c: 34 warnings, 0 errors
+compiling JSON.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\GSM\JSON\JSON.C: 28 warnings, 0 errors
+compiling modbus_GSM.C...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\GSM\modbus_GSM.C(35): warning:  #223-D: function "memset" declared implicitly
+  		memset(modbus.buf_rx,0,UART_BUF_SIZE);
+..\Core\LIB\GSM\modbus_GSM.C(39): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\LIB\GSM\modbus_GSM.C: 30 warnings, 0 errors
+compiling esp8266.c...
+../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
+  void MX_CAN_Init();
+../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
+  #endif /* __INITIALIZATION_H */
+../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
+  void read_json_advance();
+../Core/Inc/../LIB/GSM/test.H(14): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TEST_H */
+../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
+  void clear_esp_buffer();
+../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
+  void esp_random_connect_to_server();
+../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
+  #endif /* ESP8266 */
+../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
+  void modbus_slave_manager_recive();
+../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __MODBUS_GSM_H */
+../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
+  void json_get_data_dma();
+../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
+  void read_protocol_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
+  void reset_json();
+../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __JSON_H */
+../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
+  void modbus_master_1ms();
+../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
+  char modbus_time_out_get();
+../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
+  void modbus_master_read_reginter_it();
+../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
+  char modbus_slave_manage();
+../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
+  void modbus_test();
+../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+  	void ini_cpu_timer();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+  	void timer_second_manager();
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+  	void timer_basic_manager();
+..\Core\LIB\GSM\esp8266.c(38): warning:  #223-D: function "memset" declared implicitly
+  	memset(esp.BUF,0,UART_BUF_SIZE);
+..\Core\LIB\GSM\esp8266.c(43): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\LIB\GSM\esp8266.c: 30 warnings, 0 errors
 linking...
-Program Size: Code=19780 RO-data=316 RW-data=192 ZI-data=9168  
+Program Size: Code=21560 RO-data=588 RW-data=168 ZI-data=11568  
 FromELF: creating hex file...
-"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 25 Warning(s).
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 593 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -113,11 +1287,11 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
-      Source file:   Template\stdout_USART.c
-      Source file:   Template\stdout_user.c
-      Source file:   Template\stdout_display.c
       Source file:   Source\retarget_io.c
-Build Time Elapsed:  00:00:08
+      Source file:   Template\stdout_USART.c
+      Source file:   Template\stdout_display.c
+      Source file:   Template\stdout_user.c
+Build Time Elapsed:  00:00:40
 </pre>
 </body>
 </html>

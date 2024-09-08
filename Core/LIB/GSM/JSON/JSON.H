@@ -24,6 +24,9 @@ struct JSON_OUT
 
 struct JSON_PROTOCOL 
 {
+
+	char serial[10];
+	
 	char name_w1[50];
   char data_w1[50];
 	int data_w1_word;

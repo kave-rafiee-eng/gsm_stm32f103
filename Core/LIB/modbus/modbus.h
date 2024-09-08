@@ -17,13 +17,15 @@ char modbus_master_read_reginter( uint8_t slave_addres , uint8_t fc_code , uint1
 char modbus_master_write_register_SINGLE(uint8_t slave_addres , uint8_t fc_code , uint16_t start_addres , uint8_t data);
 char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code , uint16_t start_addres , uint16_t world_count , uint8_t *data );
 	
+char modbus_slave_manage();
+	
 void modbus_test();
 
 struct MODBUS_RTU {
 	
 	uint8_t TIME_OUT;
 	
-	volatile uint8_t buf_rx[100];
+	volatile uint8_t buf_rx[UART_BUF_SIZE];
 	volatile uint8_t buf_rx_index;
 	
 	int16_t buf_data[10];
@@ -34,8 +36,9 @@ struct MODBUS_SLAVE {
 	
 	volatile uint8_t address;
 	volatile uint8_t data;
-	
-	
+	volatile uint8_t buf[UART_BUF_SIZE];
+	volatile uint16_t data_count;
+	char F_new_data :1;
 };
 
 

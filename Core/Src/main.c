@@ -1,34 +1,32 @@
-
 #include "main.h"
 #include "cmsis_os.h"
+
+// CPU TIMER
+extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
 int time_esp=0;
 void Vtask1( void *pvParameters ){ 
 	
 	 for( ;; ){
 		 
-		 //test();
-		 
-
-			 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
-			 osDelay(200);
-			 HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5);
+			HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
+			osDelay(200);
+			HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5);
 			
-			 time_esp++;
-			 if( time_esp >  10 ) { time_esp=0;
-				 send_to_esp2();
-			 }
+		 	tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].EN=1;
+			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].C_set_time=800;
+			if(tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end){tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end=0;
+				esp_random_connect_to_server();
+			}	
 			
-		 
 	 }
-	
 }
 
 void Vtask2( void *pvParameters ){ 
 	
 		for( ;; ){
 		 
-		 osDelay(3000);
+		 osDelay(100);
 			test_modbus();
 	 }
 	
@@ -58,8 +56,6 @@ int main(void)
 	
 	vTaskStartScheduler();
 	
-
-
 }
 
 

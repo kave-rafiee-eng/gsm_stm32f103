@@ -26,17 +26,6 @@ extern "C" {
 #include "stm32f1xx_ll_gpio.h"
 #include "stm32f1xx_ll_usart.h"
 
-/* Includes ------------------------------------------------------------------*/ //MODBUS
-#include "../LIB/MODBUS/CRC.h"
-#include "../LIB/MODBUS/modbus.h"
-
-/* Includes ------------------------------------------------------------------*/ //COU_TIMER
-#include "../LIB/SOFT_WARE_TIMER/CPU_TIMER.H"
-
-/* Includes ------------------------------------------------------------------*/ //STANSARD LIB
-#include <stdint.h>
-#include <stdio.h>    
-
 /* Includes ------------------------------------------------------------------*/ //STM32f1_Peripheral
 #include "../LIB/STM32f1_Peripheral/GPIO.h"
 #include "../LIB/STM32f1_Peripheral/Clock.h"
@@ -48,7 +37,24 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/ //GSM
 #include "../LIB/GSM/Initialization.H"
 #include "../LIB/GSM/test.H"
+#include "../LIB/GSM/ESP8266.H"
+#include "../LIB/GSM/modbus_gsm.H"
+
+/* Includes ------------------------------------------------------------------*/ //JSON
 #include "../LIB/GSM/JSON/json.H"
+
+/* Includes ------------------------------------------------------------------*/ //MODBUS
+#include "../LIB/MODBUS/CRC.h"
+#include "../LIB/MODBUS/modbus.h"
+
+/* Includes ------------------------------------------------------------------*/ //CPU_TIMER
+#include "../LIB/SOFT_WARE_TIMER/CPU_TIMER.H"
+
+
+
+/* Includes ------------------------------------------------------------------*/ //STANSARD LIB
+#include <stdint.h>
+#include <stdio.h>    
 
 void Error_Handler(void);
 

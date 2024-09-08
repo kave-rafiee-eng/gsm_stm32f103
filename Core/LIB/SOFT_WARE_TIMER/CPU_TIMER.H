@@ -7,6 +7,8 @@
 #define tbr_g1_SEC_MAN 1 
 #define tbr_g1_SW_READ 2 
 #define tbr_g1_TEST 3
+#define tbr_g1_MODBUS_SLAVE_RX 4
+#define tbr_g1_ESP_RANDOM_CONNECT 5
 
 
 //-------------------------------------------CPU_TIMER_CONFIG

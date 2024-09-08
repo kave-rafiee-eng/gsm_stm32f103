@@ -50,6 +50,7 @@
 "gsm_stm32f103\port.o"
 "gsm_stm32f103\crc.o"
 "gsm_stm32f103\modbus.o"
+"gsm_stm32f103\modbus_slave.o"
 "gsm_stm32f103\cpu_timer.o"
 "gsm_stm32f103\can.o"
 "gsm_stm32f103\clock.o"
@@ -60,6 +61,8 @@
 "gsm_stm32f103\initialization.o"
 "gsm_stm32f103\test.o"
 "gsm_stm32f103\json.o"
+"gsm_stm32f103\esp8266.o"
+"gsm_stm32f103\modbus_gsm.o"
 "gsm_stm32f103\retarget_io.o"
 --strict --scatter "GSM_STM32F103\GSM_STM32F103.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

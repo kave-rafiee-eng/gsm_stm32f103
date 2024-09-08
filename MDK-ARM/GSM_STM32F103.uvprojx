@@ -663,6 +663,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\LIB\modbus\modbus.c</FilePath>
             </File>
+            <File>
+              <FileName>modbus_slave.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\modbus\modbus_slave.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -727,6 +732,16 @@
               <FileName>JSON.C</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\LIB\GSM\JSON\JSON.C</FilePath>
+            </File>
+            <File>
+              <FileName>esp8266.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\GSM\esp8266.c</FilePath>
+            </File>
+            <File>
+              <FileName>modbus_GSM.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\GSM\modbus_GSM.C</FilePath>
             </File>
           </Files>
         </Group>

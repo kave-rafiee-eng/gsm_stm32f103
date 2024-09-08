@@ -87,12 +87,17 @@ void DMA1_Channel7_IRQHandler(void)
 char u_data=0;
 char u2_data=0;
 
+
+extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
+
 void USART1_IRQHandler(void)
 {
 	if(LL_USART_IsActiveFlag_RXNE(USART1) && LL_USART_IsEnabledIT_RXNE(USART1))
 	{		
-		u_data=LL_USART_ReceiveData8(USART1);
-		USART2->DR=u_data;
+			u_data=LL_USART_ReceiveData8(USART1);
+		
+			modbus_it_uart_manage(u_data);
+		
 	}
   HAL_UART_IRQHandler(&huart1);
 }
@@ -104,19 +109,9 @@ void USART2_IRQHandler(void) // esp
 	if(LL_USART_IsActiveFlag_RXNE(USART2) && LL_USART_IsEnabledIT_RXNE(USART2))
 	{		
 		u2_data = LL_USART_ReceiveData8(USART2);
-		if( u2_data == '{' )start_get=1;
-
-		if( start_get == 1 ){
-			
-			esp_data.BUF[esp_data.BUF_I] = u2_data;
-			esp_data.BUF_I++;
-			
-			if( u2_data == '}' )start_get=2;
-			
-		}
 		
-		if( esp_data.BUF_I >= UART_BUF_SIZE )esp_data.BUF_I=0;
-
+		esp_uart_rx_manager(u2_data);
+		
 	}
   HAL_UART_IRQHandler(&huart2);
 

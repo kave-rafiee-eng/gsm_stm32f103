@@ -1,15 +1,15 @@
 #include "main.h"
 #include "USART.H"
 
+
+
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
-struct 	UART_DATA esp_data;
 	
 void UART1_INI(void)
 {
-
 	
   huart1.Instance = USART1;
   huart1.Init.BaudRate = 9600;

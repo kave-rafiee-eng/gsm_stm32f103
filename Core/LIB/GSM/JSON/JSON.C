@@ -71,7 +71,7 @@ void read_protocol_json(){
 		else if( json_get_data(json.document , "\"data_w1\":") == TYPE_WORD ){
 			json_protocol.data_w1_word = json.data;
 			json_protocol.data_w1_type = TYPE_WORD;
-		}    
+		} 		
 	}
 	
 	
@@ -90,6 +90,11 @@ void read_protocol_json(){
 		}    
 	}
 
+	if( json_get_data(json.document , "\"serial\":") == TYPE_STR ){
+		strcpy( json_protocol.serial , "");
+		strcpy( json_protocol.serial , json.str_data);					   
+	}
+		
 }
 
 void reset_json(){
@@ -104,6 +109,8 @@ void reset_json(){
 	
 	memset( json_protocol.name_w1 ,0,strlen(json_protocol.name_w1));
 	memset( json_protocol.name_r1 ,0,strlen(json_protocol.name_r1));
+	
+	memset(json.document,0,UART_BUF_SIZE);
 	
 }
 

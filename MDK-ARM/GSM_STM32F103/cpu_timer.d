@@ -37,12 +37,8 @@ gsm_stm32f103\cpu_timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.
 gsm_stm32f103\cpu_timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h
 gsm_stm32f103\cpu_timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h
 gsm_stm32f103\cpu_timer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h
-gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/MODBUS/CRC.h
-gsm_stm32f103\cpu_timer.o: ../Core/Inc/main.h
-gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/MODBUS/modbus.h
-gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H
-gsm_stm32f103\cpu_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h
+gsm_stm32f103\cpu_timer.o: ../Core/Inc/main.h
 gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h
 gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/STM32f1_Peripheral/USART.h
 gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h
@@ -50,4 +46,10 @@ gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h
 gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h
 gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/GSM/Initialization.H
 gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/GSM/test.H
+gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/GSM/ESP8266.H
+gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/GSM/modbus_gsm.H
 gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/GSM/JSON/json.H
+gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/MODBUS/CRC.h
+gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/MODBUS/modbus.h
+gsm_stm32f103\cpu_timer.o: ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H
+gsm_stm32f103\cpu_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -1,93 +1,73 @@
 #include "main.h"
 #include "test.h"
 #include "stdio.h"
+#include "stdlib.h"
 
-#define travel_time_addres "general*travel_time"
-#define door_control_type_ADDRESS "general*door*control_type"
-
+struct GSM gsm;
+	
+// CPU TIMER
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
-//extern char List_DoorControlType[][8];
-	
-//extern volatile	uint8_t			Stng[SETTING_ARRAY_SIZE];
-//extern volatile  uint8_t   	EEPROMSaveFlag;
+// ESP8266
+extern struct ESP8266 esp;
+extern struct ESP8266_MANAGE esp_manage;
 
-extern struct 	UART_DATA esp_data;
-
+// JSON
 extern struct JSON_OUT	 json;
 extern struct JSON_PROTOCOL json_protocol;
 
-char flag_test=0;
-int i_get=0;
-char last_get=0;
+// MODBUS
+extern struct MODBUS_SLAVE modbus_slave;
+extern struct MODBUS_RTU modbus;
 
-int time=0;
-int timer_eeprom=0;
-
-char modbus_start=0;
-
-uint16_t modbus_read[20];
-
-char uart_select=0;
-
-extern volatile char start_get;
+// STDOUT
+extern char UART_STDOUT_SELECT;
 
 void test_modbus(){
 	
-	MODBUS_ADVANCE_RS(1);
-	modbus_start=1;
-	if( modbus_start == 1 ){ modbus_start=0;
-		//modbus_master_write_register_SINGLE(SLAVE_ADD,FC_WRITE_TO_SLAVE_SINGLE,2,7);
+	MODBUS_ADVANCE_RS(0);
+
+	if( esp.F_json_get ){ //SEND DATA_JSON ESP TO ADVANCE
+		UART_STDOUT_SELECT = UART_RS485;
+		modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF),esp.BUF);
 		
-			if( start_get == 2 ){ start_get=0;
-				uart_select=2;
-				//uint8_t data[]={"{\"name_w1\":\"general*travel_time\",\"data_w1\":\"10\",}"};
-				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp_data.BUF),esp_data.BUF);
-				
-			}
-		//modbus_master_read_reginter(01,01,01,01,modbus_read);
+		clear_esp_buffer();	
 	}
 
-	if( esp_data.BUF_I > 0 ){
-			//modbus_slave_manage();
-			esp_data.BUF_I=0;
+	modbus_slave_manager_recive();
+	
+	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
+		
+			UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
+			puts((const char*)modbus_slave.buf);
+		
+			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].I_time=0;
+		
+			read_json_advance();
 	}
 	
 }
 
-void send_to_esp2(){
+
+void read_json_advance(){
 	
-	char str[100];
-	sprintf(str,"{\"name_w1\":\"-\",\"data_w1\":\"-\",}");
-	uart_select = 1;
-	puts(str);
+	reset_json();
+	strcpy(json.document,modbus_slave.buf,UART_BUF_SIZE);
+		
+	read_protocol_json();
 	
+	if( json_get_data(json.document , "\"serial\":") == TYPE_STR ){
+		gsm.device_serial	= atoi(json.str_data);	
+	}
+			
 }
+
+/*
+#define travel_time_addres "general*travel_time"
+#define door_control_type_ADDRESS "general*door*control_type"
 
 void test_json(){
-	
-	tbr_g1[tbr_g1_TEST].EN=1;
-	tbr_g1[tbr_g1_TEST].C_set_time=10;
-	
-	if( tbr_g1[tbr_g1_TEST].F_end ){ tbr_g1[tbr_g1_TEST].F_end=0;
-		
-		//puts("a");
-		
-		last_get=0;
-		int i=0;
-		for(i=0; i<UART_BUF_SIZE; i++ ){
-			if( esp_data.BUF[i] == '}' ){
-				last_get = '}';
-				break;
-			}
-		}
-		
-		if( last_get == '}' ){
-			
-			json_get_document(esp_data.BUF,&esp_data.BUF_I);
-			
-			read_protocol_json();
-	
+
 			if( json_protocol.data_w1_type > 0 ){
 				
 					puts("/name = ");
@@ -121,7 +101,7 @@ void test_json(){
 											}
 									}
 							}			
-					}	*/		
+					}			
 					
 			}
 
@@ -141,40 +121,21 @@ void test_json(){
 						puts(str); 
 						time=1;	
 		
-					}*/
+					}
 									
 			}
 			else{
 				time=100;
 			}
-			
-			reset_json();
-			
+		
 		}
 		
-		if(time>0)time--;
-			
-	}
-	
-	
-	if( time == 0 ){ time=500;
-		char str[100];
-		sprintf(str,"{\"name_w1\":\"-\",\"data_w1\":\"-\",}");
-		puts(str); 					
-	}
 
-}
 
-void gsm_init(){
-	
-	ini_cpu_timer();
-	
-}
-
+}*/
 
 
 //HALL_SendData(strlen(HALL_TX_Buffer));	
-
 
 /* DMA :
 
