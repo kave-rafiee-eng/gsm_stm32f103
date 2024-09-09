@@ -1,6 +1,9 @@
 #include "main.h"
 #include "esp8266.h"
 
+
+extern struct GSM gsm;
+
 // STDOUT
 extern char UART_STDOUT_SELECT;
 
@@ -9,10 +12,20 @@ struct ESP8266_MANAGE esp_manage;
 
 void esp_random_connect_to_server(){
 	
-	char str[50];
-	sprintf(str,"{\"name_w1\":\"-\",\"data_w1\":\"-\",}");
-	UART_STDOUT_SELECT = UART_ESP;
-	puts(str);	
+	gsm.device_serial=100;
+	
+	if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
+			char str[80];
+			sprintf(str,"{\"serial\":\"%d\",\"url\":\"SW_ENABLE=1&\",}",gsm.device_serial);
+			UART_STDOUT_SELECT = UART_ESP;
+			puts(str);			
+	}
+	else{
+			char str[80];
+			sprintf(str,"{\"serial\":\"%d\",\"name_w1\":\"-\",\"data_w1\":\"-\",}",gsm.device_serial);
+			UART_STDOUT_SELECT = UART_ESP;
+			puts(str);	
+	}
 	
 }
 

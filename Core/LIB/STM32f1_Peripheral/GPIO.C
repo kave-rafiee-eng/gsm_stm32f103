@@ -11,6 +11,7 @@ char read_gpio(GPIO_TypeDef *GPIOx , unsigned int pin){
 void GPIO_INI(void)
 {
 	
+	
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 /* USER CODE BEGIN MX_GPIO_Init_1 */
 /* USER CODE END MX_GPIO_Init_1 */

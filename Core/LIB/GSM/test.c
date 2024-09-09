@@ -25,6 +25,8 @@ extern char UART_STDOUT_SELECT;
 
 void test_modbus(){
 	
+	if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;
+	
 	MODBUS_ADVANCE_RS(0);
 
 	if( esp.F_json_get ){ //SEND DATA_JSON ESP TO ADVANCE

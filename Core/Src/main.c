@@ -38,7 +38,7 @@ void StartDefaultTask(void *argument);
 int main(void)
 {
 
-
+	
   HAL_Init();
 
 	Hardware_init();
