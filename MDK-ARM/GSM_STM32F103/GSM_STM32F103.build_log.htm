@@ -27,68 +27,6 @@ Project File Date:  09/08/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'GSM_STM32F103'
-compiling esp8266.c...
-../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(23): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(6): warning:  #1295-D: Deprecated declaration MX_CAN_Init - give arg types
-  void MX_CAN_Init();
-../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h(12): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/STM32f1_Peripheral/DMA.h(8): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/GSM/Initialization.H(8): warning:  #1-D: last line of file ends without a newline
-  #endif /* __INITIALIZATION_H */
-../Core/Inc/../LIB/GSM/test.H(6): warning:  #1295-D: Deprecated declaration read_json_advance - give arg types
-  void read_json_advance();
-../Core/Inc/../LIB/GSM/test.H(15): warning:  #1-D: last line of file ends without a newline
-  #endif /* __TEST_H */
-../Core/Inc/../LIB/GSM/ESP8266.H(8): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
-  void clear_esp_buffer();
-../Core/Inc/../LIB/GSM/ESP8266.H(9): warning:  #1295-D: Deprecated declaration esp_random_connect_to_server - give arg types
-  void esp_random_connect_to_server();
-../Core/Inc/../LIB/GSM/ESP8266.H(26): warning:  #1-D: last line of file ends without a newline
-  #endif /* ESP8266 */
-../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
-  void modbus_slave_manager_recive();
-../Core/Inc/../LIB/GSM/modbus_gsm.H(10): warning:  #1-D: last line of file ends without a newline
-  #endif /* __MODBUS_GSM_H */
-../Core/Inc/../LIB/GSM/JSON/json.H(13): warning:  #1295-D: Deprecated declaration json_get_data_dma - give arg types
-  void json_get_data_dma();
-../Core/Inc/../LIB/GSM/JSON/json.H(14): warning:  #1295-D: Deprecated declaration read_protocol_json - give arg types
-  void read_protocol_json();
-../Core/Inc/../LIB/GSM/JSON/json.H(15): warning:  #1295-D: Deprecated declaration reset_json - give arg types
-  void reset_json();
-../Core/Inc/../LIB/GSM/JSON/json.H(44): warning:  #1-D: last line of file ends without a newline
-  #endif /* __JSON_H */
-../Core/Inc/../LIB/MODBUS/CRC.h(8): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/MODBUS/modbus.h(12): warning:  #1295-D: Deprecated declaration modbus_master_1ms - give arg types
-  void modbus_master_1ms();
-../Core/Inc/../LIB/MODBUS/modbus.h(13): warning:  #1295-D: Deprecated declaration modbus_time_out_get - give arg types
-  char modbus_time_out_get();
-../Core/Inc/../LIB/MODBUS/modbus.h(14): warning:  #1295-D: Deprecated declaration modbus_master_read_reginter_it - give arg types
-  void modbus_master_read_reginter_it();
-../Core/Inc/../LIB/MODBUS/modbus.h(20): warning:  #1295-D: Deprecated declaration modbus_slave_manage - give arg types
-  char modbus_slave_manage();
-../Core/Inc/../LIB/MODBUS/modbus.h(22): warning:  #1295-D: Deprecated declaration modbus_test - give arg types
-  void modbus_test();
-../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(22): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
-  	void ini_cpu_timer();
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(23): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
-  	void timer_second_manager();
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
-  	void timer_basic_manager();
-..\Core\LIB\GSM\esp8266.c(51): warning:  #223-D: function "memset" declared implicitly
-  	memset(esp.BUF,0,UART_BUF_SIZE);
-..\Core\LIB\GSM\esp8266.c(56): warning:  #1-D: last line of file ends without a newline
-  }
-..\Core\LIB\GSM\esp8266.c: 30 warnings, 0 errors
 compiling main.c...
 ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -146,17 +84,17 @@ compiling main.c...
   	void timer_second_manager();
 ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(24): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
   	void timer_basic_manager();
-../Core/Src/main.c(30): warning:  #223-D: function "test_modbus" declared implicitly
+../Core/Src/main.c(33): warning:  #223-D: function "test_modbus" declared implicitly
   			test_modbus();
-../Core/Src/main.c(54): warning:  #223-D: function "xTaskCreate" declared implicitly
+../Core/Src/main.c(57): warning:  #223-D: function "xTaskCreate" declared implicitly
   	xTaskCreate(Vtask1,"task1",100,NULL,1,NULL);
-../Core/Src/main.c(57): warning:  #223-D: function "vTaskStartScheduler" declared implicitly
+../Core/Src/main.c(60): warning:  #223-D: function "vTaskStartScheduler" declared implicitly
   	vTaskStartScheduler();
 ../Core/Src/main.c: 31 warnings, 0 errors
 linking...
-Program Size: Code=22084 RO-data=588 RW-data=172 ZI-data=11564  
+Program Size: Code=22108 RO-data=588 RW-data=176 ZI-data=11568  
 FromELF: creating hex file...
-"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 61 Warning(s).
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 31 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -191,7 +129,7 @@ Package Vendor: Keil
       Source file:   Template\stdout_USART.c
       Source file:   Template\stdout_display.c
       Source file:   Template\stdout_user.c
-Build Time Elapsed:  00:00:06
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
