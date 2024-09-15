@@ -8,7 +8,8 @@ void Hardware_init( void ){
 	
 	UART1_INI();
 	UART2_INI();
-
+	UART3_INI();
+	
 }
 
 

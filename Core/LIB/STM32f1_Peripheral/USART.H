@@ -3,6 +3,7 @@
 
 #include "main.h"
 	
+#define UART_SIM 3
 #define UART_ESP 2
 #define UART_RS485 1
 
@@ -19,5 +20,6 @@ struct 	UART_DATA
 	
 void UART2_INI(void);
 void UART1_INI(void);
+void UART3_INI(void);
 
 #endif

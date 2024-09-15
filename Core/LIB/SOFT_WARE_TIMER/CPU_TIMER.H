@@ -9,7 +9,7 @@
 #define tbr_g1_TEST 3
 #define tbr_g1_MODBUS_SLAVE_RX 4
 #define tbr_g1_ESP_RANDOM_CONNECT 5
-
+#define tbr_g1_SIM_UART_GET 6
 
 //-------------------------------------------CPU_TIMER_CONFIG
 

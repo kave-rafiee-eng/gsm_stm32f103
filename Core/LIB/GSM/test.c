@@ -12,6 +12,10 @@ extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 extern struct ESP8266 esp;
 extern struct ESP8266_MANAGE esp_manage;
 
+// SIM
+extern struct ESP8266 sim;
+extern struct ESP8266_MANAGE sim_manage;
+
 // JSON
 extern struct JSON_OUT	 json;
 extern struct JSON_PROTOCOL json_protocol;
@@ -36,17 +40,29 @@ void test_modbus(){
 		clear_esp_buffer();	
 	}
 
+	if( sim.F_json_get ){ //SEND DATA_JSON SIM TO ADVANCE
+		UART_STDOUT_SELECT = UART_RS485;
+		modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF),sim.BUF);
+		
+		clear_sim_buffer();	
+	}
+		
 	modbus_slave_manager_recive();
 	
 	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
 		
-			UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
-			puts((const char*)modbus_slave.buf);
+			//UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
+			//puts((const char*)modbus_slave.buf);
 		
 			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].I_time=0;
 		
 			read_json_advance();
+		
+			http_read();
+		
+			reset_json();
 	}
+
 	
 }
 

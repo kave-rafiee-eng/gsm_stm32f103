@@ -5,9 +5,17 @@
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
 int time_esp=0;
+char init_sim=0;
+
 void Vtask1( void *pvParameters ){ 
 	
 	 for( ;; ){
+		 
+			if( init_sim == 0 ){ init_sim=1;
+				tset_send_sim();
+			}
+		 
+			
 		 
 			HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
 			osDelay(200);
@@ -18,9 +26,18 @@ void Vtask1( void *pvParameters ){
 			if(tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end){tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end=0;
 				
 				time_esp++;
-				if( time_esp >= 4 ){ time_esp=0; esp_random_connect_to_server(); }
+				//if( time_esp >= 4 ){ time_esp=0; esp_random_connect_to_server(); }
+				
+				if( time_esp >= 1 ){ time_esp=0; http_read(); }
+				
 					
 			}	
+			
+			/*tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].EN=1;
+			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].C_set_time=800;
+			if(tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end){tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end=0;
+				
+			}*/
 			
 	 }
 }
@@ -53,6 +70,10 @@ int main(void)
 		HAL_Delay(50);
 		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
   }*/
+	
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
+	HAL_Delay(3000);
+	
 	
 	xTaskCreate(Vtask1,"task1",100,NULL,1,NULL);
 	xTaskCreate(Vtask2,"task2",100,NULL,1,NULL);

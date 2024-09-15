@@ -86,7 +86,7 @@ void DMA1_Channel7_IRQHandler(void)
 
 char u_data=0;
 char u2_data=0;
-
+char u3_data=0;
 
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
@@ -120,6 +120,13 @@ void USART2_IRQHandler(void) // esp
 void USART3_IRQHandler(void)
 {
 
+	if(LL_USART_IsActiveFlag_RXNE(USART3) && LL_USART_IsEnabledIT_RXNE(USART3))
+	{		
+		u3_data = LL_USART_ReceiveData8(USART3);
+		
+		sim_uart_rx_manager(u3_data);
+		
+	}
   HAL_UART_IRQHandler(&huart3);
 
 }
