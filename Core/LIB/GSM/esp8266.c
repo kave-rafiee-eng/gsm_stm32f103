@@ -50,7 +50,13 @@ void esp_uart_rx_manager(char data){
 			esp.BUF[esp.BUF_I] = data;
 			esp.BUF_I++;
 			if( data == '}' ){ esp_manage.json_level=2;
-				esp.F_json_get=1;
+
+				if( esp.BUF_I > 3 )esp.F_json_get=1;
+				else{
+						esp.BUF_I=0;
+						esp_manage.json_level=0;
+				}
+				
 			}
 		}
 		
@@ -84,7 +90,13 @@ void sim_uart_rx_manager(char data){
 			sim.BUF[sim.BUF_I] = data;
 			sim.BUF_I++;
 			if( data == '}' ){ sim_manage.json_level=2;
-				sim.F_json_get=1;
+				
+				if( sim.BUF_I > 3 )sim.F_json_get=1;
+				else{
+						sim.BUF_I=0;
+						sim_manage.json_level=0;
+				}
+				
 			}
 		}
 		
@@ -150,7 +162,6 @@ void http_read(){
 	UART_STDOUT_SELECT = UART_SIM;
 	char str[100];
 
-	
 	clear_sim_uart_buffer();
 	sprintf(str,"AT+HTTPINIT");
 	puts(str);
@@ -170,7 +181,7 @@ void http_read(){
 	else{
 		
 			clear_sim_uart_buffer();
-			sprintf(str,"AT+HTTPPARA=\"URL\",\"www.ravis-gsm.ir/GSM_RAVIS/gsm_connection.php?serial=100&%d\"");
+			sprintf(str,"AT+HTTPPARA=\"URL\",\"www.ravis-gsm.ir/GSM_RAVIS/gsm_connection.php?serial=100\"");
 			puts(str);
 			whit_to_responce_sim();		
 	}
@@ -178,13 +189,13 @@ void http_read(){
 	clear_sim_uart_buffer();
 	sprintf(str,"AT+HTTPACTION=0");
 	puts(str);
-	if( wait_to_get_sim("HTTPACTION:",4000) ==  1 ){
+	if( wait_to_get_sim("HTTPACTION:",4000) ==  1 ){}
 		
 		clear_sim_uart_buffer();
 		sprintf(str,"AT+HTTPREAD");
 		puts(str);
 		whit_to_responce_sim();		
-	}
+	
 						
 	clear_sim_uart_buffer();
 	sprintf(str,"AT+HTTPTERM");
@@ -199,36 +210,40 @@ void tset_send_sim(){
 	UART_STDOUT_SELECT = UART_SIM;
 	char str[100];
 	
-	clear_sim_uart_buffer();
+	/*clear_sim_uart_buffer();
 	sprintf(str,"AT");
 	puts(str);
-	whit_to_responce_sim();
+	whit_to_responce_sim();*/
+	
+
 	
 	clear_sim_uart_buffer();
 	sprintf(str,"AT+SAPBR=3,1,\"Contype\",\"GPRS\"");
 	puts(str);
 	whit_to_responce_sim();
 	
-	osDelay(2000);
+	osDelay(500);
 	
 	clear_sim_uart_buffer();
-	sprintf(str,"AT+SAPBR=3,1,\"APN\",\"mcinet\"");
+	sprintf(str,"AT+SAPBR=3,1,\"APN\",\"RighTel\"");
 	puts(str);
 	whit_to_responce_sim();
 	
-	osDelay(2000);
+	osDelay(500);
 	
 	clear_sim_uart_buffer();
 	sprintf(str,"AT+SAPBR=1,1");
 	puts(str);
 	whit_to_responce_sim();
 	
-	osDelay(2000);
+	osDelay(500);
 			
 	clear_sim_uart_buffer();
 	sprintf(str,"AT+SAPBR=2,1");
 	puts(str);
 	whit_to_responce_sim();
+	
+
 	
 /*
 	osDelay(2000);				

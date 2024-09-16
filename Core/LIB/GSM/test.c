@@ -27,6 +27,8 @@ extern struct MODBUS_RTU modbus;
 // STDOUT
 extern char UART_STDOUT_SELECT;
 
+extern int time_esp;
+
 void test_modbus(){
 	
 	if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;
@@ -45,20 +47,23 @@ void test_modbus(){
 		modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF),sim.BUF);
 		
 		clear_sim_buffer();	
+		time_esp = 7;
 	}
 		
 	modbus_slave_manager_recive();
 	
 	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
 		
-			//UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
-			//puts((const char*)modbus_slave.buf);
+			UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
+			puts((const char*)modbus_slave.buf);
+		
+			time_esp = 3;
 		
 			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].I_time=0;
 		
 			read_json_advance();
 		
-			http_read();
+			//http_read();
 		
 			reset_json();
 	}

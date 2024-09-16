@@ -25,10 +25,12 @@ void Vtask1( void *pvParameters ){
 			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].C_set_time=800;
 			if(tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end){tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end=0;
 				
-				time_esp++;
-				//if( time_esp >= 4 ){ time_esp=0; esp_random_connect_to_server(); }
 				
-				if( time_esp >= 1 ){ time_esp=0; http_read(); }
+				if( time_esp == 0 ){ time_esp=1; esp_random_connect_to_server(); }
+				else time_esp--;
+				
+				//if( time_esp == 0 ){ time_esp=2; http_read(); time_esp=2; }
+				//else time_esp--;
 				
 					
 			}	
