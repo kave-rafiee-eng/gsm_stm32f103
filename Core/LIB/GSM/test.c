@@ -8,9 +8,10 @@ struct GSM gsm;
 // CPU TIMER
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
-// ESP8266
+// ESP
 extern struct ESP8266 esp;
 extern struct ESP8266_MANAGE esp_manage;
+extern struct ESP8266_STATUS esp_status;
 
 // SIM
 extern struct ESP8266 sim;
@@ -35,43 +36,36 @@ void test_modbus(){
 	
 	MODBUS_ADVANCE_RS(0);
 
-	if( esp.F_json_get ){ //SEND DATA_JSON ESP TO ADVANCE
-		UART_STDOUT_SELECT = UART_RS485;
-		modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF),esp.BUF);
+	if( esp.F_data_for_advance ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
 		
-		clear_esp_buffer();	
+		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+		clear_esp_buffer();
 	}
 
-	if( sim.F_json_get ){ //SEND DATA_JSON SIM TO ADVANCE
+	/*if( sim.F_json_get ){ //SEND DATA_JSON SIM TO ADVANCE
 		UART_STDOUT_SELECT = UART_RS485;
 		modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF),sim.BUF);
 		
 		clear_sim_buffer();	
 		time_esp = 7;
-	}
-		
+	}*/
+	
 	modbus_slave_manager_recive();
 	
 	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
 		
-			UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
-			puts((const char*)modbus_slave.buf);
+			//UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
+			//puts((const char*)modbus_slave.buf);
 		
-			time_esp = 3;
-		
-			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].I_time=0;
-		
-			read_json_advance();
-		
-			//http_read();
-		
-			reset_json();
+			if( esp_status.READY )esp.F_data_for_server=1;
+			
+			//read_json_advance();
+			//reset_json();
 	}
-
 	
 }
 
-
+/*
 void read_json_advance(){
 	
 	reset_json();
@@ -84,7 +78,7 @@ void read_json_advance(){
 	}
 			
 }
-
+*/
 /*
 #define travel_time_addres "general*travel_time"
 #define door_control_type_ADDRESS "general*door*control_type"

@@ -48,6 +48,7 @@ gsm_stm32f103\initialization.o: ../Core/Inc/../LIB/GSM/Initialization.H
 gsm_stm32f103\initialization.o: ../Core/Inc/../LIB/GSM/test.H
 gsm_stm32f103\initialization.o: ../Core/Inc/../LIB/GSM/ESP8266.H
 gsm_stm32f103\initialization.o: ../Core/Inc/../LIB/GSM/modbus_gsm.H
+gsm_stm32f103\initialization.o: ../Core/Inc/../LIB/GSM/advance.h
 gsm_stm32f103\initialization.o: ../Core/Inc/../LIB/GSM/JSON/json.H
 gsm_stm32f103\initialization.o: ../Core/Inc/../LIB/MODBUS/CRC.h
 gsm_stm32f103\initialization.o: ../Core/Inc/../LIB/MODBUS/modbus.h

@@ -30,7 +30,7 @@ char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code 
 	
 	for(i=0;i<world_count+9;i++){
 		MODBUS_ADVANCE_RS(1);
-			stdout_putchar(tx_buf[i]);
+			UART_PUT_CHAR(tx_buf[i],UART_RS485);
 		MODBUS_ADVANCE_RS(0);
 	}	
 	

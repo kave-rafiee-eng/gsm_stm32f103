@@ -743,6 +743,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\LIB\GSM\modbus_GSM.C</FilePath>
             </File>
+            <File>
+              <FileName>advance.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\GSM\advance.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

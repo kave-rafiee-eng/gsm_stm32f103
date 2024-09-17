@@ -18,11 +18,20 @@ extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart3;
 
 
+// CPU TIMER
+extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
 void SysTick_Handler(void)
 {
 	
 	timer_basic_manager();
+	
+	tbr_g1[tbr_g1_SEC_MAN].EN=1;
+	tbr_g1[tbr_g1_SEC_MAN].C_set_time=1000;
+	if(tbr_g1[tbr_g1_SEC_MAN].F_end){tbr_g1[tbr_g1_SEC_MAN].F_end=0;
+			timer_second_manager();
+	}
+			
 	
   HAL_IncTick();
 	
@@ -124,7 +133,7 @@ void USART3_IRQHandler(void)
 	{		
 		u3_data = LL_USART_ReceiveData8(USART3);
 		
-		sim_uart_rx_manager(u3_data);
+		//sim_uart_rx_manager(u3_data);
 		
 	}
   HAL_UART_IRQHandler(&huart3);

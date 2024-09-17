@@ -11,6 +11,9 @@
 #define tbr_g1_ESP_RANDOM_CONNECT 5
 #define tbr_g1_SIM_UART_GET 6
 
+#define tbrc_s1_ESP_RANDOM_CONNET 0
+#define tbrc_s1_ADVANCE_CONNECTION_TEST 1
+
 //-------------------------------------------CPU_TIMER_CONFIG
 
 #define def_num_tbrc_s1 10

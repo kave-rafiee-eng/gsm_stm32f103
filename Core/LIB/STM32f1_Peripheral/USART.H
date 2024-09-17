@@ -21,5 +21,7 @@ struct 	UART_DATA
 void UART2_INI(void);
 void UART1_INI(void);
 void UART3_INI(void);
-
+char UART_PRINT(char *str , char uart_select );
+char UART_PUT_CHAR(char data , char uart_select );
+	
 #endif

@@ -39,6 +39,7 @@ extern "C" {
 #include "../LIB/GSM/test.H"
 #include "../LIB/GSM/ESP8266.H"
 #include "../LIB/GSM/modbus_gsm.H"
+#include "../LIB/GSM/advance.h"
 
 /* Includes ------------------------------------------------------------------*/ //JSON
 #include "../LIB/GSM/JSON/json.H"
@@ -49,7 +50,6 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/ //CPU_TIMER
 #include "../LIB/SOFT_WARE_TIMER/CPU_TIMER.H"
-
 
 
 /* Includes ------------------------------------------------------------------*/ //STANSARD LIB

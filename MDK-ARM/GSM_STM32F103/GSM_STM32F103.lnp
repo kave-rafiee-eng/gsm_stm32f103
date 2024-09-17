@@ -63,6 +63,7 @@
 "gsm_stm32f103\json.o"
 "gsm_stm32f103\esp8266.o"
 "gsm_stm32f103\modbus_gsm.o"
+"gsm_stm32f103\advance.o"
 "gsm_stm32f103\retarget_io.o"
 --strict --scatter "GSM_STM32F103\GSM_STM32F103.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

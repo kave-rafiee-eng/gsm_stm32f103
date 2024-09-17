@@ -1,5 +1,8 @@
 #include "main.h"
 #include "USART.H"
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
@@ -72,4 +75,53 @@ void UART3_INI(void)
 	NVIC_SetPriority(USART3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),1, 1));
   NVIC_EnableIRQ(USART3_IRQn);
 	
+}
+
+int size=0;
+
+char UART_PRINT(char *str , char uart_select ){
+
+	size = strlen(str);
+	int i=0;
+	for(i=0;i<size;i++){
+		
+			if( uart_select == 3 ){
+				LL_USART_TransmitData8(USART3, str[i]);		 
+				while(!LL_USART_IsActiveFlag_TXE(USART3));
+			}
+			
+			if( uart_select == 2 ){
+				LL_USART_TransmitData8(USART2, str[i]);		 
+				while(!LL_USART_IsActiveFlag_TXE(USART2));
+			}
+			
+			if( uart_select == 1 ){
+				
+				LL_USART_TransmitData8(USART1, str[i]);		 
+				while(!LL_USART_IsActiveFlag_TXE(USART1));		
+			}		
+	}
+	return 1;
+	
+}
+
+
+char UART_PUT_CHAR(char data , char uart_select ){
+	
+		if( uart_select == 3 ){
+			LL_USART_TransmitData8(USART3, data);		 
+			while(!LL_USART_IsActiveFlag_TXE(USART3));
+		}
+			
+		if( uart_select == 2 ){
+			LL_USART_TransmitData8(USART2, data);		 
+			while(!LL_USART_IsActiveFlag_TXE(USART2));
+		}
+			
+		if( uart_select == 1 ){
+				
+			LL_USART_TransmitData8(USART1, data);		 
+			while(!LL_USART_IsActiveFlag_TXE(USART1));		
+		}		
+
 }

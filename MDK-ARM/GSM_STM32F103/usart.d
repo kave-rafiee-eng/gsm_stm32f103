@@ -48,8 +48,11 @@ gsm_stm32f103\usart.o: ../Core/Inc/../LIB/GSM/Initialization.H
 gsm_stm32f103\usart.o: ../Core/Inc/../LIB/GSM/test.H
 gsm_stm32f103\usart.o: ../Core/Inc/../LIB/GSM/ESP8266.H
 gsm_stm32f103\usart.o: ../Core/Inc/../LIB/GSM/modbus_gsm.H
+gsm_stm32f103\usart.o: ../Core/Inc/../LIB/GSM/advance.h
 gsm_stm32f103\usart.o: ../Core/Inc/../LIB/GSM/JSON/json.H
 gsm_stm32f103\usart.o: ../Core/Inc/../LIB/MODBUS/CRC.h
 gsm_stm32f103\usart.o: ../Core/Inc/../LIB/MODBUS/modbus.h
 gsm_stm32f103\usart.o: ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H
 gsm_stm32f103\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+gsm_stm32f103\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+gsm_stm32f103\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
