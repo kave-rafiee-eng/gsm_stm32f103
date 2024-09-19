@@ -30,6 +30,29 @@ extern char UART_STDOUT_SELECT;
 
 extern int time_esp;
 
+char edge=0;
+void test_mqtt_btn(){
+	
+	if( HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) != edge ){
+		
+		edge = HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN);
+		
+		if( edge == 0 ){
+			char str[80];
+			sprintf(str,"set");
+			UART_PRINT(str,UART_ESP);
+		}
+		else{
+			char str[80];
+			sprintf(str,"clear");
+			UART_PRINT(str,UART_ESP);
+
+		}			
+		
+	}
+	
+}
+
 void test_modbus(){
 	
 	if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;

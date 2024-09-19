@@ -10,9 +10,11 @@ char init_sim=0;
 void Vtask_advance( void *pvParameters ){ 
 	
 	 for( ;; ){
-		 osDelay(1);
+		 osDelay(10);
 		 
-		 	tbr_g1[tbr_g1_LED_BLANK].EN=1;
+		 test_mqtt_btn();
+		 
+		 /*	tbr_g1[tbr_g1_LED_BLANK].EN=1;
 			tbr_g1[tbr_g1_LED_BLANK].C_set_time=300;
 			if(tbr_g1[tbr_g1_LED_BLANK].F_end){tbr_g1[tbr_g1_LED_BLANK].F_end=0;
 					esp_led_show();
@@ -20,7 +22,7 @@ void Vtask_advance( void *pvParameters ){
 			}
 			
 			test_modbus();
-			advance_manager();
+			advance_manager();*/
 		 
 	 }
  
@@ -67,7 +69,7 @@ extern int size;
 
 void Vtask_wifi( void *pvParameters ){ 
 		for( ;; ){ 
-			esp8266_manager();
+			//esp8266_manager();
 			osDelay(1);
 	 }
 }
