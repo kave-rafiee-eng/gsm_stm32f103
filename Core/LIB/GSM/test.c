@@ -55,11 +55,11 @@ void test_mqtt_btn(){
 
 void test_modbus(){
 	
-	if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;
+	//if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;
 	
 	MODBUS_ADVANCE_RS(0);
 
-	if( esp.F_data_for_advance ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
+	if( esp.F_data_for_advance || esp.F_json_get ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
 		
 		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
 		clear_esp_buffer();
@@ -80,7 +80,9 @@ void test_modbus(){
 			//UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
 			//puts((const char*)modbus_slave.buf);
 		
-			if( esp_status.READY )esp.F_data_for_server=1;
+			//if( esp_status.READY )esp.F_data_for_server=1;
+		esp.F_data_for_server=1;
+		UART_PRINT((char*)modbus_slave.buf,UART_ESP);
 			
 			//read_json_advance();
 			//reset_json();

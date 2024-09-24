@@ -10,11 +10,11 @@ char init_sim=0;
 void Vtask_advance( void *pvParameters ){ 
 	
 	 for( ;; ){
-		 osDelay(10);
+		 osDelay(1);
 		 
-		 test_mqtt_btn();
+		 //test_mqtt_btn();
 		 
-		 /*	tbr_g1[tbr_g1_LED_BLANK].EN=1;
+		 	tbr_g1[tbr_g1_LED_BLANK].EN=1;
 			tbr_g1[tbr_g1_LED_BLANK].C_set_time=300;
 			if(tbr_g1[tbr_g1_LED_BLANK].F_end){tbr_g1[tbr_g1_LED_BLANK].F_end=0;
 					esp_led_show();
@@ -22,7 +22,7 @@ void Vtask_advance( void *pvParameters ){
 			}
 			
 			test_modbus();
-			advance_manager();*/
+			//advance_manager();
 		 
 	 }
  
@@ -85,16 +85,6 @@ int main(void)
 
 	Hardware_init();
 	Software_init();
-	
-	/*while(1){
-		 
-		USART1->DR='A';
-		HAL_Delay(50);
-		HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
-  }*/
-	
-	/*HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
-	HAL_Delay(3000);*/
 	
 	
 	xTaskCreate(Vtask_wifi,"task_wifi",100,NULL,1,NULL);

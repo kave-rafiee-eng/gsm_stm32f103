@@ -79,9 +79,9 @@ void esp_random_connect_to_server(){
 	if( esp.F_data_for_server ){ esp.F_data_for_server=0;
 		char str[80];
 		UART_PRINT((char*)modbus_slave.buf,UART_ESP);
-		manage_esp_responce();	
+		//manage_esp_responce();	
 	}
-	else if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
+	/*else if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
 		char str[80];
 		sprintf(str,"{\"serial\":\"%d\",\"url\":\"SW_ENABLE=1&\",}",advance.SERIAL);
 		UART_PRINT(str,UART_ESP);
@@ -92,7 +92,7 @@ void esp_random_connect_to_server(){
 		sprintf(str,"{\"serial\":\"%d\",}",advance.SERIAL);
 		UART_PRINT(str,UART_ESP);
 		manage_esp_responce();
-	}
+	}*/
 	
 }
 
