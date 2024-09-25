@@ -28,10 +28,9 @@ struct ESP8266_MANAGE esp_manage;
 struct ESP8266_STATUS esp_status;
 
 
-
 void esp_led_show(){
 	
-	if ( esp_status.ERROR_WIFI == 0 && ( esp_status.ERROR_HTTP == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
+	if ( esp_status.ERROR_WIFI == 0 && ( esp_status.ERROR_MQTT == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
 		
 	if ( esp_status.ERROR_NOT_RESPONCE || esp_status.ERROR_WIFI  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,0);
 	
@@ -41,33 +40,27 @@ void esp_led_show(){
 
 void esp8266_manager(){
 	
+	esp_status.READY=1;
 	if( esp_status.READY ){
 		
-		if( esp.F_data_for_server ){	
-			esp_random_connect_to_server();
-		}
-		
-		if( esp.F_data_for_advance == 0 ){
-				tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].EN=1;
-				tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].AUTO=1;
-				
-				if( tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end ){ tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end=0;
-					
-					if( advance.READY )esp_random_connect_to_server();
-					else esp8266_connection_test();
-					
-					tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=2;
+			if( esp.F_data_for_server ){	
+				esp_random_connect_to_server();
+			}
+			
+			if( esp.F_data_for_advance == 0 ){
+
+				if( esp.F_json_get ){
+					manage_esp_responce();	
 				}
-		}
-		else tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].EN=0;
-		
+				
+			}
+			
 	}
 	else{
 			esp8266_connection_test();
+			osDelay(1000);
 	}
 
-
-	
 }
 
 
@@ -120,26 +113,39 @@ void manage_esp_responce(){
 			if( json_get_data(json.document , "\"error\":") == TYPE_STR ){
 				if( strcmp(json.str_data,"wifi") == 0 )esp_status.ERROR_WIFI=1;
 				else esp_status.ERROR_WIFI=0;
-				if( strcmp(json.str_data,"http_code") == 0 )esp_status.ERROR_HTTP=1;
+				/*if( strcmp(json.str_data,"http_code") == 0 )esp_status.ERROR_HTTP=1;
 				else if( strcmp(json.str_data,"http_begin") == 0 )esp_status.ERROR_HTTP=1;
-				else esp_status.ERROR_HTTP=0;
+				else esp_status.ERROR_HTTP=0;*/
+				if( strcmp(json.str_data,"mqtt") == 0 )esp_status.ERROR_MQTT=1;
+				
+				clear_esp_buffer();
 			}
 			else{
 				esp_status.ERROR_WIFI=0;
-				esp_status.ERROR_HTTP=0;
+				//esp_status.ERROR_HTTP=0;
+				esp_status.ERROR_MQTT=0;
 				esp_status.READY=1;
 			}
 	}
 
-	if( esp_status.ERROR_HTTP || esp_status.ERROR_NOT_RESPONCE ||esp_status.ERROR_WIFI )esp_status.READY=0;
+	/*if( esp_status.ERROR_HTTP || esp_status.ERROR_NOT_RESPONCE ||esp_status.ERROR_WIFI )esp_status.READY=0;
 	else { esp_status.READY=1;
 
 		esp.F_data_for_advance=1;
 		
 		tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=5;
-	}		
+	}		*/
 	
-	
+	if( esp_status.ERROR_MQTT || esp_status.ERROR_NOT_RESPONCE ||esp_status.ERROR_WIFI ){ esp_status.READY=0;
+		
+	}
+	else { esp_status.READY=1;
+
+			esp.F_data_for_advance=1;
+			
+			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=5;
+	}	
+		
 }
 
 char wait_to_esp_get_json( int time_out ){
@@ -190,4 +196,14 @@ char wait_to_get( char *buffer ,char *sub_str , int time_out ){
 		if( time > time_out )return 0;
 	}
 }
+
+
+/*
+	if ( esp_status.ERROR_WIFI == 0 && ( esp_status.ERROR_HTTP == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
+		
+	if ( esp_status.ERROR_NOT_RESPONCE || esp_status.ERROR_WIFI  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,0);
+	
+	if ( esp_status.READY  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,1);
+	
+*/
 

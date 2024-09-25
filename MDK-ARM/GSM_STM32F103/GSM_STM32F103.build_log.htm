@@ -27,7 +27,7 @@ Project File Date:  09/24/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'GSM_STM32F103'
-compiling mqtt_tcp.c...
+compiling main.c...
 ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(27): warning:  #1-D: last line of file ends without a newline
@@ -54,7 +54,7 @@ compiling mqtt_tcp.c...
   void manage_esp_responce();
 ../Core/Inc/../LIB/GSM/ESP8266.H(12): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
   void clear_esp_buffer();
-../Core/Inc/../LIB/GSM/ESP8266.H(43): warning:  #1-D: last line of file ends without a newline
+../Core/Inc/../LIB/GSM/ESP8266.H(44): warning:  #1-D: last line of file ends without a newline
   #endif /* ESP8266 */
 ../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
   void modbus_slave_manager_recive();
@@ -74,7 +74,9 @@ compiling mqtt_tcp.c...
   void sim800_turn_on_internet();
 ../Core/Inc/../LIB/GSM/sim800.h(9): warning:  #1295-D: Deprecated declaration clear_sim_buffer - give arg types
   void clear_sim_buffer();
-../Core/Inc/../LIB/GSM/sim800.h(15): warning:  #1-D: last line of file ends without a newline
+../Core/Inc/../LIB/GSM/sim800.h(14): warning:  #1295-D: Deprecated declaration sim800_led_show - give arg types
+  void sim800_led_show();
+../Core/Inc/../LIB/GSM/sim800.h(22): warning:  #1-D: last line of file ends without a newline
   #endif /* __SIM800_H */
 ../Core/Inc/../LIB/GSM/mqtt_tcp.h(7): warning:  #1295-D: Deprecated declaration mqtt_tcp_packet_connect - give arg types
   void mqtt_tcp_packet_connect();
@@ -110,51 +112,25 @@ compiling mqtt_tcp.c...
   	void timer_second_manager();
 ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(27): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
   	void timer_basic_manager();
-..\Core\LIB\GSM\mqtt_tcp.c(6): warning:  #1295-D: Deprecated declaration mqtt_tcp_start - give arg types
-  void mqtt_tcp_start();
-..\Core\LIB\GSM\mqtt_tcp.c(7): warning:  #1295-D: Deprecated declaration mqtt_ping - give arg types
-  void mqtt_ping();
-..\Core\LIB\GSM\mqtt_tcp.c(25): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
-..\Core\LIB\GSM\mqtt_tcp.c(27): warning:  #223-D: function "osDelay" declared implicitly
-  			osDelay(200);
-..\Core\LIB\GSM\mqtt_tcp.c(29): warning:  #188-D: enumerated type mixed with another type
-  			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
-..\Core\LIB\GSM\mqtt_tcp.c(47): warning:  #223-D: function "osDelay" declared implicitly
-  		osDelay(500);
-..\Core\LIB\GSM\mqtt_tcp.c(63): warning:  #223-D: function "osDelay" declared implicitly
-  				osDelay(1);
-..\Core\LIB\GSM\mqtt_tcp.c(72): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "char *"
-  					mqtt_tcp_packet_pub("gsm",modbus_slave.buf);
-..\Core\LIB\GSM\mqtt_tcp.c(87): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(100);
-..\Core\LIB\GSM\mqtt_tcp.c(98): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "char *"
-  	if( strfind(sim_uart_buffer.BUF,"OK") > 0 ){ server_connect=1; }
-..\Core\LIB\GSM\mqtt_tcp.c(99): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "char *"
-  	if( strfind(sim_uart_buffer.BUF,"ERROR") > 0 ){ server_connect=0; }
-..\Core\LIB\GSM\mqtt_tcp.c(104): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(1000);
-..\Core\LIB\GSM\mqtt_tcp.c(121): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(100);
-..\Core\LIB\GSM\mqtt_tcp.c(140): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(100);
-..\Core\LIB\GSM\mqtt_tcp.c(146): warning:  #223-D: function "strlen" declared implicitly
-  	buf_tx[3] = strlen(topic);
-..\Core\LIB\GSM\mqtt_tcp.c(167): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "char *"
-  	if( strfind(sim_uart_buffer.BUF,"OK") > 0 ){ server_connect=1; }
-..\Core\LIB\GSM\mqtt_tcp.c(168): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "char *"
-  	if( strfind(sim_uart_buffer.BUF,"ERROR") > 0 ){ server_connect=0; }
-..\Core\LIB\GSM\mqtt_tcp.c(176): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(100);
-..\Core\LIB\GSM\mqtt_tcp.c(182): warning:  #223-D: function "strlen" declared implicitly
-  	buf_tx[5] = strlen(topic);
-..\Core\LIB\GSM\mqtt_tcp.c(200): warning:  #1-D: last line of file ends without a newline
-  }
-..\Core\LIB\GSM\mqtt_tcp.c: 61 warnings, 0 errors
+../Core/Src/main.c(16): warning:  #223-D: function "esp_led_show" declared implicitly
+  					esp_led_show();
+../Core/Src/main.c(23): warning:  #223-D: function "test_modbus" declared implicitly
+  		 test_modbus();
+../Core/Src/main.c(42): warning:  #223-D: function "esp8266_manager" declared implicitly
+  			esp8266_manager();
+../Core/Src/main.c(58): warning:  #188-D: enumerated type mixed with another type
+  	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,1);
+../Core/Src/main.c(59): warning:  #188-D: enumerated type mixed with another type
+  	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
+../Core/Src/main.c(61): warning:  #223-D: function "xTaskCreate" declared implicitly
+  	xTaskCreate(Vtask_wifi,"task_wifi",100,NULL,1,NULL);
+../Core/Src/main.c(65): warning:  #223-D: function "vTaskStartScheduler" declared implicitly
+  	vTaskStartScheduler();
+../Core/Src/main.c: 49 warnings, 0 errors
 linking...
-Program Size: Code=19908 RO-data=348 RW-data=160 ZI-data=11184  
+Program Size: Code=20776 RO-data=564 RW-data=176 ZI-data=11720  
 FromELF: creating hex file...
-"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 61 Warning(s).
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 49 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -189,7 +165,7 @@ Package Vendor: Keil
       Source file:   Template\stdout_display.c
       Source file:   Template\stdout_user.c
       Source file:   Template\stdout_USART.c
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

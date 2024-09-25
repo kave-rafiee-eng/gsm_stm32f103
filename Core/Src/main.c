@@ -4,24 +4,21 @@
 // CPU TIMER
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
-int time_esp=0;
-char init_sim=0;
 
 void Vtask_advance( void *pvParameters ){ 
 	
 	 for( ;; ){
 		 osDelay(1);
 		 
-
-		 /*	tbr_g1[tbr_g1_LED_BLANK].EN=1;
+		 	tbr_g1[tbr_g1_LED_BLANK].EN=1;
 			tbr_g1[tbr_g1_LED_BLANK].C_set_time=300;
 			if(tbr_g1[tbr_g1_LED_BLANK].F_end){tbr_g1[tbr_g1_LED_BLANK].F_end=0;
 					esp_led_show();
 					advance_led_show();
+					//sim800_led_show();
 			}
 			
-			*/
-			//advance_manager();
+			advance_manager();
 		 
 		 test_modbus();
 		 
@@ -33,11 +30,7 @@ void Vtask_sim( void *pvParameters ){
 	
 	 for( ;; ){	 
 		 
-			/*if( init_sim == 0 ){ init_sim=1;
-				sim800_turn_on_internet();		
-			}*/
-			
-			SIM_MQTT();
+			//SIM_MQTT();
 			
 	 }
 }
@@ -46,7 +39,7 @@ extern int size;
 
 void Vtask_wifi( void *pvParameters ){ 
 		for( ;; ){ 
-			//esp8266_manager();
+			esp8266_manager();
 			osDelay(1);
 	 }
 }

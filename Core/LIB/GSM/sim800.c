@@ -11,7 +11,22 @@ struct ESP8266_MANAGE sim_manage;
 
 struct UART_DATA sim_uart_buffer;
 
+struct SIM800_STATUS sim800_status;
+
+void sim800_led_show(){
+	
+	if ( sim800_status.MQTT_READY == 0 && ( sim800_status.SIM_CART_INSERT == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
+		
+	if ( sim800_status.SIM_CART_INSERT != 1 ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,0);
+	
+	if ( sim800_status.MQTT_READY == 1 && sim800_status.SIM_CART_INSERT == 1  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,1);
+	
+}
+
 void sim800_turn_on_internet(){
+	
+	sim800_status.MQTT_READY=0;
+	sim800_status.SIM_CART_INSERT=0;
 	
 	sim_send_str("AT\n");
 	
@@ -24,6 +39,8 @@ void sim800_turn_on_internet(){
 
 	sim_send_str("AT+SAPBR=2,1\n");
 	
+	sim_send_str("AT+cpin?\n");
+	sim800_status.SIM_CART_INSERT = wait_to_get_sim("READY",4000); 
 }
 
 void sim_send_str(char *str){

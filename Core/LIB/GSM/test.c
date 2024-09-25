@@ -30,66 +30,33 @@ extern char UART_STDOUT_SELECT;
 
 extern int time_esp;
 
-char edge=0;
-void test_mqtt_btn(){
-	
-	if( HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) != edge ){
-		
-		edge = HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN);
-		
-		if( edge == 0 ){
-			char str[80];
-			sprintf(str,"set");
-			UART_PRINT(str,UART_ESP);
-		}
-		else{
-			char str[80];
-			sprintf(str,"clear");
-			UART_PRINT(str,UART_ESP);
-
-		}			
-		
-	}
-	
-}
-
 void test_modbus(){
 	
 	//if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;
 	
 	MODBUS_ADVANCE_RS(0);
 
-	/*if( esp.F_data_for_advance || esp.F_json_get ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
+	if( esp.F_data_for_advance  ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
 		
 		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
 		clear_esp_buffer();
-	}*/
+	}
 	
-	if( sim.F_json_get ){ sim.F_json_get=0; //SEND DATA_JSON ESP TO ADVANCE
+	/*if( sim.F_json_get ){ sim.F_json_get=0; //SEND DATA_JSON ESP TO ADVANCE
 		
 		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
 		clear_sim_buffer_json();
-	}
-
-	/*if( sim.F_json_get ){ //SEND DATA_JSON SIM TO ADVANCE
-		UART_STDOUT_SELECT = UART_RS485;
-		modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF),sim.BUF);
-		
-		clear_sim_buffer();	
-		time_esp = 7;
 	}*/
+
 	
 	modbus_slave_manager_recive();
 	
 	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
 		
-			sim.F_data_for_server = 1;
+			//sim.F_data_for_server = 1;
 		
-			//UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
-			//puts((const char*)modbus_slave.buf);
+			if( esp_status.READY )esp.F_data_for_server=1;
 		
-			//if( esp_status.READY )esp.F_data_for_server=1;
-			esp.F_data_for_server=1;
 			//UART_PRINT((char*)modbus_slave.buf,UART_ESP);
 			
 			//read_json_advance();

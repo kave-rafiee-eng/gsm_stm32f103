@@ -16,6 +16,7 @@ struct ESP8266_STATUS
 	char ERROR_NOT_RESPONCE : 1;
 	char ERROR_WIFI : 1;
 	char ERROR_HTTP : 1;
+	char ERROR_MQTT : 1;
 	
 	char READY : 1;
 	

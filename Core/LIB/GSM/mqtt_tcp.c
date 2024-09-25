@@ -17,30 +17,27 @@ extern struct UART_DATA sim_uart_buffer;
 extern struct ESP8266 sim;
 extern struct ESP8266_MANAGE sim_manage;
 
+extern struct SIM800_STATUS sim800_status;
+
 void SIM_MQTT(){
 	
-
-	if( server_connect == 0 ){
+	if( sim800_status.MQTT_READY == 0 || sim800_status.SIM_CART_INSERT == 0 ){
 		
 			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
-			
 			osDelay(200);
-		
 			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
-		
 			osDelay(200);
 			sim_send_str("ATE0\n");
 			osDelay(8000);
 			
-			//whit_to_responce_sim(20000);
-		
+			//whit_to_responce_sim(20000);	
 	}
 	
 	sim800_turn_on_internet();
-	mqtt_tcp_start();
 	
+	if( sim800_status.SIM_CART_INSERT == 1 )mqtt_tcp_start();
 	
-	if( server_connect ){ 
+	if( sim800_status.SIM_CART_INSERT == 1 && sim800_status.MQTT_READY == 1 ){ 
 		
 		sim_send_str("ATE0\n");
 		mqtt_tcp_packet_pub("gsm","start");
@@ -52,25 +49,16 @@ void SIM_MQTT(){
 	}
 	
 	int i=0;
-	while( server_connect == 1 ){
-		
-				/*char str[50];
-				sprintf(str,"data%d",i);
-				mqtt_tcp_packet_pub("server",str);
-				
-				osDelay(500);*/
-		
+	while( sim800_status.SIM_CART_INSERT == 1 && sim800_status.MQTT_READY == 1 ){
+			
 				osDelay(1);
-
 				i++;
-		
+	
 				if( i > 3000 ){ i=0; mqtt_ping(); }
 				
 				if( sim.F_data_for_server ){ sim.F_data_for_server=0;
-					i=0;
-					
+					i=0;		
 					mqtt_tcp_packet_pub("gsm",modbus_slave.buf);
-					//mqtt_tcp_packet_pub("server","data");
 					
 				}
 						
@@ -95,8 +83,8 @@ void mqtt_ping(){
 		
 	whit_to_responce_sim(4000);	
 	
-	if( strfind(sim_uart_buffer.BUF,"OK") > 0 ){ server_connect=1; }
-	if( strfind(sim_uart_buffer.BUF,"ERROR") > 0 ){ server_connect=0; }
+	if( strfind(sim_uart_buffer.BUF,"OK") > 0 ){ sim800_status.MQTT_READY=1; }
+	if( strfind(sim_uart_buffer.BUF,"ERROR") > 0 ){ sim800_status.MQTT_READY=0; }
 }
 
 void mqtt_tcp_start(){
@@ -105,7 +93,7 @@ void mqtt_tcp_start(){
 
 	sim_send_str("AT+CIPSTART=\"TCP\",\"5.198.176.233\",\"1883\"\n");
 	
-	server_connect = wait_to_get_sim("CONNECT",10000);
+	sim800_status.MQTT_READY = wait_to_get_sim("CONNECT",10000);
 
 	
 	osDelay(1000);
@@ -164,8 +152,8 @@ void mqtt_tcp_packet_pub( char *topic , char *data ){
 	
 	whit_to_responce_sim(4000);
 	
-	if( strfind(sim_uart_buffer.BUF,"OK") > 0 ){ server_connect=1; }
-	if( strfind(sim_uart_buffer.BUF,"ERROR") > 0 ){ server_connect=0; }
+	if( strfind(sim_uart_buffer.BUF,"OK") > 0 ){ sim800_status.MQTT_READY=1; }
+	if( strfind(sim_uart_buffer.BUF,"ERROR") > 0 ){ sim800_status.MQTT_READY=0; }
 	
 }
 
