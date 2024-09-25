@@ -59,10 +59,16 @@ void test_modbus(){
 	
 	MODBUS_ADVANCE_RS(0);
 
-	if( esp.F_data_for_advance || esp.F_json_get ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
+	/*if( esp.F_data_for_advance || esp.F_json_get ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
 		
 		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
 		clear_esp_buffer();
+	}*/
+	
+	if( sim.F_json_get ){ sim.F_json_get=0; //SEND DATA_JSON ESP TO ADVANCE
+		
+		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
+		clear_sim_buffer_json();
 	}
 
 	/*if( sim.F_json_get ){ //SEND DATA_JSON SIM TO ADVANCE
@@ -77,12 +83,14 @@ void test_modbus(){
 	
 	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
 		
+			sim.F_data_for_server = 1;
+		
 			//UART_STDOUT_SELECT = UART_ESP; //SEND DATA_JSON ADVANCE  TO  ESP
 			//puts((const char*)modbus_slave.buf);
 		
 			//if( esp_status.READY )esp.F_data_for_server=1;
-		esp.F_data_for_server=1;
-		UART_PRINT((char*)modbus_slave.buf,UART_ESP);
+			esp.F_data_for_server=1;
+			//UART_PRINT((char*)modbus_slave.buf,UART_ESP);
 			
 			//read_json_advance();
 			//reset_json();

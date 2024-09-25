@@ -748,6 +748,26 @@
               <FileType>1</FileType>
               <FilePath>..\Core\LIB\GSM\advance.c</FilePath>
             </File>
+            <File>
+              <FileName>sim800.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\GSM\sim800.c</FilePath>
+            </File>
+            <File>
+              <FileName>mqtt_tcp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\GSM\mqtt_tcp.c</FilePath>
+            </File>
+            <File>
+              <FileName>sim800_http.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\GSM\sim800_http.c</FilePath>
+            </File>
+            <File>
+              <FileName>sim800_at_command.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\LIB\GSM\sim800_at_command.txt</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

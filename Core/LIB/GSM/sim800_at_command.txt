@@ -1,0 +1,49 @@
+
+
+AT+HTTPPARA="URL","https://www.ravis-gsm.ir/GSM_RAVIS/gsm_connection.php?serial=100&"
+
+//Get Product name
+AT
+
+
+//Command to read signal strength
+AT+CSQ
+
+
+//Get device phone number
+AT+CIMI
+
+//Get the device serial number
+AT+GSN
+
+//TYPE GPRS CONNECTIO
+AT+SAPBR=3,1,"Contype","GPRS"
+
+//	mtnirancell	mcinet	RighTel
+AT+SAPBR=3,1,"APN","RighTel"
+
+//ENABLE GPRS
+AT+SAPBR=1,1
+
+//GET IP
+AT+SAPBR=2,1
+
+// ENABLE HTTP
+AT+HTTPINIT
+
+AT+HTTPPARA="CID",1
+
+AT+HTTPPARA="URL","www.ravis-gsm.ir/GSM_RAVIS/gsm_connection.php?serial=100&"
+
+// START HTTP
+AT+HTTPACTION=0
+
+// READ HTTP
+AT+HTTPREAD
+
+// END HTTP
+AT+HTTPTERM
+
+// GPRS OFF
+AT+SAPBR=0,1
+

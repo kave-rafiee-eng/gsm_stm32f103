@@ -40,6 +40,8 @@ extern "C" {
 #include "../LIB/GSM/ESP8266.H"
 #include "../LIB/GSM/modbus_gsm.H"
 #include "../LIB/GSM/advance.h"
+#include "../LIB/GSM/sim800.h"
+#include "../LIB/GSM/mqtt_tcp.h"
 
 /* Includes ------------------------------------------------------------------*/ //JSON
 #include "../LIB/GSM/JSON/json.H"

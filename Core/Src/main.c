@@ -12,17 +12,18 @@ void Vtask_advance( void *pvParameters ){
 	 for( ;; ){
 		 osDelay(1);
 		 
-		 //test_mqtt_btn();
-		 
-		 	tbr_g1[tbr_g1_LED_BLANK].EN=1;
+
+		 /*	tbr_g1[tbr_g1_LED_BLANK].EN=1;
 			tbr_g1[tbr_g1_LED_BLANK].C_set_time=300;
 			if(tbr_g1[tbr_g1_LED_BLANK].F_end){tbr_g1[tbr_g1_LED_BLANK].F_end=0;
 					esp_led_show();
 					advance_led_show();
 			}
 			
-			test_modbus();
+			*/
 			//advance_manager();
+		 
+		 test_modbus();
 		 
 	 }
  
@@ -30,37 +31,13 @@ void Vtask_advance( void *pvParameters ){
 
 void Vtask_sim( void *pvParameters ){ 
 	
-	 for( ;; ){
+	 for( ;; ){	 
 		 
 			/*if( init_sim == 0 ){ init_sim=1;
-				tset_send_sim();
+				sim800_turn_on_internet();		
 			}*/
-		 
 			
-		 /*
-			HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
-			osDelay(200);
-			HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5);
-			
-		 	tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].EN=1;
-			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].C_set_time=800;
-			if(tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end){tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end=0;
-				
-				
-				if( time_esp == 0 ){ time_esp=1; esp_random_connect_to_server(); }
-				else time_esp--;
-				
-				//if( time_esp == 0 ){ time_esp=2; http_read(); time_esp=2; }
-				//else time_esp--;
-				
-					
-			}	*/
-			
-			/*tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].EN=1;
-			tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].C_set_time=800;
-			if(tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end){tbr_g1[tbr_g1_ESP_RANDOM_CONNECT].F_end=0;
-				
-			}*/
+			SIM_MQTT();
 			
 	 }
 }
@@ -80,12 +57,13 @@ void StartDefaultTask(void *argument);
 int main(void)
 {
 
-	
   HAL_Init();
 
 	Hardware_init();
 	Software_init();
-	
+
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,1);
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
 	
 	xTaskCreate(Vtask_wifi,"task_wifi",100,NULL,1,NULL);
 	xTaskCreate(Vtask_sim,"task_sim",100,NULL,1,NULL);

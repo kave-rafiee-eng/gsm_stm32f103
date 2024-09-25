@@ -133,7 +133,7 @@ void USART3_IRQHandler(void)
 	{		
 		u3_data = LL_USART_ReceiveData8(USART3);
 		
-		//sim_uart_rx_manager(u3_data);
+		sim_uart_rx_manager(u3_data);
 		
 	}
   HAL_UART_IRQHandler(&huart3);
