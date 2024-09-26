@@ -14,13 +14,13 @@ void Vtask_advance( void *pvParameters ){
 			tbr_g1[tbr_g1_LED_BLANK].C_set_time=300;
 			if(tbr_g1[tbr_g1_LED_BLANK].F_end){tbr_g1[tbr_g1_LED_BLANK].F_end=0;
 					esp_led_show();
-					advance_led_show();
-					//sim800_led_show();
+					//advance_led_show();
+					sim800_led_show();
 			}
 			
 			advance_manager();
 		 
-		 test_modbus();
+			test_modbus();
 		 
 	 }
  
@@ -30,7 +30,7 @@ void Vtask_sim( void *pvParameters ){
 	
 	 for( ;; ){	 
 		 
-			//SIM_MQTT();
+			SIM_MQTT();
 			
 	 }
 }

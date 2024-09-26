@@ -27,7 +27,7 @@ Project File Date:  09/24/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'GSM_STM32F103'
-compiling main.c...
+compiling sim800.c...
 ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(27): warning:  #1-D: last line of file ends without a newline
@@ -112,23 +112,23 @@ compiling main.c...
   	void timer_second_manager();
 ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(27): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
   	void timer_basic_manager();
-../Core/Src/main.c(16): warning:  #223-D: function "esp_led_show" declared implicitly
-  					esp_led_show();
-../Core/Src/main.c(23): warning:  #223-D: function "test_modbus" declared implicitly
-  		 test_modbus();
-../Core/Src/main.c(42): warning:  #223-D: function "esp8266_manager" declared implicitly
-  			esp8266_manager();
-../Core/Src/main.c(58): warning:  #188-D: enumerated type mixed with another type
-  	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,1);
-../Core/Src/main.c(59): warning:  #188-D: enumerated type mixed with another type
-  	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);	
-../Core/Src/main.c(61): warning:  #223-D: function "xTaskCreate" declared implicitly
-  	xTaskCreate(Vtask_wifi,"task_wifi",100,NULL,1,NULL);
-../Core/Src/main.c(65): warning:  #223-D: function "vTaskStartScheduler" declared implicitly
-  	vTaskStartScheduler();
-../Core/Src/main.c: 49 warnings, 0 errors
+..\Core\LIB\GSM\sim800.c(20): warning:  #188-D: enumerated type mixed with another type
+  	if ( sim800_status.SIM_CART_INSERT != 1 ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,0);
+..\Core\LIB\GSM\sim800.c(22): warning:  #188-D: enumerated type mixed with another type
+  	if ( sim800_status.MQTT_READY == 1 && sim800_status.SIM_CART_INSERT == 1  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,1);
+..\Core\LIB\GSM\sim800.c(57): warning:  #223-D: function "osDelay" declared implicitly
+  			osDelay(1);
+..\Core\LIB\GSM\sim800.c(61): warning:  #68-D: integer conversion resulted in a change of sign
+  			if( time > time_out )return -1;
+..\Core\LIB\GSM\sim800.c(69): warning:  #223-D: function "osDelay" declared implicitly
+  		osDelay(1);
+..\Core\LIB\GSM\sim800.c(111): warning:  #223-D: function "memset" declared implicitly
+  	memset(sim_uart_buffer.BUF,0,UART_BUF_SIZE);
+..\Core\LIB\GSM\sim800.c(117): warning:  #223-D: function "memset" declared implicitly
+  	memset(sim.BUF_JSON,0,UART_BUF_SIZE);
+..\Core\LIB\GSM\sim800.c: 49 warnings, 0 errors
 linking...
-Program Size: Code=20776 RO-data=564 RW-data=176 ZI-data=11720  
+Program Size: Code=22408 RO-data=620 RW-data=176 ZI-data=11720  
 FromELF: creating hex file...
 "GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 49 Warning(s).
 
@@ -163,8 +163,8 @@ Package Vendor: Keil
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
       Source file:   Source\retarget_io.c
       Source file:   Template\stdout_display.c
-      Source file:   Template\stdout_user.c
       Source file:   Template\stdout_USART.c
+      Source file:   Template\stdout_user.c
 Build Time Elapsed:  00:00:04
 </pre>
 </body>

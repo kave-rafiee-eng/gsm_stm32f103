@@ -16,6 +16,7 @@ extern struct ESP8266_STATUS esp_status;
 // SIM
 extern struct ESP8266 sim;
 extern struct ESP8266_MANAGE sim_manage;
+extern struct SIM800_STATUS sim800_status;
 
 // JSON
 extern struct JSON_OUT	 json;
@@ -37,16 +38,16 @@ void test_modbus(){
 	MODBUS_ADVANCE_RS(0);
 
 	if( esp.F_data_for_advance  ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
-		
 		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
 		clear_esp_buffer();
 	}
 	
-	/*if( sim.F_json_get ){ sim.F_json_get=0; //SEND DATA_JSON ESP TO ADVANCE
+	if( sim.F_json_get ){ sim.F_json_get=0; //SEND DATA_JSON ESP TO ADVANCE	
 		
 		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
-		clear_sim_buffer_json();
-	}*/
+		clear_sim_buffer_json();	
+		
+	}
 
 	
 	modbus_slave_manager_recive();
@@ -56,6 +57,7 @@ void test_modbus(){
 			//sim.F_data_for_server = 1;
 		
 			if( esp_status.READY )esp.F_data_for_server=1;
+			else if( sim800_status.MQTT_READY )sim.F_data_for_server=1;
 		
 			//UART_PRINT((char*)modbus_slave.buf,UART_ESP);
 			

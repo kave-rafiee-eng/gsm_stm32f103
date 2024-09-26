@@ -40,7 +40,7 @@ void esp_led_show(){
 
 void esp8266_manager(){
 	
-	esp_status.READY=1;
+	//esp_status.READY=1;
 	if( esp_status.READY ){
 		
 			if( esp.F_data_for_server ){	
@@ -53,6 +53,14 @@ void esp8266_manager(){
 					manage_esp_responce();	
 				}
 				
+			}
+			
+			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].EN=1;
+			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].AUTO=1;
+			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=6;
+			
+			if( tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end ){ tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end=0;
+					esp8266_connection_test();	
 			}
 			
 	}
@@ -141,9 +149,13 @@ void manage_esp_responce(){
 	}
 	else { esp_status.READY=1;
 
-			esp.F_data_for_advance=1;
+			if( json_get_data(json.document , "\"@empty\":") == TYPE_STR ){
+				clear_esp_buffer();
+			}
+			else{
+				esp.F_data_for_advance=1;
+			}
 			
-			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=5;
 	}	
 		
 }

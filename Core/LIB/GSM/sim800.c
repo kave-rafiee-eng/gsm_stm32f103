@@ -15,11 +15,11 @@ struct SIM800_STATUS sim800_status;
 
 void sim800_led_show(){
 	
-	if ( sim800_status.MQTT_READY == 0 && ( sim800_status.SIM_CART_INSERT == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
+	if ( sim800_status.MQTT_READY == 0 && ( sim800_status.SIM_CART_INSERT == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5);
 		
-	if ( sim800_status.SIM_CART_INSERT != 1 ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,0);
+	if ( sim800_status.SIM_CART_INSERT != 1 ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,0);
 	
-	if ( sim800_status.MQTT_READY == 1 && sim800_status.SIM_CART_INSERT == 1  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,1);
+	if ( sim800_status.MQTT_READY == 1 && sim800_status.SIM_CART_INSERT == 1  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,1);
 	
 }
 
@@ -107,8 +107,6 @@ void sim_uart_rx_manager(char data){
 }
 
 void clear_sim_buffer(){
-	
-
 	
 	memset(sim_uart_buffer.BUF,0,UART_BUF_SIZE);
 	sim_uart_buffer.BUF_I=0;
