@@ -31,6 +31,8 @@ extern char UART_STDOUT_SELECT;
 
 extern int time_esp;
 
+extern struct SIM800_STATUS mc60_status;
+
 void test_modbus(){
 	
 	//if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;
@@ -42,7 +44,7 @@ void test_modbus(){
 		clear_esp_buffer();
 	}
 	
-	if( sim.F_json_get ){ sim.F_json_get=0; //SEND DATA_JSON ESP TO ADVANCE	
+	if( sim.F_json_get && esp_status.READY == 0 ){ sim.F_json_get=0; //SEND DATA_JSON ESP TO ADVANCE	
 		
 		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
 		clear_sim_buffer_json();	
@@ -57,7 +59,7 @@ void test_modbus(){
 			//sim.F_data_for_server = 1;
 		
 			if( esp_status.READY )esp.F_data_for_server=1;
-			else if( sim800_status.MQTT_READY )sim.F_data_for_server=1;
+			else if( mc60_status.MQTT_READY )sim.F_data_for_server=1;
 		
 			//UART_PRINT((char*)modbus_slave.buf,UART_ESP);
 			

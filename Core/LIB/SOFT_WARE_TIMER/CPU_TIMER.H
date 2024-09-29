@@ -13,6 +13,7 @@
 
 #define tbrc_s1_ESP_RANDOM_CONNET 0
 #define tbrc_s1_ADVANCE_CONNECTION_TEST 1
+#define tbrc_s1_MC60_CONECTION_TEST 2
 
 //-------------------------------------------CPU_TIMER_CONFIG
 

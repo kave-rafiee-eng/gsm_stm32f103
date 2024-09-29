@@ -27,7 +27,7 @@ Project File Date:  09/29/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'GSM_STM32F103'
-compiling mc60_mqtt.c...
+compiling esp8266.c...
 ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(27): warning:  #1-D: last line of file ends without a newline
@@ -108,27 +108,39 @@ compiling mc60_mqtt.c...
   void modbus_test();
 ../Core/Inc/../LIB/MODBUS/modbus.h(45): warning:  #1-D: last line of file ends without a newline
   #endif
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(25): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(26): warning:  #1295-D: Deprecated declaration ini_cpu_timer - give arg types
   	void ini_cpu_timer();
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(26): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(27): warning:  #1295-D: Deprecated declaration timer_second_manager - give arg types
   	void timer_second_manager();
-../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(27): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
+../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(28): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
   	void timer_basic_manager();
-..\Core\LIB\GSM\mc60_mqtt.c(22): warning:  #188-D: enumerated type mixed with another type
-  	if ( mc60_status.SIM_CART_INSERT != 1 ) LED_SIM(0);
-..\Core\LIB\GSM\mc60_mqtt.c(24): warning:  #188-D: enumerated type mixed with another type
-  	if ( mc60_status.MQTT_READY == 1 && mc60_status.SIM_CART_INSERT == 1  ) LED_SIM(1);
-..\Core\LIB\GSM\mc60_mqtt.c(39): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(2000);
-..\Core\LIB\GSM\mc60_mqtt.c(89): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(5);
-..\Core\LIB\GSM\mc60_mqtt.c(105): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(5);
-..\Core\LIB\GSM\mc60_mqtt.c: 48 warnings, 0 errors
+..\Core\LIB\GSM\esp8266.c(35): warning:  #188-D: enumerated type mixed with another type
+  	if ( esp_status.ERROR_NOT_RESPONCE || esp_status.ERROR_WIFI  ) LED_ESP(0);
+..\Core\LIB\GSM\esp8266.c(37): warning:  #188-D: enumerated type mixed with another type
+  	if ( esp_status.READY  ) LED_ESP(1);
+..\Core\LIB\GSM\esp8266.c(43): warning:  #188-D: enumerated type mixed with another type
+  	ESP_ON(0);
+..\Core\LIB\GSM\esp8266.c(70): warning:  #223-D: function "osDelay" declared implicitly
+  			osDelay(1000);
+..\Core\LIB\GSM\esp8266.c(82): warning:  #177-D: variable "str"  was declared but never referenced
+  		char str[80];
+..\Core\LIB\GSM\esp8266.c(120): warning:  #223-D: function "strcpy" declared implicitly
+  			strcpy(json.document,esp.BUF_JSON,UART_BUF_SIZE);
+..\Core\LIB\GSM\esp8266.c(123): warning:  #223-D: function "strcmp" declared implicitly
+  				if( strcmp(json.str_data,"wifi") == 0 )esp_status.ERROR_WIFI=1;
+..\Core\LIB\GSM\esp8266.c(128): warning:  #223-D: function "strcmp" declared implicitly
+  				if( strcmp(json.str_data,"mqtt") == 0 )esp_status.ERROR_MQTT=1;
+..\Core\LIB\GSM\esp8266.c(167): warning:  #223-D: function "osDelay" declared implicitly
+  	while( 1 ){ osDelay(1);
+..\Core\LIB\GSM\esp8266.c(191): warning:  #223-D: function "memset" declared implicitly
+  	memset(esp.BUF_JSON,0,UART_BUF_SIZE);
+..\Core\LIB\GSM\esp8266.c(207): warning:  #223-D: function "osDelay" declared implicitly
+  		osDelay(1);
+..\Core\LIB\GSM\esp8266.c: 54 warnings, 0 errors
 linking...
-Program Size: Code=22332 RO-data=564 RW-data=184 ZI-data=11720  
+Program Size: Code=22152 RO-data=564 RW-data=184 ZI-data=11720  
 FromELF: creating hex file...
-"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 48 Warning(s).
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 54 Warning(s).
 
 <h2>Software Packages used:</h2>
 

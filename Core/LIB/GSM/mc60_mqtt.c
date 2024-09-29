@@ -1,6 +1,10 @@
 #include "main.h"
 #include "mc60_mqtt.h"
 
+// MODBUS
+extern struct MODBUS_SLAVE modbus_slave;
+extern struct MODBUS_RTU modbus;
+
 // CPU TIMER
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 extern struct cpu_timer_8bit_reset_contorol_Seconds tbrc_s1[def_num_tbrc_s1];
@@ -32,11 +36,12 @@ void mc60_mqtt_manage(){
 	SIM_ON(1);
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("SMS Ready",10000); */
 	
-
 	sim_send_str("at+cfun=1,1\n");
 	wait_to_get_sim("SMS",20000); 
 	
 	osDelay(2000);
+	
+	sim_send_str("ATE0\n"); osDelay(100);
 	
 	sim_send_str("AT+cpin?\n");
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("READY",5000); 
@@ -63,13 +68,27 @@ void mc60_mqtt_manage(){
 			int num=0;
 			while( mc60_status.MQTT_READY == 1 ){
 						
-				char buf_tx[100];
+				/*char buf_tx[100];
 				sprintf(buf_tx,"rafiee/%d\n",num);
 				num++;
 				
 				//+QMTPUB
 				mc60_mqtt_pub("top_test",buf_tx);					
-				osDelay(1000);
+				osDelay(1000);*/
+				if( sim.F_data_for_server ){ sim.F_data_for_server=0;	
+					mc60_mqtt_pub("gsm",modbus_slave.buf);
+					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
+				}
+				
+				osDelay(1);
+				
+				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].EN=1;
+				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].AUTO=1;
+				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].C_set_time=15;
+				
+				if( tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end ){ tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
+						mc60_mqtt_pub("TEST","test");
+				}
 				
 			}		
 	}
@@ -86,7 +105,8 @@ void mc60_mqtt_pub( char *topic , char *data){
 	char buf_tx[100];
 	sprintf(buf_tx,"AT+QMTPUB=0,0,0,0,\"%s\"\n",topic);
 	sim_send_str(buf_tx);
-	osDelay(5);
+	osDelay(100);
+	//whit_to_responce_sim(100);
 	
 	sim_send_str(data);
 	UART_PUT_CHAR(26,UART_SIM);

@@ -15,7 +15,8 @@ void Vtask_advance( void *pvParameters ){
 			if(tbr_g1[tbr_g1_LED_BLANK].F_end){tbr_g1[tbr_g1_LED_BLANK].F_end=0;
 					esp_led_show();
 					advance_led_show();
-					sim800_led_show();
+					//sim800_led_show();
+				mv60_led_show();
 			}
 			
 			advance_manager();

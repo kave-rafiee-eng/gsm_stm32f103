@@ -104,7 +104,7 @@ void esp8266_connection_test(){
 	clear_esp_buffer();
 	
 	char str[80];
-	sprintf(str,"{connection_test:\"?\",}");
+	sprintf(str,"connection_test:\"?\"");
 		
 	UART_PRINT(str,UART_ESP);
 	manage_esp_responce();
