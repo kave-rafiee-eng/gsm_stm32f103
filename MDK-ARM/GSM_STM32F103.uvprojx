@@ -768,6 +768,11 @@
               <FileType>5</FileType>
               <FilePath>..\Core\LIB\GSM\sim800_at_command.txt</FilePath>
             </File>
+            <File>
+              <FileName>mc60_mqtt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\GSM\mc60_mqtt.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

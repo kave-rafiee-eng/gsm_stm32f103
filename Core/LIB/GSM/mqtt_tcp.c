@@ -23,12 +23,12 @@ void SIM_MQTT(){
 	
 	if( sim800_status.MQTT_READY == 0 || sim800_status.SIM_CART_INSERT == 0 ){
 		
-			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,0);
+			SIM_ON(0);
+			osDelay(1000);
+			SIM_ON(1);
 			osDelay(200);
-			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
-			osDelay(200);
-			sim_send_str("ATE0\n");
-			osDelay(8000);
+			sim_send_str("ATE1\n");
+			osDelay(15000);
 			
 			//whit_to_responce_sim(20000);	
 	}
@@ -39,7 +39,7 @@ void SIM_MQTT(){
 	
 	if( sim800_status.SIM_CART_INSERT == 1 && sim800_status.MQTT_READY == 1 ){ 
 		
-		sim_send_str("ATE0\n");
+		sim_send_str("ATE1\r\n");
 		mqtt_tcp_packet_pub("gsm","start");
 		osDelay(500);
 		mqtt_tcp_packet_sub("server");	

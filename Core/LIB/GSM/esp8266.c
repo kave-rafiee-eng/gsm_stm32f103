@@ -30,16 +30,17 @@ struct ESP8266_STATUS esp_status;
 
 void esp_led_show(){
 	
-	if ( esp_status.ERROR_WIFI == 0 && ( esp_status.ERROR_MQTT == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
+	if ( esp_status.ERROR_WIFI == 0 && ( esp_status.ERROR_MQTT == 1 ) ) LED_ESP_TOGGLE();
 		
-	if ( esp_status.ERROR_NOT_RESPONCE || esp_status.ERROR_WIFI  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,0);
+	if ( esp_status.ERROR_NOT_RESPONCE || esp_status.ERROR_WIFI  ) LED_ESP(0);
 	
-	if ( esp_status.READY  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,1);
+	if ( esp_status.READY  ) LED_ESP(1);
 	
 }
 
 void esp8266_manager(){
 	
+	ESP_ON(0);
 	//esp_status.READY=1;
 	if( esp_status.READY ){
 		

@@ -15,11 +15,11 @@ struct SIM800_STATUS sim800_status;
 
 void sim800_led_show(){
 	
-	if ( sim800_status.MQTT_READY == 0 && ( sim800_status.SIM_CART_INSERT == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5);
+	if ( sim800_status.MQTT_READY == 0 && ( sim800_status.SIM_CART_INSERT == 1 ) ) LED_SIM_TOGGLE();
 		
-	if ( sim800_status.SIM_CART_INSERT != 1 ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,0);
+	if ( sim800_status.SIM_CART_INSERT != 1 ) LED_SIM(0);
 	
-	if ( sim800_status.MQTT_READY == 1 && sim800_status.SIM_CART_INSERT == 1  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,1);
+	if ( sim800_status.MQTT_READY == 1 && sim800_status.SIM_CART_INSERT == 1  ) LED_SIM(1);
 	
 }
 
@@ -32,15 +32,15 @@ void sim800_turn_on_internet(){
 	
 	sim_send_str("AT+SAPBR=3,1,\"Contype\",\"GPRS\"\n");
 
-	sim_send_str("AT+SAPBR=3,1,\"APN\",\"mcinet\"\n");
-	//sim_send_str("AT+SAPBR=3,1,\"APN\",\"RighTel\"\n");
+	//sim_send_str("AT+SAPBR=3,1,\"APN\",\"mcinet\"\n");
+	sim_send_str("AT+SAPBR=3,1,\"APN\",\"RighTel\"\n");
 
 	sim_send_str("AT+SAPBR=1,1\n");
 
 	sim_send_str("AT+SAPBR=2,1\n");
 	
 	sim_send_str("AT+cpin?\n");
-	sim800_status.SIM_CART_INSERT = wait_to_get_sim("READY",4000); 
+	sim800_status.SIM_CART_INSERT = wait_to_get_sim("READY",8000); 
 }
 
 void sim_send_str(char *str){
@@ -50,14 +50,17 @@ void sim_send_str(char *str){
 	whit_to_responce_sim(4000);
 }
 
+int ad=0;
+
 char wait_to_get_sim( char *buffer , int time_out ){	
 	int time=0;
-	while( 1 ){	
-			if( strfind((char*)sim_uart_buffer.BUF,buffer) > 0 )return 1;
+	while( 1 ){
+			ad = strfind(sim_uart_buffer.BUF,buffer);
+			if( strfind((char*)sim_uart_buffer.BUF,buffer) >= 0 )return 1;
 			osDelay(1);
 			time++;
 		
-			if( strfind((char*)sim_uart_buffer.BUF,"ERROR") > 0 )return 0;
+			if( strfind((char*)sim_uart_buffer.BUF,"ERROR") >= 0 )return 0;
 			if( time > time_out )return -1;
 	}
 }

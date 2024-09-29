@@ -42,6 +42,7 @@ extern "C" {
 #include "../LIB/GSM/advance.h"
 #include "../LIB/GSM/sim800.h"
 #include "../LIB/GSM/mqtt_tcp.h"
+#include "../LIB/GSM/mc60_mqtt.h"
 
 /* Includes ------------------------------------------------------------------*/ //JSON
 #include "../LIB/GSM/JSON/json.H"

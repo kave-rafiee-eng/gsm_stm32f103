@@ -30,8 +30,8 @@ struct ADVANCE  advance;
 
 void advance_led_show(){
 	
-	if ( advance.READY ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,1);
-	else HAL_GPIO_WritePin(GPIOB,GPIO_PIN_5,0);
+	if ( advance.READY ) LED_ADVANCE(1);
+	else LED_ADVANCE(0);
 
 }
 

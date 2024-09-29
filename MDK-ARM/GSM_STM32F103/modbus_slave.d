@@ -51,6 +51,7 @@ gsm_stm32f103\modbus_slave.o: ../Core/Inc/../LIB/GSM/modbus_gsm.H
 gsm_stm32f103\modbus_slave.o: ../Core/Inc/../LIB/GSM/advance.h
 gsm_stm32f103\modbus_slave.o: ../Core/Inc/../LIB/GSM/sim800.h
 gsm_stm32f103\modbus_slave.o: ../Core/Inc/../LIB/GSM/mqtt_tcp.h
+gsm_stm32f103\modbus_slave.o: ../Core/Inc/../LIB/GSM/mc60_mqtt.h
 gsm_stm32f103\modbus_slave.o: ../Core/Inc/../LIB/GSM/JSON/json.H
 gsm_stm32f103\modbus_slave.o: ../Core/Inc/../LIB/MODBUS/CRC.h
 gsm_stm32f103\modbus_slave.o: ../Core/Inc/../LIB/MODBUS/modbus.h
