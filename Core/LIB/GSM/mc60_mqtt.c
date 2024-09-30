@@ -14,6 +14,9 @@ extern struct ESP8266_MANAGE sim_manage;
 
 extern struct UART_DATA sim_uart_buffer;
 
+// ADVANCE
+extern struct ADVANCE  advance;
+
 struct SIM800_STATUS mc60_status;
 
 void mc60_mqtt_pub( char *topic , char *data);
@@ -29,6 +32,8 @@ void mv60_led_show(){
 	
 }
 
+char lost_i=0;
+
 void mc60_mqtt_manage(){
 
 	/*SIM_ON(0);
@@ -36,10 +41,13 @@ void mc60_mqtt_manage(){
 	SIM_ON(1);
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("SMS Ready",10000); */
 	
-	sim_send_str("at+cfun=1,1\n");
-	wait_to_get_sim("SMS",20000); 
+	if( lost_i >= 3 ){ lost_i=0;
+		sim_send_str("at+cfun=1,1\n");
+		wait_to_get_sim("SMS",20000); 				
+	}
+
 	
-	osDelay(2000);
+	osDelay(1000);
 	
 	sim_send_str("ATE0\n"); osDelay(100);
 	
@@ -47,7 +55,7 @@ void mc60_mqtt_manage(){
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("READY",5000); 
 	osDelay(100);
 	
-	if( mc60_status.SIM_CART_INSERT ){
+	if( mc60_status.SIM_CART_INSERT && advance.READY ){
 		
 			//sim_send_str("AT+QMTCLOSE=0\n");
 			//osDelay(1000);
@@ -61,8 +69,11 @@ void mc60_mqtt_manage(){
 					sim_send_str("AT+QMTCONN=0,\"clientExample\"\n");
 					mc60_status.MQTT_READY = wait_to_get_sim("+QMTCONN",5000);
 					osDelay(1000);		
+		
+					char buf_tx[100];
+					sprintf(buf_tx,"server/%d",advance.SERIAL);
 				
-					mc60_mqtt_sub("server");				
+					mc60_mqtt_sub(buf_tx);				
 			}
 
 			int num=0;
@@ -84,13 +95,19 @@ void mc60_mqtt_manage(){
 				
 				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].EN=1;
 				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].AUTO=1;
-				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].C_set_time=15;
+				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].C_set_time=5;
 				
 				if( tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end ){ tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
-						mc60_mqtt_pub("TEST","test");
+					
+						char str[100];
+						sprintf(str,"{\"serial\":\"%d\"}",advance.SERIAL);
+										
+						mc60_mqtt_pub("gsm",str);
 				}
 				
-			}		
+			}	
+
+		lost_i++;
 	}
 		
 }

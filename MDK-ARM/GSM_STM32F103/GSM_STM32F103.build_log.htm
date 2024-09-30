@@ -120,25 +120,25 @@ compiling esp8266.c...
   	if ( esp_status.READY  ) LED_ESP(1);
 ..\Core\LIB\GSM\esp8266.c(43): warning:  #188-D: enumerated type mixed with another type
   	ESP_ON(0);
-..\Core\LIB\GSM\esp8266.c(70): warning:  #223-D: function "osDelay" declared implicitly
+..\Core\LIB\GSM\esp8266.c(71): warning:  #223-D: function "osDelay" declared implicitly
   			osDelay(1000);
-..\Core\LIB\GSM\esp8266.c(82): warning:  #177-D: variable "str"  was declared but never referenced
+..\Core\LIB\GSM\esp8266.c(83): warning:  #177-D: variable "str"  was declared but never referenced
   		char str[80];
-..\Core\LIB\GSM\esp8266.c(120): warning:  #223-D: function "strcpy" declared implicitly
+..\Core\LIB\GSM\esp8266.c(121): warning:  #223-D: function "strcpy" declared implicitly
   			strcpy(json.document,esp.BUF_JSON,UART_BUF_SIZE);
-..\Core\LIB\GSM\esp8266.c(123): warning:  #223-D: function "strcmp" declared implicitly
+..\Core\LIB\GSM\esp8266.c(124): warning:  #223-D: function "strcmp" declared implicitly
   				if( strcmp(json.str_data,"wifi") == 0 )esp_status.ERROR_WIFI=1;
-..\Core\LIB\GSM\esp8266.c(128): warning:  #223-D: function "strcmp" declared implicitly
+..\Core\LIB\GSM\esp8266.c(129): warning:  #223-D: function "strcmp" declared implicitly
   				if( strcmp(json.str_data,"mqtt") == 0 )esp_status.ERROR_MQTT=1;
-..\Core\LIB\GSM\esp8266.c(167): warning:  #223-D: function "osDelay" declared implicitly
+..\Core\LIB\GSM\esp8266.c(168): warning:  #223-D: function "osDelay" declared implicitly
   	while( 1 ){ osDelay(1);
-..\Core\LIB\GSM\esp8266.c(191): warning:  #223-D: function "memset" declared implicitly
+..\Core\LIB\GSM\esp8266.c(192): warning:  #223-D: function "memset" declared implicitly
   	memset(esp.BUF_JSON,0,UART_BUF_SIZE);
-..\Core\LIB\GSM\esp8266.c(207): warning:  #223-D: function "osDelay" declared implicitly
+..\Core\LIB\GSM\esp8266.c(208): warning:  #223-D: function "osDelay" declared implicitly
   		osDelay(1);
 ..\Core\LIB\GSM\esp8266.c: 54 warnings, 0 errors
 linking...
-Program Size: Code=22152 RO-data=564 RW-data=184 ZI-data=11720  
+Program Size: Code=22588 RO-data=564 RW-data=184 ZI-data=11720  
 FromELF: creating hex file...
 "GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 54 Warning(s).
 
@@ -175,7 +175,7 @@ Package Vendor: Keil
       Source file:   Template\stdout_display.c
       Source file:   Template\stdout_USART.c
       Source file:   Source\retarget_io.c
-Build Time Elapsed:  00:00:04
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

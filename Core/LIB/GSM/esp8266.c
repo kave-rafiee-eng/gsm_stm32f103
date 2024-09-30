@@ -46,11 +46,12 @@ void esp8266_manager(){
 		
 			if( esp.F_data_for_server ){	
 				esp_random_connect_to_server();
+				tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].I_time=0;
 			}
 			
 			if( esp.F_data_for_advance == 0 ){
 
-				if( esp.F_json_get ){
+				if( esp.F_json_get ){ tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].I_time=0;
 					manage_esp_responce();	
 				}
 				
@@ -58,14 +59,14 @@ void esp8266_manager(){
 			
 			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].EN=1;
 			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].AUTO=1;
-			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=6;
+			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=4;
 			
 			if( tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end ){ tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end=0;
 					esp8266_connection_test();	
 			}
 			
 	}
-	else{
+	else if( advance.READY ){
 			esp8266_connection_test();
 			osDelay(1000);
 	}
@@ -104,7 +105,7 @@ void esp8266_connection_test(){
 	clear_esp_buffer();
 	
 	char str[80];
-	sprintf(str,"connection_test:\"?\"");
+	sprintf(str,"{\"serial\":\"%d\"}",advance.SERIAL);
 		
 	UART_PRINT(str,UART_ESP);
 	manage_esp_responce();
