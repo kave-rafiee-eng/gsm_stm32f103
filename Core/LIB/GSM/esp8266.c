@@ -27,6 +27,7 @@ struct ESP8266 esp;
 struct ESP8266_MANAGE esp_manage;
 struct ESP8266_STATUS esp_status;
 
+extern struct GSM gsm;
 
 void esp_led_show(){
 	
@@ -44,6 +45,9 @@ void esp8266_manager(){
 	//esp_status.READY=1;
 	if( esp_status.READY ){
 		
+		if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
+			esp8266_send_en_user();
+		}
 			if( esp.F_data_for_server ){	
 				esp_random_connect_to_server();
 				tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].I_time=0;
@@ -53,8 +57,7 @@ void esp8266_manager(){
 
 				if( esp.F_json_get ){ tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].I_time=0;
 					manage_esp_responce();	
-				}
-				
+				}	
 			}
 			
 			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].EN=1;
@@ -99,6 +102,17 @@ void esp_random_connect_to_server(){
 	
 }
 
+void esp8266_send_en_user(){
+	
+	clear_esp_buffer();
+	
+	char str[80];
+	sprintf(str,"{\"serial\":\"%d\",\"en_user\":\"1\"}",advance.SERIAL);
+		
+	UART_PRINT(str,UART_ESP);
+	manage_esp_responce();
+
+}
 
 void esp8266_connection_test(){
 	

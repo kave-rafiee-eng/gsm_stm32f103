@@ -19,6 +19,8 @@ extern struct ADVANCE  advance;
 
 struct SIM800_STATUS mc60_status;
 
+extern struct GSM gsm;
+
 void mc60_mqtt_pub( char *topic , char *data);
 void mc60_mqtt_sub(char *topic);
 	
@@ -95,13 +97,20 @@ void mc60_mqtt_manage(){
 				
 				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].EN=1;
 				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].AUTO=1;
-				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].C_set_time=5;
+				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].C_set_time=3;
 				
 				if( tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end ){ tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
 					
 						char str[100];
 						sprintf(str,"{\"serial\":\"%d\"}",advance.SERIAL);
 										
+						mc60_mqtt_pub("gsm",str);
+				}
+				
+				if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
+					
+						char str[80];
+						sprintf(str,"{\"serial\":\"%d\",\"en_user\":\"1\"}",advance.SERIAL);
 						mc60_mqtt_pub("gsm",str);
 				}
 				

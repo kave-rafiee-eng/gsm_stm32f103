@@ -10,7 +10,8 @@ void manage_esp_responce();
 char wait_to_esp_get_json( int time_out );
 void esp_uart_rx_manager(char data);
 void clear_esp_buffer();
-	
+void esp8266_send_en_user();
+
 struct ESP8266_STATUS
 {
 	char ERROR_NOT_RESPONCE : 1;

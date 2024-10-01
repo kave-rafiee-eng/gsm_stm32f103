@@ -3,8 +3,8 @@
 
 #include "main.h"
 
-#define SW_EN_GPIO GPIOB
-#define SW_EN_PIN GPIO_PIN_3
+#define SW_EN_GPIO GPIOA
+#define SW_EN_PIN GPIO_PIN_11
 
 #define	LED_ESP(x)     ( HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,x) ) //B3
 #define	LED_SIM(x)     ( HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,x) ) //B4

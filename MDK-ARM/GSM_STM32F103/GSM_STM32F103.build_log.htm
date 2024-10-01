@@ -27,7 +27,7 @@ Project File Date:  09/29/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'GSM_STM32F103'
-compiling esp8266.c...
+compiling mc60_mqtt.c...
 ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(27): warning:  #1-D: last line of file ends without a newline
@@ -54,7 +54,9 @@ compiling esp8266.c...
   void manage_esp_responce();
 ../Core/Inc/../LIB/GSM/ESP8266.H(12): warning:  #1295-D: Deprecated declaration clear_esp_buffer - give arg types
   void clear_esp_buffer();
-../Core/Inc/../LIB/GSM/ESP8266.H(44): warning:  #1-D: last line of file ends without a newline
+../Core/Inc/../LIB/GSM/ESP8266.H(13): warning:  #1295-D: Deprecated declaration esp8266_send_en_user - give arg types
+  void esp8266_send_en_user();
+../Core/Inc/../LIB/GSM/ESP8266.H(45): warning:  #1-D: last line of file ends without a newline
   #endif /* ESP8266 */
 ../Core/Inc/../LIB/GSM/modbus_gsm.H(8): warning:  #1295-D: Deprecated declaration modbus_slave_manager_recive - give arg types
   void modbus_slave_manager_recive();
@@ -114,33 +116,25 @@ compiling esp8266.c...
   	void timer_second_manager();
 ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(28): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
   	void timer_basic_manager();
-..\Core\LIB\GSM\esp8266.c(35): warning:  #188-D: enumerated type mixed with another type
-  	if ( esp_status.ERROR_NOT_RESPONCE || esp_status.ERROR_WIFI  ) LED_ESP(0);
-..\Core\LIB\GSM\esp8266.c(37): warning:  #188-D: enumerated type mixed with another type
-  	if ( esp_status.READY  ) LED_ESP(1);
-..\Core\LIB\GSM\esp8266.c(43): warning:  #188-D: enumerated type mixed with another type
-  	ESP_ON(0);
-..\Core\LIB\GSM\esp8266.c(71): warning:  #223-D: function "osDelay" declared implicitly
-  			osDelay(1000);
-..\Core\LIB\GSM\esp8266.c(83): warning:  #177-D: variable "str"  was declared but never referenced
-  		char str[80];
-..\Core\LIB\GSM\esp8266.c(121): warning:  #223-D: function "strcpy" declared implicitly
-  			strcpy(json.document,esp.BUF_JSON,UART_BUF_SIZE);
-..\Core\LIB\GSM\esp8266.c(124): warning:  #223-D: function "strcmp" declared implicitly
-  				if( strcmp(json.str_data,"wifi") == 0 )esp_status.ERROR_WIFI=1;
-..\Core\LIB\GSM\esp8266.c(129): warning:  #223-D: function "strcmp" declared implicitly
-  				if( strcmp(json.str_data,"mqtt") == 0 )esp_status.ERROR_MQTT=1;
-..\Core\LIB\GSM\esp8266.c(168): warning:  #223-D: function "osDelay" declared implicitly
-  	while( 1 ){ osDelay(1);
-..\Core\LIB\GSM\esp8266.c(192): warning:  #223-D: function "memset" declared implicitly
-  	memset(esp.BUF_JSON,0,UART_BUF_SIZE);
-..\Core\LIB\GSM\esp8266.c(208): warning:  #223-D: function "osDelay" declared implicitly
-  		osDelay(1);
-..\Core\LIB\GSM\esp8266.c: 54 warnings, 0 errors
+..\Core\LIB\GSM\mc60_mqtt.c(31): warning:  #188-D: enumerated type mixed with another type
+  	if ( mc60_status.SIM_CART_INSERT != 1 ) LED_SIM(0);
+..\Core\LIB\GSM\mc60_mqtt.c(33): warning:  #188-D: enumerated type mixed with another type
+  	if ( mc60_status.MQTT_READY == 1 && mc60_status.SIM_CART_INSERT == 1  ) LED_SIM(1);
+..\Core\LIB\GSM\mc60_mqtt.c(52): warning:  #223-D: function "osDelay" declared implicitly
+  	osDelay(1000);
+..\Core\LIB\GSM\mc60_mqtt.c(92): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "char *"
+  					mc60_mqtt_pub("gsm",modbus_slave.buf);
+..\Core\LIB\GSM\mc60_mqtt.c(81): warning:  #177-D: variable "num"  was declared but never referenced
+  			int num=0;
+..\Core\LIB\GSM\mc60_mqtt.c(134): warning:  #223-D: function "osDelay" declared implicitly
+  	osDelay(100);
+..\Core\LIB\GSM\mc60_mqtt.c(151): warning:  #223-D: function "osDelay" declared implicitly
+  	osDelay(5);
+..\Core\LIB\GSM\mc60_mqtt.c: 51 warnings, 0 errors
 linking...
-Program Size: Code=22588 RO-data=564 RW-data=184 ZI-data=11720  
+Program Size: Code=22808 RO-data=564 RW-data=184 ZI-data=11720  
 FromELF: creating hex file...
-"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 54 Warning(s).
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 51 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -171,11 +165,11 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
-      Source file:   Template\stdout_user.c
       Source file:   Template\stdout_display.c
-      Source file:   Template\stdout_USART.c
       Source file:   Source\retarget_io.c
-Build Time Elapsed:  00:00:05
+      Source file:   Template\stdout_user.c
+      Source file:   Template\stdout_USART.c
+Build Time Elapsed:  00:00:22
 </pre>
 </body>
 </html>
