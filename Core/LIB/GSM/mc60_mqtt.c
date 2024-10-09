@@ -34,7 +34,7 @@ void mv60_led_show(){
 	
 }
 
-char lost_i=0;
+char lost_i=3;
 
 void mc60_mqtt_manage(){
 
@@ -43,22 +43,46 @@ void mc60_mqtt_manage(){
 	SIM_ON(1);
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("SMS Ready",10000); */
 	
-	if( lost_i >= 3 ){ lost_i=0;
+	
+	
+	if( lost_i >= 3 ){ 
+		
+		while(1){
+			
+			mc60_status.MQTT_READY=0; mc60_status.SIM_CART_INSERT=0;
+			
+			SIM_ON(1);
+			osDelay(1000);
+			SIM_ON(0);
+			
+			osDelay(2000);
+		
+			sim_send_str("AT\n");
+			if( wait_to_get_sim("OK",3000) == 1 ){  break;	 }	
+			
+		}
+
+		
+		lost_i=0;
 		sim_send_str("at+cfun=1,1\n");
 		wait_to_get_sim("SMS",20000); 				
 	}
 
-	
 	osDelay(1000);
+	
+	sim_send_str("AT\n"); 
+	osDelay(100);
+	sim_send_str("AT\n"); 
+	osDelay(100);
 	
 	sim_send_str("ATE0\n"); osDelay(100);
 	
-	sim_send_str("AT+cpin?\n");
+	sim_send_str("AT+CPIN?\n");
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("READY",5000); 
 	osDelay(100);
 	
-	if( mc60_status.SIM_CART_INSERT && advance.READY ){
-		
+	//advance.READY=1;
+	if( mc60_status.SIM_CART_INSERT == 1 && advance.READY == 1 ){
 			//sim_send_str("AT+QMTCLOSE=0\n");
 			//osDelay(1000);
 			
@@ -91,6 +115,10 @@ void mc60_mqtt_manage(){
 				if( sim.F_data_for_server ){ sim.F_data_for_server=0;	
 					mc60_mqtt_pub("gsm",modbus_slave.buf);
 					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
+					osDelay(100);
+					mc60_mqtt_pub("gsm",modbus_slave.buf);
+					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
+					osDelay(100);
 				}
 				
 				osDelay(1);
@@ -116,8 +144,10 @@ void mc60_mqtt_manage(){
 				
 			}	
 
-		lost_i++;
+		
 	}
+	
+	lost_i++;
 		
 }
 

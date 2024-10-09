@@ -103,9 +103,9 @@ void USART1_IRQHandler(void)
 {
 	if(LL_USART_IsActiveFlag_RXNE(USART1) && LL_USART_IsEnabledIT_RXNE(USART1))
 	{		
-			u_data=LL_USART_ReceiveData8(USART1);
 		
-			esp_uart_rx_manager(u_data);
+		u_data=LL_USART_ReceiveData8(USART1);
+		modbus_it_uart_manage(u_data);	
 		
 	}
   HAL_UART_IRQHandler(&huart1);
@@ -119,8 +119,8 @@ void USART2_IRQHandler(void) // esp
 	{		
 		u2_data = LL_USART_ReceiveData8(USART2);
 		
+		esp_uart_rx_manager(u2_data);
 		
-		modbus_it_uart_manage(u2_data);
 		
 	}
   HAL_UART_IRQHandler(&huart2);

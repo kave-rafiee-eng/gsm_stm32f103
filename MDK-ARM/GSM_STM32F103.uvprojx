@@ -776,6 +776,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>drive</GroupName>
+          <Files>
+            <File>
+              <FileName>modbus_drive.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\drive\modbus_drive.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>

@@ -22,7 +22,7 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 C:\Users\kave\Desktop\Ravis_Kave\ravis_shared\GSM\GSM_STM32F103\MDK-ARM\GSM_STM32F103.uvprojx
-Project File Date:  09/29/2024
+Project File Date:  10/02/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
@@ -120,21 +120,29 @@ compiling mc60_mqtt.c...
   	if ( mc60_status.SIM_CART_INSERT != 1 ) LED_SIM(0);
 ..\Core\LIB\GSM\mc60_mqtt.c(33): warning:  #188-D: enumerated type mixed with another type
   	if ( mc60_status.MQTT_READY == 1 && mc60_status.SIM_CART_INSERT == 1  ) LED_SIM(1);
-..\Core\LIB\GSM\mc60_mqtt.c(52): warning:  #223-D: function "osDelay" declared implicitly
+..\Core\LIB\GSM\mc60_mqtt.c(54): warning:  #188-D: enumerated type mixed with another type
+  			SIM_ON(1);
+..\Core\LIB\GSM\mc60_mqtt.c(55): warning:  #223-D: function "osDelay" declared implicitly
+  			osDelay(1000);
+..\Core\LIB\GSM\mc60_mqtt.c(56): warning:  #188-D: enumerated type mixed with another type
+  			SIM_ON(0);
+..\Core\LIB\GSM\mc60_mqtt.c(71): warning:  #223-D: function "osDelay" declared implicitly
   	osDelay(1000);
-..\Core\LIB\GSM\mc60_mqtt.c(92): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "char *"
+..\Core\LIB\GSM\mc60_mqtt.c(116): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "char *"
   					mc60_mqtt_pub("gsm",modbus_slave.buf);
-..\Core\LIB\GSM\mc60_mqtt.c(81): warning:  #177-D: variable "num"  was declared but never referenced
+..\Core\LIB\GSM\mc60_mqtt.c(119): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "char *"
+  					mc60_mqtt_pub("gsm",modbus_slave.buf);
+..\Core\LIB\GSM\mc60_mqtt.c(105): warning:  #177-D: variable "num"  was declared but never referenced
   			int num=0;
-..\Core\LIB\GSM\mc60_mqtt.c(134): warning:  #223-D: function "osDelay" declared implicitly
+..\Core\LIB\GSM\mc60_mqtt.c(164): warning:  #223-D: function "osDelay" declared implicitly
   	osDelay(100);
-..\Core\LIB\GSM\mc60_mqtt.c(151): warning:  #223-D: function "osDelay" declared implicitly
+..\Core\LIB\GSM\mc60_mqtt.c(181): warning:  #223-D: function "osDelay" declared implicitly
   	osDelay(5);
-..\Core\LIB\GSM\mc60_mqtt.c: 51 warnings, 0 errors
+..\Core\LIB\GSM\mc60_mqtt.c: 55 warnings, 0 errors
 linking...
-Program Size: Code=22808 RO-data=564 RW-data=184 ZI-data=11720  
+Program Size: Code=22880 RO-data=564 RW-data=184 ZI-data=11720  
 FromELF: creating hex file...
-"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 51 Warning(s).
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 55 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -165,11 +173,11 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
-      Source file:   Template\stdout_display.c
-      Source file:   Source\retarget_io.c
       Source file:   Template\stdout_user.c
       Source file:   Template\stdout_USART.c
-Build Time Elapsed:  00:00:22
+      Source file:   Template\stdout_display.c
+      Source file:   Source\retarget_io.c
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

@@ -3,8 +3,8 @@
 
 #include "main.h"
 
-#define SW_EN_GPIO GPIOA
-#define SW_EN_PIN GPIO_PIN_11
+#define SW_EN_GPIO GPIOC
+#define SW_EN_PIN GPIO_PIN_14
 
 #define	LED_ESP(x)     ( HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,x) ) //B3
 #define	LED_SIM(x)     ( HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,x) ) //B4
@@ -15,7 +15,7 @@
 #define	LED_ADVANCE_TOGGLE()     ( HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_5) ) //B5
 
 #define	SIM_ON(x)     ( HAL_GPIO_WritePin(GPIOA,GPIO_PIN_7,x) ) //A7
-#define	ESP_ON(x)     ( HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,x) ) //B13
+#define	ESP_ON(x)     ( HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,x) ) //B13
 
 void GPIO_INI(void);
 char read_gpio(GPIO_TypeDef *GPIOx , unsigned int pin);

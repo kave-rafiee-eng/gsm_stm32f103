@@ -117,7 +117,6 @@ void mqtt_tcp_packet_connect(){
 		
 	whit_to_responce_sim(4000);
 		
-	
 }
 
 //-----------------****************************************
