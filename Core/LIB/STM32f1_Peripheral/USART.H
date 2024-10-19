@@ -7,7 +7,7 @@
 #define UART_ESP 2
 #define UART_RS485 1
 
-#define UART_BUF_SIZE 200
+#define UART_BUF_SIZE 250
 
 #define	MODBUS_ADVANCE_RS(x)     ( HAL_GPIO_WritePin(GPIOA,GPIO_PIN_11,x) ) //A11
 

@@ -44,7 +44,6 @@ void mc60_mqtt_manage(){
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("SMS Ready",10000); */
 	
 	
-	
 	if( lost_i >= 3 ){ 
 		
 		while(1){
@@ -62,7 +61,6 @@ void mc60_mqtt_manage(){
 			
 		}
 
-		
 		lost_i=0;
 		sim_send_str("at+cfun=1,1\n");
 		wait_to_get_sim("SMS",20000); 				
@@ -105,6 +103,7 @@ void mc60_mqtt_manage(){
 			int num=0;
 			while( mc60_status.MQTT_READY == 1 ){
 						
+
 				/*char buf_tx[100];
 				sprintf(buf_tx,"rafiee/%d\n",num);
 				num++;
@@ -116,9 +115,6 @@ void mc60_mqtt_manage(){
 					mc60_mqtt_pub("gsm",modbus_slave.buf);
 					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
 					osDelay(100);
-					mc60_mqtt_pub("gsm",modbus_slave.buf);
-					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
-					osDelay(100);
 				}
 				
 				osDelay(1);
@@ -126,6 +122,10 @@ void mc60_mqtt_manage(){
 				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].EN=1;
 				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].AUTO=1;
 				tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].C_set_time=3;
+
+				if( sim.F_json_get ){ tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
+					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
+				}
 				
 				if( tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end ){ tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
 					
@@ -158,13 +158,15 @@ void mc60_start_mqtt(){
 
 void mc60_mqtt_pub( char *topic , char *data){
 	
-	char buf_tx[100];
-	sprintf(buf_tx,"AT+QMTPUB=0,0,0,0,\"%s\"\n",topic);
+	char buf_tx[50];
+	sprintf(buf_tx,"AT+QMTPUB=0,0,0,0,\"%s\"\n\r",topic);
 	sim_send_str(buf_tx);
 	osDelay(100);
 	//whit_to_responce_sim(100);
 	
 	sim_send_str(data);
+	if( strfind(data,"}") >= 0 ){}
+		else sim_send_str("}");
 	UART_PUT_CHAR(26,UART_SIM);
 	
 	whit_to_responce_sim(4000);

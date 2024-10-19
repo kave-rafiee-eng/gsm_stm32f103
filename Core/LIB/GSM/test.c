@@ -7,7 +7,7 @@ struct GSM gsm;
 	
 // CPU TIMER
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
-
+extern struct cpu_timer_8bit_reset_contorol_Seconds tbrc_s1[def_num_tbrc_s1];
 // ESP
 extern struct ESP8266 esp;
 extern struct ESP8266_MANAGE esp_manage;
@@ -44,11 +44,35 @@ void test_modbus(){
 		clear_esp_buffer();
 	}
 	
-	if( sim.F_json_get && esp_status.READY == 0 ){ sim.F_json_get=0; //SEND DATA_JSON ESP TO ADVANCE	
+	if( sim.F_json_get && esp_status.READY == 0 ){  //SEND DATA_JSON mc60 TO ADVANCE	
+		
+		tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
+		tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
 		
 		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
-		clear_sim_buffer_json();	
 		
+		int time=0;
+		
+		while(1){
+			
+			tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
+			tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
+			
+			osDelay(1); time++;
+			
+			if( time == 500){
+				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
+			}
+			if( time > 1000 )break;
+			
+			modbus_slave_manager_recive();
+	
+			if( modbus_slave.F_new_data )break;
+			
+		}
+		
+		clear_sim_buffer_json();
+		sim.F_json_get=0;
 	}
 
 	
@@ -56,6 +80,7 @@ void test_modbus(){
 	
 	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
 		
+			tbrc_s1[tbrc_s1_ADVANCE_CONNECTION_TEST].I_time=0;
 			//sim.F_data_for_server = 1;
 		
 			if( esp_status.READY )esp.F_data_for_server=1;

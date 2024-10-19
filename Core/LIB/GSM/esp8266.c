@@ -46,9 +46,9 @@ void esp8266_manager(){
 	//advance.READY=1;
 	if( esp_status.READY ){
 		
-		/*if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
+		if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
 			esp8266_send_en_user();
-		}*/
+		}
 			if( esp.F_data_for_server ){	
 				esp_random_connect_to_server();
 				tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].I_time=0;

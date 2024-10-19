@@ -19,8 +19,6 @@ void Vtask_advance( void *pvParameters ){
 		 //modbus_drive_write_register_single(1,6,3,4);
 */
 		 
-
-		 
 		 //osDelay(10000);
 		 
 		 	tbr_g1[tbr_g1_LED_BLANK].EN=1;

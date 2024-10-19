@@ -152,82 +152,34 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>73</LineNumber>
+          <LineNumber>158</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134230288</Address>
+          <Address>134226144</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\Core\LIB\GSM\mc60_mqtt.c</Filename>
+          <Filename>../Core/Src/stm32f1xx_it.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\GSM_STM32F103\../Core/LIB/GSM/mc60_mqtt.c\73</Expression>
+          <Expression>\\GSM_STM32F103\../Core/Src/stm32f1xx_it.c\158</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>66</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134230258</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\Core\LIB\GSM\mc60_mqtt.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\GSM_STM32F103\../Core/LIB/GSM/mc60_mqtt.c\66</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>52</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134230190</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\Core\LIB\GSM\mc60_mqtt.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\GSM_STM32F103\../Core/LIB/GSM/mc60_mqtt.c\52</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
           <LineNumber>64</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
+          <Address>134235496</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\Core\LIB\GSM\mc60_mqtt.c</Filename>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\Core\LIB\GSM\test.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>72</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\Core\LIB\GSM\mc60_mqtt.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\GSM_STM32F103\../Core/LIB/GSM/test.c\64</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -244,12 +196,12 @@
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>mc60_status</ItemText>
+          <ItemText>time</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>esp_status</ItemText>
+          <ItemText>sim_uart_buffer.BUF</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
@@ -259,22 +211,37 @@
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>sim.BUF_JSON</ItemText>
+          <ItemText>tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>lost_i</ItemText>
+          <ItemText>sim.BUF_JSON</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>time</ItemText>
+          <ItemText>modbus.buf_rx_index</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>mc60_status</ItemText>
+          <ItemText>modbus.buf_rx</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>advance</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>sim.F_json_get</ItemText>
+        </Ww>
+        <Ww>
+          <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>sim.BUF_JSON</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

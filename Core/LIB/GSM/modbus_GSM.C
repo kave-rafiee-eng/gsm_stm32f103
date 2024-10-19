@@ -24,7 +24,7 @@ void modbus_slave_manager_recive(){
 	if( modbus.buf_rx_index > 0 )tbr_g1[tbr_g1_MODBUS_SLAVE_RX].EN=1;
 	else tbr_g1[tbr_g1_MODBUS_SLAVE_RX].EN=0;
 	
-	tbr_g1[tbr_g1_MODBUS_SLAVE_RX].C_set_time=10;
+	tbr_g1[tbr_g1_MODBUS_SLAVE_RX].C_set_time=50;
 	
 	if(tbr_g1[tbr_g1_MODBUS_SLAVE_RX].F_end){
 		
