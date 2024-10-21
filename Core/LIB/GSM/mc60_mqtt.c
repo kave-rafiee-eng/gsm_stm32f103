@@ -73,7 +73,7 @@ void mc60_mqtt_manage(){
 	sim_send_str("AT\n"); 
 	osDelay(100);
 	
-	sim_send_str("ATE0\n"); osDelay(100);
+	sim_send_str("ATE1\n"); osDelay(100);
 	
 	sim_send_str("AT+CPIN?\n");
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("READY",5000); 
@@ -84,8 +84,14 @@ void mc60_mqtt_manage(){
 			//sim_send_str("AT+QMTCLOSE=0\n");
 			//osDelay(1000);
 			
-			sim_send_str("AT+QMTOPEN=0,\"84.47.232.10\",\"1883\"\n");
+			//sim_send_str("AT+QMTOPEN=0,\"84.47.232.10\",\"1883\"\n");
+			//sim_send_str("AT+QMTOPEN=0,\"109.125.149.108\",\"1883\"\n\r");
+			sim_send_str("AT+QMTOPEN=0,\"ravis-gsm.ir\",\"1883\"\n\r");
 			mc60_status.MQTT_READY = wait_to_get_sim("+QMTOPEN",5000);
+		
+			sim_send_str("AT+QMTOPEN? \n");
+			wait_to_get_sim("+QMTOPEN",5000);
+
 			osDelay(1000);
 			
 			if( mc60_status.MQTT_READY ){
@@ -94,6 +100,9 @@ void mc60_mqtt_manage(){
 					mc60_status.MQTT_READY = wait_to_get_sim("+QMTCONN",5000);
 					osDelay(1000);		
 		
+					sim_send_str("ATE0\n"); osDelay(100);
+					osDelay(500);	
+				
 					char buf_tx[100];
 					sprintf(buf_tx,"server/%d",advance.SERIAL);
 				
