@@ -27,7 +27,7 @@ Project File Date:  10/02/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'GSM_STM32F103'
-compiling mc60_mqtt.c...
+compiling test.c...
 ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(8): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(27): warning:  #1-D: last line of file ends without a newline
@@ -116,31 +116,41 @@ compiling mc60_mqtt.c...
   	void timer_second_manager();
 ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H(28): warning:  #1295-D: Deprecated declaration timer_basic_manager - give arg types
   	void timer_basic_manager();
-..\Core\LIB\GSM\mc60_mqtt.c(31): warning:  #188-D: enumerated type mixed with another type
-  	if ( mc60_status.SIM_CART_INSERT != 1 ) LED_SIM(0);
-..\Core\LIB\GSM\mc60_mqtt.c(33): warning:  #188-D: enumerated type mixed with another type
-  	if ( mc60_status.MQTT_READY == 1 && mc60_status.SIM_CART_INSERT == 1  ) LED_SIM(1);
-..\Core\LIB\GSM\mc60_mqtt.c(53): warning:  #188-D: enumerated type mixed with another type
-  			SIM_ON(1);
-..\Core\LIB\GSM\mc60_mqtt.c(54): warning:  #223-D: function "osDelay" declared implicitly
-  			osDelay(1000);
-..\Core\LIB\GSM\mc60_mqtt.c(55): warning:  #188-D: enumerated type mixed with another type
-  			SIM_ON(0);
-..\Core\LIB\GSM\mc60_mqtt.c(69): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(1000);
-..\Core\LIB\GSM\mc60_mqtt.c(124): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "char *"
-  					mc60_mqtt_pub("gsm",modbus_slave.buf);
-..\Core\LIB\GSM\mc60_mqtt.c(112): warning:  #177-D: variable "num"  was declared but never referenced
-  			int num=0;
-..\Core\LIB\GSM\mc60_mqtt.c(173): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(100);
-..\Core\LIB\GSM\mc60_mqtt.c(192): warning:  #223-D: function "osDelay" declared implicitly
-  	osDelay(5);
-..\Core\LIB\GSM\mc60_mqtt.c: 54 warnings, 0 errors
+..\Core\LIB\GSM\test.c(40): warning:  #188-D: enumerated type mixed with another type
+  	MODBUS_ADVANCE_RS(0);
+..\Core\LIB\GSM\test.c(43): warning:  #223-D: function "strlen" declared implicitly
+  		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+..\Core\LIB\GSM\test.c(43): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+  		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+..\Core\LIB\GSM\test.c(50): warning:  #223-D: function "osDelay" declared implicitly
+  			osDelay(1); time++;
+..\Core\LIB\GSM\test.c(53): warning:  #223-D: function "strlen" declared implicitly
+  				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+..\Core\LIB\GSM\test.c(53): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+  				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+..\Core\LIB\GSM\test.c(71): warning:  #223-D: function "strlen" declared implicitly
+  		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
+..\Core\LIB\GSM\test.c(71): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+  		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
+..\Core\LIB\GSM\test.c(80): warning:  #223-D: function "osDelay" declared implicitly
+  			osDelay(1); time++;
+..\Core\LIB\GSM\test.c(83): warning:  #223-D: function "strlen" declared implicitly
+  				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
+..\Core\LIB\GSM\test.c(83): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+  				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
+..\Core\LIB\GSM\test.c(93): warning:  #223-D: function "clear_sim_buffer_json" declared implicitly
+  		clear_sim_buffer_json();
+..\Core\LIB\GSM\test.c(98): warning:  #223-D: function "clear_sim_buffer_json" declared implicitly
+  		clear_sim_buffer_json();
+..\Core\LIB\GSM\test.c(156): warning:  #9-D: nested comment is not allowed
+  					/*if( strcmp(json_protocol.name_w1,travel_time_addres) == 0 ){ // write travel_time_addres	
+..\Core\LIB\GSM\test.c(180): warning:  #9-D: nested comment is not allowed
+  					/*if( strcmp(json_protocol.name_r1,travel_time_addres) == 0 ){ // read travel_time_addres	
+..\Core\LIB\GSM\test.c: 59 warnings, 0 errors
 linking...
-Program Size: Code=23220 RO-data=564 RW-data=184 ZI-data=12024  
+Program Size: Code=23380 RO-data=564 RW-data=184 ZI-data=12024  
 FromELF: creating hex file...
-"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 54 Warning(s).
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 59 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -171,11 +181,11 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
-      Source file:   Template\stdout_user.c
       Source file:   Source\retarget_io.c
-      Source file:   Template\stdout_display.c
+      Source file:   Template\stdout_user.c
       Source file:   Template\stdout_USART.c
-Build Time Elapsed:  00:00:07
+      Source file:   Template\stdout_display.c
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

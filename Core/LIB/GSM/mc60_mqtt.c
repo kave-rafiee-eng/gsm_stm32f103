@@ -1,5 +1,8 @@
 #include "main.h"
 #include "mc60_mqtt.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
 
 // MODBUS
 extern struct MODBUS_SLAVE modbus_slave;
@@ -34,7 +37,7 @@ void mv60_led_show(){
 	
 }
 
-char lost_i=3;
+char lost_i=8;
 
 void mc60_mqtt_manage(){
 
@@ -44,7 +47,7 @@ void mc60_mqtt_manage(){
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("SMS Ready",10000); */
 	
 	
-	if( lost_i >= 3 ){ 
+	if( lost_i >= 8 ){ 
 		
 		while(1){
 			
@@ -66,7 +69,7 @@ void mc60_mqtt_manage(){
 		wait_to_get_sim("SMS",20000); 				
 	}
 
-	osDelay(1000);
+	osDelay(100);
 	
 	sim_send_str("AT\n"); 
 	osDelay(100);
@@ -124,6 +127,10 @@ void mc60_mqtt_manage(){
 					mc60_mqtt_pub("gsm",modbus_slave.buf);
 					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
 					osDelay(100);
+
+					/*mc60_mqtt_pub("gsm",modbus_slave.buf);
+					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
+					osDelay(100);*/
 				}
 				
 				osDelay(1);
@@ -173,9 +180,22 @@ void mc60_mqtt_pub( char *topic , char *data){
 	osDelay(100);
 	//whit_to_responce_sim(100);
 	
-	sim_send_str(data);
-	if( strfind(data,"}") >= 0 ){}
-		else sim_send_str("}");
+	//sim_send_str(data);
+	//UART_PRINT(data,UART_SIM);
+	
+	int size = strlen(data);
+	int i=0;
+	for(i=0;i<size;i++){
+		
+		LL_USART_TransmitData8(USART3, data[i]);		 
+		while(!LL_USART_IsActiveFlag_TXE(USART3));
+
+	}
+
+	
+	//UART_PRINT(data,UART_SIM);
+	//whit_to_responce_sim(1000);
+	
 	UART_PUT_CHAR(26,UART_SIM);
 	
 	whit_to_responce_sim(4000);

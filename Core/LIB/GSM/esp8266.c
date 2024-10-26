@@ -48,6 +48,7 @@ void esp8266_manager(){
 		
 		if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
 			esp8266_send_en_user();
+			osDelay(1000);
 		}
 			if( esp.F_data_for_server ){	
 				esp_random_connect_to_server();
@@ -63,7 +64,7 @@ void esp8266_manager(){
 			
 			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].EN=1;
 			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].AUTO=1;
-			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=4;
+			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=3;
 			
 			if( tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end ){ tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end=0;
 					esp8266_connection_test();	

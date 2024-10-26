@@ -57,3 +57,5 @@ gsm_stm32f103\mc60_mqtt.o: ../Core/Inc/../LIB/MODBUS/CRC.h
 gsm_stm32f103\mc60_mqtt.o: ../Core/Inc/../LIB/MODBUS/modbus.h
 gsm_stm32f103\mc60_mqtt.o: ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H
 gsm_stm32f103\mc60_mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+gsm_stm32f103\mc60_mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+gsm_stm32f103\mc60_mqtt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

@@ -39,9 +39,28 @@ void test_modbus(){
 	
 	MODBUS_ADVANCE_RS(0);
 
-	if( esp.F_data_for_advance  ){ esp.F_data_for_advance=0; //SEND DATA_JSON ESP TO ADVANCE
+	if( esp.F_data_for_advance  ){  //SEND DATA_JSON ESP TO ADVANCE
 		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+		int time=0;
+		while(1){
+	
+		tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].I_time=0;
+		tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end=0;
+			
+			osDelay(1); time++;
+			
+			if( time == 500){
+				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+			}
+			if( time > 1000 )break;
+			
+			modbus_slave_manager_recive();
+	
+			if( modbus_slave.F_new_data )break;
+			
+		}
 		clear_esp_buffer();
+		esp.F_data_for_advance=0;
 	}
 	
 	if( sim.F_json_get && esp_status.READY == 0 ){  //SEND DATA_JSON mc60 TO ADVANCE	
@@ -71,6 +90,11 @@ void test_modbus(){
 			
 		}
 		
+		clear_sim_buffer_json();
+		sim.F_json_get=0;
+	}
+	
+	if( sim.F_json_get && esp_status.READY == 1 ){
 		clear_sim_buffer_json();
 		sim.F_json_get=0;
 	}

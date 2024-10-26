@@ -3,7 +3,7 @@
 <title>Static Call Graph - [GSM_STM32F103\GSM_STM32F103.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image GSM_STM32F103\GSM_STM32F103.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Oct 21 01:09:23 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Oct 26 00:13:39 2024
 <BR><P>
 <H3>Maximum Stack Usage =        344 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -485,6 +485,7 @@ Global Symbols
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_get_data
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_find
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_PRINT
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc60_mqtt_pub
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;advance_connection_test
 </UL>
 
@@ -1307,7 +1308,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_manager
 </UL>
 
-<P><STRONG><a name="[cb]"></a>esp8266_manager</STRONG> (Thumb, 200 bytes, Stack size 8 bytes, esp8266.o(i.esp8266_manager))
+<P><STRONG><a name="[cb]"></a>esp8266_manager</STRONG> (Thumb, 208 bytes, Stack size 8 bytes, esp8266.o(i.esp8266_manager))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232 + Unknown Stack Size
 <LI>Call Chain = esp8266_manager &rArr; esp8266_send_en_user &rArr; manage_esp_responce &rArr; json_get_data &rArr; atoi &rArr; strtol &rArr; _strtoul
 </UL>
@@ -1424,7 +1425,7 @@ Global Symbols
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;esp8266_connection_test
 </UL>
 
-<P><STRONG><a name="[c9]"></a>mc60_mqtt_manage</STRONG> (Thumb, 562 bytes, Stack size 112 bytes, mc60_mqtt.o(i.mc60_mqtt_manage))
+<P><STRONG><a name="[c9]"></a>mc60_mqtt_manage</STRONG> (Thumb, 560 bytes, Stack size 112 bytes, mc60_mqtt.o(i.mc60_mqtt_manage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 344 + Unknown Stack Size
 <LI>Call Chain = mc60_mqtt_manage &rArr; mc60_mqtt_sub &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1439,13 +1440,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Vtask_sim
 </UL>
 
-<P><STRONG><a name="[e6]"></a>mc60_mqtt_pub</STRONG> (Thumb, 88 bytes, Stack size 64 bytes, mc60_mqtt.o(i.mc60_mqtt_pub))
-<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
+<P><STRONG><a name="[e6]"></a>mc60_mqtt_pub</STRONG> (Thumb, 108 bytes, Stack size 72 bytes, mc60_mqtt.o(i.mc60_mqtt_pub))
+<BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
 <LI>Call Chain = mc60_mqtt_pub &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strfind
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_PUT_CHAR
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;whit_to_responce_sim
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_to_get_sim
@@ -1581,11 +1582,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;json_find
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mc60_mqtt_pub
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_to_get_sim
 </UL>
 
-<P><STRONG><a name="[c8]"></a>test_modbus</STRONG> (Thumb, 392 bytes, Stack size 16 bytes, test.o(i.test_modbus))
+<P><STRONG><a name="[c8]"></a>test_modbus</STRONG> (Thumb, 528 bytes, Stack size 16 bytes, test.o(i.test_modbus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = test_modbus &rArr; modbus_master_write_register_MULTI &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
