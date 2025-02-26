@@ -33,7 +33,10 @@ extern int time_esp;
 
 extern struct SIM800_STATUS mc60_status;
 
-void test_modbus(){
+#define RETRY_INTERVAL 500
+#define TIMEOUT_LIMIT 1000
+
+void MAIN_communication(){
 	
 	if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;
 	
@@ -42,23 +45,23 @@ void test_modbus(){
 	if( esp.F_data_for_advance  ){  //SEND DATA_JSON ESP TO ADVANCE
 		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
 		int time=0;
-		while(1){
-	
-		tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].I_time=0;
-		tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end=0;
-			
-			osDelay(1); time++;
-			
-			if( time == 500){
-				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+		
+			while (time <= TIMEOUT_LIMIT) {
+					tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].I_time = 0;
+					tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end = 0;
+
+					osDelay(1);
+					time++;
+
+					if (time == RETRY_INTERVAL) {
+							modbus_master_write_register_MULTI(SLAVE_ADD, FC_WRITE_TO_SLAVE_MULTI, 2, strlen(esp.BUF_JSON), esp.BUF_JSON);
+					}
+
+					modbus_slave_manager_recive();
+
+					if (modbus_slave.F_new_data) break;
 			}
-			if( time > 1000 )break;
-			
-			modbus_slave_manager_recive();
-	
-			if( modbus_slave.F_new_data )break;
-			
-		}
+		
 		clear_esp_buffer();
 		esp.F_data_for_advance=0;
 	}
@@ -72,23 +75,21 @@ void test_modbus(){
 		
 		int time=0;
 		
-		while(1){
-			
-			tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
-			tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
-			
-			osDelay(1); time++;
-			
-			if( time == 500){
-				modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
-			}
-			if( time > 1000 )break;
-			
-			modbus_slave_manager_recive();
-	
-			if( modbus_slave.F_new_data )break;
-			
-		}
+    while (time <= TIMEOUT_LIMIT) {
+        tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time = 0;
+        tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end = 0;
+
+        osDelay(1);
+        time++;
+
+        if (time == RETRY_INTERVAL) {
+            modbus_master_write_register_MULTI(SLAVE_ADD, FC_WRITE_TO_SLAVE_MULTI, 2, strlen(sim.BUF_JSON), sim.BUF_JSON);
+        }
+
+        modbus_slave_manager_recive();
+
+        if (modbus_slave.F_new_data) break;
+    }
 		
 		clear_sim_buffer_json();
 		sim.F_json_get=0;
@@ -105,112 +106,12 @@ void test_modbus(){
 	if( modbus_slave.F_new_data ){ modbus_slave.F_new_data=0;
 		
 			tbrc_s1[tbrc_s1_ADVANCE_CONNECTION_TEST].I_time=0;
-			//sim.F_data_for_server = 1;
-		
+
 			if( esp_status.READY )esp.F_data_for_server=1;
 			else if( mc60_status.MQTT_READY )sim.F_data_for_server=1;
 		
-			//UART_PRINT((char*)modbus_slave.buf,UART_ESP);
-			
-			//read_json_advance();
-			//reset_json();
 	}
 	
 }
 
-/*
-void read_json_advance(){
-	
-	reset_json();
-	strcpy(json.document,modbus_slave.buf,UART_BUF_SIZE);
-		
-	read_protocol_json();
-	
-	if( json_get_data(json.document , "\"serial\":") == TYPE_STR ){
-		gsm.device_serial	= atoi(json.str_data);	
-	}
-			
-}
-*/
-/*
-#define travel_time_addres "general*travel_time"
-#define door_control_type_ADDRESS "general*door*control_type"
 
-void test_json(){
-
-			if( json_protocol.data_w1_type > 0 ){
-				
-					puts("/name = ");
-					puts( json_protocol.name_w1 );	
-				
-					if( json_protocol.data_w1_type == TYPE_STR ){
-							puts("/data_str = ");
-							puts( json_protocol.data_w1 );	
-					}
-					else if( json_protocol.data_w1_type == TYPE_WORD ){
-							char str[50];
-							sprintf(str,"/data_word = %d",json_protocol.data_w1_word);
-							puts(str);    
-					}
-					
-					/*if( strcmp(json_protocol.name_w1,travel_time_addres) == 0 ){ // write travel_time_addres	
-							if( json_protocol.data_w1_type == TYPE_STR ){
-									//puts("/travel_time$ = ");
-									Stng[TRAVEL_TIME] = atoi(json_protocol.data_w1);
-									timer_eeprom = 500;
-							}			
-					}
-					
-					if( strcmp(json_protocol.name_w1,door_control_type_ADDRESS) == 0 ){ // write door_control_type_ADDRESS	
-							if( json_protocol.data_w1_type == TYPE_STR ){			
-									char i=0;
-									for(i=0;i<3;i++){
-											if( strcmp( json_protocol.data_w1 , List_DoorControlType[i] ) == 0 ){
-												Stng[DOOR_CONTROL_TYPE] = i;
-												timer_eeprom = 500;											
-											}
-									}
-							}			
-					}			
-					
-			}
-
-			if( json_protocol.data_r1_type > 0 ){
-				
-					/*if( strcmp(json_protocol.name_r1,travel_time_addres) == 0 ){ // read travel_time_addres	
-						char str[100];
-						sprintf(str,"{\"name_w1\":\"%s\",\"data_w1\":%d,}",travel_time_addres,Stng[TRAVEL_TIME]);
-						puts(str); 
-						time=1;	
-		
-					}
-					
-					if( strcmp(json_protocol.name_r1,door_control_type_ADDRESS) == 0 ){ // read door_control_type_ADDRESS	
-						char str[100];
-						sprintf(str,"{\"name_w1\":\"%s\",\"data_w1\":\"%s\",}",door_control_type_ADDRESS,List_DoorControlType[Stng[DOOR_CONTROL_TYPE]]);
-						puts(str); 
-						time=1;	
-		
-					}
-									
-			}
-			else{
-				time=100;
-			}
-		
-		}
-		
-
-
-}*/
-
-
-//HALL_SendData(strlen(HALL_TX_Buffer));	
-
-/* DMA :
-
-//i_get = UART_BUFFER_SIZE - DMA1_Stream2->NDTR;
-//extern char 									HALL_TX_Buffer[UART_BUFFER_SIZE];
-//extern volatile	char				HALL_RX_Buffer[UART_BUFFER_SIZE];
-//json_get_data_dma();
-*/

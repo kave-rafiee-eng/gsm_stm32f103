@@ -4,35 +4,30 @@
 // CPU TIMER
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 
- int fer=700;
- int panel=0;
-
+//Main
 void Vtask_advance( void *pvParameters ){ 
 	
 	 for( ;; ){
 		 
-		 /*modbus_drive_write_register_single(1,6,0x1000,fer);
-		 osDelay(100);
-		 modbus_drive_write_register_single(1,6,0x2000,panel);
-		 osDelay(100);
-		 //test_drive_modbus();
-		 //modbus_drive_write_register_single(1,6,3,4);
-*/
-		 
-		 //osDelay(10000);
-		 
-		 	tbr_g1[tbr_g1_LED_BLANK].EN=1;
-			tbr_g1[tbr_g1_LED_BLANK].C_set_time=300;
-			if(tbr_g1[tbr_g1_LED_BLANK].F_end){tbr_g1[tbr_g1_LED_BLANK].F_end=0;
-					esp_led_show();
-					advance_led_show();
-					mv60_led_show();
+		 	tbr_g1[tbr_g1_STATUS_LEDS].EN=1;
+			tbr_g1[tbr_g1_STATUS_LEDS].C_set_time=300;
+			if(tbr_g1[tbr_g1_STATUS_LEDS].F_end){tbr_g1[tbr_g1_STATUS_LEDS].F_end=0;
+					ESP_led_status();
+					ADVANCE_led_status();
+					MC60_led_status();
 			}
 			
 			advance_manager();
 		 
-			test_modbus();
-		 
+			MAIN_communication();		
+			
+			//-----------------
+			//test_can();
+			//test_shasi();
+			//---------------
+	
+			osDelay(1);
+			
 	 }
  
 }
@@ -41,7 +36,7 @@ void Vtask_sim( void *pvParameters ){
 	
 	 for( ;; ){	 
 		
-			mc60_mqtt_manage();
+			//mc60_mqtt_manage();
 			osDelay(1);
 	 }
 }
@@ -50,7 +45,7 @@ extern int size;
 
 void Vtask_wifi( void *pvParameters ){ 
 		for( ;; ){ 
-			esp8266_manager();
+			ESP_manager();
 			osDelay(1);
 	 }
 }
@@ -66,15 +61,15 @@ int main(void)
 	Hardware_init();
 	Software_init();
 
-	//HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,1);
-	//HAL_GPIO_WritePin(GPIOB,GPIO_PIN_13,1);
-SIM_ON(0);
+	SIM_ON(0);
 	
 	xTaskCreate(Vtask_wifi,"task_wifi",100,NULL,1,NULL);
 	xTaskCreate(Vtask_sim,"task_sim",100,NULL,1,NULL);
 	xTaskCreate(Vtask_advance,"task_advance",100,NULL,1,NULL);
 	
 	vTaskStartScheduler();
+	
+	MODBUS_ADVANCE_RS(0);
 	
 }
 

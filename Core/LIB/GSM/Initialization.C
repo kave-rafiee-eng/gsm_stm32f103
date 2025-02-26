@@ -10,6 +10,11 @@ void Hardware_init( void ){
 	UART2_INI();
 	UART3_INI();
 	
+	MX_CAN_Init();
+	
+	HAL_CAN_Start(&hcan);
+  HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
+
 }
 
 

@@ -3,6 +3,7 @@
 
 #include "main.h"
 
+void MAIN_communication();
 void read_json_advance();
 
 struct GSM

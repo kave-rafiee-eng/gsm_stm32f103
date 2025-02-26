@@ -34,7 +34,7 @@ char modbus_slave_manage(){
 		slave_crc_get = (modbus.buf_rx[slave_data_count+7]<<8) + modbus.buf_rx[slave_data_count+6];		
 		slave_crc_calculate = CRC_16(modbus.buf_rx,6+slave_data_count);
 		
-		if( slave_crc_calculate == slave_crc_get ){
+		if( slave_crc_calculate == slave_crc_get && slave_data_count<200 ){
 			
 			memset(modbus_slave.buf,0,UART_BUF_SIZE);
 			
@@ -47,6 +47,6 @@ char modbus_slave_manage(){
 		}
 		
 	}
-	else 0;
+	else return 0;
 }
 

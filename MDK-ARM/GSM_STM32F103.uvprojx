@@ -786,6 +786,36 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>expanstion_Card</GroupName>
+          <Files>
+            <File>
+              <FileName>expansion.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\expansion_card\expansion.C</FilePath>
+            </File>
+            <File>
+              <FileName>ex_serial.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\expansion_card\ex_serial.C</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SHASI</GroupName>
+          <Files>
+            <File>
+              <FileName>modbus_rtu_8bit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\SHASI\modbus_rtu_8bit.c</FilePath>
+            </File>
+            <File>
+              <FileName>SHASI.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\LIB\SHASI\SHASI.C</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>

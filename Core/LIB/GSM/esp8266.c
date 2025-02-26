@@ -29,7 +29,7 @@ struct ESP8266_STATUS esp_status;
 
 extern struct GSM gsm;
 
-void esp_led_show(){
+void ESP_led_status(){
 	
 	if ( esp_status.ERROR_WIFI == 0 && ( esp_status.ERROR_MQTT == 1 ) ) LED_ESP_TOGGLE();
 		
@@ -39,11 +39,13 @@ void esp_led_show(){
 	
 }
 
-void esp8266_manager(){
+void ESP_manager(){
 	
-	ESP_ON(0);
+	ESP_ON(0); // tuen on ESP
+	//---------
 	//esp_status.READY=1;
 	//advance.READY=1;
+	//---------
 	if( esp_status.READY ){
 		
 		if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
@@ -228,12 +230,4 @@ char wait_to_get( char *buffer ,char *sub_str , int time_out ){
 }
 
 
-/*
-	if ( esp_status.ERROR_WIFI == 0 && ( esp_status.ERROR_HTTP == 1 ) ) HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_4);
-		
-	if ( esp_status.ERROR_NOT_RESPONCE || esp_status.ERROR_WIFI  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,0);
-	
-	if ( esp_status.READY  ) HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,1);
-	
-*/
 

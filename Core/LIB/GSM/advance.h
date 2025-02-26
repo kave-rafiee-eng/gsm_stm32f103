@@ -4,7 +4,8 @@
 
 #include "main.h"
 
-void advance_led_show();
+void ADVANCE_led_status();
+
 void advance_connection_test();
 char wait_to_advance_get_data( int time_out );
 void manage_advance_responce();

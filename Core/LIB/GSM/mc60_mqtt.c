@@ -27,7 +27,7 @@ extern struct GSM gsm;
 void mc60_mqtt_pub( char *topic , char *data);
 void mc60_mqtt_sub(char *topic);
 	
-void mv60_led_show(){
+void MC60_led_status(){
 	
 	if ( mc60_status.MQTT_READY == 0 && ( mc60_status.SIM_CART_INSERT == 1 ) ) LED_SIM_TOGGLE();
 		
@@ -40,39 +40,27 @@ void mv60_led_show(){
 char lost_i=8;
 
 void mc60_mqtt_manage(){
-
-	/*SIM_ON(0);
-	osDelay(1000);
-	SIM_ON(1);
-	mc60_status.SIM_CART_INSERT = wait_to_get_sim("SMS Ready",10000); */
 	
-	
-	if( lost_i >= 8 ){ 
+	if( lost_i >= 8 ){ lost_i=0; 
 		
-		while(1){
-			
-			mc60_status.MQTT_READY=0; mc60_status.SIM_CART_INSERT=0;
-			
+			SIM_ON(0);
+			osDelay(1000);
 			SIM_ON(1);
 			osDelay(1000);
-			SIM_ON(0);
+			SIM_PWR(1);
+			osDelay(1000);
+			SIM_PWR(0);
+			
+			mc60_status.MQTT_READY=0; mc60_status.SIM_CART_INSERT=0;
+		
+			/*sim_send_str("AT\n");
+			if( wait_to_get_sim("OK",3000) == 1 ){  break;	 }*/
+			//im_send_str("at+cfun=1,1\n");
+			wait_to_get_sim("SMS",20000); 		
 			
 			osDelay(2000);
-		
-			sim_send_str("AT\n");
-			if( wait_to_get_sim("OK",3000) == 1 ){  break;	 }	
-			
-		}
-
-		lost_i=0;
-		sim_send_str("at+cfun=1,1\n");
-		wait_to_get_sim("SMS",20000); 				
 	}
 
-	osDelay(100);
-	
-	sim_send_str("AT\n"); 
-	osDelay(100);
 	sim_send_str("AT\n"); 
 	osDelay(100);
 	
@@ -93,20 +81,21 @@ void mc60_mqtt_manage(){
 			mc60_status.MQTT_READY = wait_to_get_sim("+QMTOPEN",5000);
 		
 			sim_send_str("AT+QMTOPEN? \n");
-			wait_to_get_sim("+QMTOPEN",5000);
+			mc60_status.MQTT_READY = wait_to_get_sim("++QMTOPEN: 0,0",5000);
 
-			osDelay(1000);
+			osDelay(500);
 			
 			if( mc60_status.MQTT_READY ){
 				
-					sim_send_str("AT+QMTCONN=0,\"clientExample\"\n");
-					mc60_status.MQTT_READY = wait_to_get_sim("+QMTCONN",5000);
+					char buf_tx[100];
+					sprintf(buf_tx,"AT+QMTCONN=0,\"clientExample%d\"\n",lost_i);
+					sim_send_str(buf_tx);
+					mc60_status.MQTT_READY = wait_to_get_sim("+QMTCONN: 0,0,0",5000);
 					osDelay(1000);		
 		
 					sim_send_str("ATE0\n"); osDelay(100);
 					osDelay(500);	
 				
-					char buf_tx[100];
 					sprintf(buf_tx,"server/%d",advance.SERIAL);
 				
 					mc60_mqtt_sub(buf_tx);				
@@ -187,8 +176,8 @@ void mc60_mqtt_pub( char *topic , char *data){
 	int i=0;
 	for(i=0;i<size;i++){
 		
-		LL_USART_TransmitData8(USART3, data[i]);		 
-		while(!LL_USART_IsActiveFlag_TXE(USART3));
+		LL_USART_TransmitData8(USART2, data[i]);		 
+		while(!LL_USART_IsActiveFlag_TXE(USART2));
 
 	}
 

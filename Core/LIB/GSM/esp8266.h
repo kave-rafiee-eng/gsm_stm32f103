@@ -4,6 +4,9 @@
 
 #include "main.h"
 
+void ESP_led_status();
+void ESP_manager();
+
 void esp_random_connect_to_server();
 void esp8266_connection_test();
 void manage_esp_responce();

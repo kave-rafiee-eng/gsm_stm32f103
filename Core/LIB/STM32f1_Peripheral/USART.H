@@ -3,13 +3,13 @@
 
 #include "main.h"
 	
-#define UART_SIM 3
-#define UART_ESP 2
+#define UART_SIM 2
+#define UART_ESP 3
 #define UART_RS485 1
 
-#define UART_BUF_SIZE 250
+#define UART_BUF_SIZE 240
 
-#define	MODBUS_ADVANCE_RS(x)     ( HAL_GPIO_WritePin(GPIOA,GPIO_PIN_11,x) ) //A11
+#define	MODBUS_ADVANCE_RS(x)     ( HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,x) ) //A8
 
 
 struct 	UART_DATA

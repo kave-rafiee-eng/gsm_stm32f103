@@ -5,6 +5,26 @@
 #include "task.h"
 
 
+
+extern CAN_HandleTypeDef hcan;
+
+char int_can=0;
+
+void USB_LP_CAN1_RX0_IRQHandler(void)
+{
+
+  HAL_CAN_IRQHandler(&hcan);
+	int_can=1;
+}
+
+void CAN1_RX1_IRQHandler(void)
+{
+
+  HAL_CAN_IRQHandler(&hcan);
+	int_can=1;	
+
+}
+
 extern struct 	UART_DATA esp_data;
 
 extern DMA_HandleTypeDef hdma_usart1_rx;
@@ -106,6 +126,7 @@ void USART1_IRQHandler(void)
 		
 		u_data=LL_USART_ReceiveData8(USART1);
 		modbus_it_uart_manage(u_data);	
+		//serial_ex(u_data);
 		
 	}
   HAL_UART_IRQHandler(&huart1);
@@ -113,29 +134,30 @@ void USART1_IRQHandler(void)
 
 volatile char start_get=0;
 
-void USART2_IRQHandler(void) // esp
+void USART2_IRQHandler(void) // SIM
 {
 	if(LL_USART_IsActiveFlag_RXNE(USART2) && LL_USART_IsEnabledIT_RXNE(USART2))
 	{		
+
 		u2_data = LL_USART_ReceiveData8(USART2);
 		
-		esp_uart_rx_manager(u2_data);
-		
+		sim_uart_rx_manager(u2_data);
 		
 	}
   HAL_UART_IRQHandler(&huart2);
 
 }
 
-void USART3_IRQHandler(void)
+void USART3_IRQHandler(void) // ESP
 {
 
 	if(LL_USART_IsActiveFlag_RXNE(USART3) && LL_USART_IsEnabledIT_RXNE(USART3))
 	{		
+
 		u3_data = LL_USART_ReceiveData8(USART3);
 		
-		sim_uart_rx_manager(u3_data);
-		
+		esp_uart_rx_manager(u3_data);
+			
 	}
   HAL_UART_IRQHandler(&huart3);
 

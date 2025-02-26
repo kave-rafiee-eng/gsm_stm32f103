@@ -44,6 +44,10 @@ extern "C" {
 #include "../LIB/GSM/mqtt_tcp.h"
 #include "../LIB/GSM/mc60_mqtt.h"
 
+/* Includes ------------------------------------------------------------------*/ //expansion CARD
+#include "../LIB/expansion_card/expansion.H"
+#include "../LIB/expansion_card/ex_serial.H"
+
 /* Includes ------------------------------------------------------------------*/ //JSON
 #include "../LIB/GSM/JSON/json.H"
 
@@ -53,6 +57,10 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/ //CPU_TIMER
 #include "../LIB/SOFT_WARE_TIMER/CPU_TIMER.H"
+
+/* Includes ------------------------------------------------------------------*/ //SHASI
+#include "../LIB/SHASI/modbus_rtu_8bit.H"
+#include "../LIB/SHASI/SHASI.H"
 
 
 /* Includes ------------------------------------------------------------------*/ //STANSARD LIB

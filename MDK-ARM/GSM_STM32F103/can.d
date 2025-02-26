@@ -52,8 +52,13 @@ gsm_stm32f103\can.o: ../Core/Inc/../LIB/GSM/advance.h
 gsm_stm32f103\can.o: ../Core/Inc/../LIB/GSM/sim800.h
 gsm_stm32f103\can.o: ../Core/Inc/../LIB/GSM/mqtt_tcp.h
 gsm_stm32f103\can.o: ../Core/Inc/../LIB/GSM/mc60_mqtt.h
+gsm_stm32f103\can.o: ../Core/Inc/../LIB/expansion_card/expansion.H
+gsm_stm32f103\can.o: ../Core/Inc/../LIB/expansion_card/ex_serial.H
 gsm_stm32f103\can.o: ../Core/Inc/../LIB/GSM/JSON/json.H
 gsm_stm32f103\can.o: ../Core/Inc/../LIB/MODBUS/CRC.h
 gsm_stm32f103\can.o: ../Core/Inc/../LIB/MODBUS/modbus.h
 gsm_stm32f103\can.o: ../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H
+gsm_stm32f103\can.o: ../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H
+gsm_stm32f103\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+gsm_stm32f103\can.o: ../Core/Inc/../LIB/SHASI/SHASI.H
 gsm_stm32f103\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
