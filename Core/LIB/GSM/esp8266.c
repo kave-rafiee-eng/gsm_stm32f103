@@ -41,7 +41,15 @@ void ESP_led_status(){
 
 void ESP_manager(){
 	
-	ESP_ON(0); // tuen on ESP
+	if(esp.F_reset == 0 )ESP_ON(0); // tuen on ESP
+	else{
+		//restarting ESP
+		esp.F_reset=0;
+		ESP_ON(1);
+		reset_esp_status();
+		osDelay(2000);
+		ESP_ON(0);
+	}
 	//---------
 	//esp_status.READY=1;
 	//advance.READY=1;
@@ -66,21 +74,47 @@ void ESP_manager(){
 			
 			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].EN=1;
 			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].AUTO=1;
-			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=3;
+			tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time= TIME_ESP_RANDOM_CONNECT;
 			
 			if( tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end ){ tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].F_end=0;
 					esp8266_connection_test();	
 			}
+			
+			//---------------------------- SERVER TSET
+			tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_TX].EN=1;
+			tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_TX].AUTO=1;
+			tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_TX].C_set_time=TIME_ESP_SERVER_CHECK_TX;
+			
+			if( tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_TX].F_end ){ tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_TX].F_end=0;
+					esp8266_server_check_TX();	
+			}			
 			
 	}
 	else if( advance.READY ){
 			esp8266_connection_test();
 			osDelay(1000);
 	}
+	
+	
+	//---------------------------- SERVER TSET reset
+	tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].EN=1;
+	tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].AUTO=1;
+	tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].C_set_time=TIME_ESP_SERVER_CHECK_RX;
+			
+	if( tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].F_end ){ tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].F_end=0;
+			esp.F_reset=1;	
+	}		
 
 }
 
-
+void reset_esp_status(){
+	
+	esp_status.ERROR_HTTP=0;
+	esp_status.ERROR_MQTT=0;
+	esp_status.ERROR_NOT_RESPONCE=0;
+	esp_status.ERROR_WIFI=0;
+	esp_status.READY=0;
+}
 
 void esp_random_connect_to_server(){
 	
@@ -91,19 +125,20 @@ void esp_random_connect_to_server(){
 		UART_PRINT((char*)modbus_slave.buf,UART_ESP);
 		//manage_esp_responce();	
 	}
-	/*else if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
-		char str[80];
-		sprintf(str,"{\"serial\":\"%d\",\"url\":\"SW_ENABLE=1&\",}",advance.SERIAL);
-		UART_PRINT(str,UART_ESP);
-		manage_esp_responce();	
-	}
-	else{
-		char str[80];
-		sprintf(str,"{\"serial\":\"%d\",}",advance.SERIAL);
-		UART_PRINT(str,UART_ESP);
-		manage_esp_responce();
-	}*/
 	
+}
+
+
+void esp8266_server_check_TX(){
+	
+	clear_esp_buffer();
+	
+	char str[80];
+	sprintf(str,"{\"serial\":\"%d\",\"TEST\":\"1\"}",advance.SERIAL);
+		
+	UART_PRINT(str,UART_ESP);
+	manage_esp_responce();
+
 }
 
 void esp8266_send_en_user(){
@@ -154,22 +189,22 @@ void manage_esp_responce(){
 				esp_status.ERROR_MQTT=0;
 				esp_status.READY=1;
 			}
+		
+			
 	}
 
-	/*if( esp_status.ERROR_HTTP || esp_status.ERROR_NOT_RESPONCE ||esp_status.ERROR_WIFI )esp_status.READY=0;
-	else { esp_status.READY=1;
-
-		esp.F_data_for_advance=1;
-		
-		tbrc_s1[tbrc_s1_ESP_RANDOM_CONNET].C_set_time=5;
-	}		*/
-	
 	if( esp_status.ERROR_MQTT || esp_status.ERROR_NOT_RESPONCE ||esp_status.ERROR_WIFI ){ esp_status.READY=0;
 		
 	}
 	else { esp_status.READY=1;
 
 			if( json_get_data(json.document , "\"@empty\":") == TYPE_STR ){
+				clear_esp_buffer();
+			}
+			else if( json_get_data(json.document , "\"SERVER_TEST\":")  > 0 ){
+				esp.F_reset=0;
+				tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].I_time=0;
+				tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].F_end=0;
 				clear_esp_buffer();
 			}
 			else{
@@ -215,8 +250,6 @@ void clear_esp_buffer(){
 }
 
 //------------------------------------------ SIM
-
-
 
 char wait_to_get( char *buffer ,char *sub_str , int time_out ){
 		

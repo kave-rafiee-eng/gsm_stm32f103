@@ -38,7 +38,33 @@ extern struct SIM800_STATUS mc60_status;
 
 void MAIN_communication(){
 	
-	if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) )gsm.F_send_EN_USER=1;
+	if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) ){ 
+		for(char i=0; i<10; i++ ){
+			LED_ESP(i%2);
+			LED_SIM(i%2);   
+			LED_ADVANCE(i%2); 	
+			osDelay(300);			
+		}
+
+		gsm.F_send_EN_USER=1;
+		gsm.COUNTER_timer_EN_USER=COUNTER_EN_USER_SEND;
+	}
+	
+	if( gsm.COUNTER_timer_EN_USER > 0 ){
+		
+			tbrc_s1[tbrc_s1_ESP_EN_USER].EN=1;
+			tbrc_s1[tbrc_s1_ESP_EN_USER].AUTO=1;
+			tbrc_s1[tbrc_s1_ESP_EN_USER].C_set_time=TIME_EN_USER_SEND;
+					
+			if( tbrc_s1[tbrc_s1_ESP_EN_USER].F_end ){ tbrc_s1[tbrc_s1_ESP_EN_USER].F_end=0;
+					if(esp_status.READY || mc60_status.MQTT_READY ) { gsm.F_send_EN_USER=1;
+						gsm.COUNTER_timer_EN_USER--;
+					}
+			}			
+			
+	}
+	else tbrc_s1[tbrc_s1_ESP_EN_USER].EN=0;
+	
 	
 	MODBUS_ADVANCE_RS(0);
 
@@ -109,7 +135,13 @@ void MAIN_communication(){
 
 			if( esp_status.READY )esp.F_data_for_server=1;
 			else if( mc60_status.MQTT_READY )sim.F_data_for_server=1;
+			
+			reset_json();
+			strncpy(json.document, (const char *)modbus_slave.buf, sizeof(json.document) - 1);
+			json.document[sizeof(json.document) - 1] = '\0';
 		
+			if( json_get_data(json.document , "\"serial\":")  == TYPE_STR )gsm.device_serial = atoi(json.str_data);
+
 	}
 	
 }

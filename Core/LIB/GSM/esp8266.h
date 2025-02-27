@@ -4,8 +4,14 @@
 
 #include "main.h"
 
+#define TIME_ESP_RANDOM_CONNECT 3
+#define TIME_ESP_SERVER_CHECK_TX 30
+#define TIME_ESP_SERVER_CHECK_RX 90
+
 void ESP_led_status();
 void ESP_manager();
+void esp8266_server_check_TX();
+void reset_esp_status();
 
 void esp_random_connect_to_server();
 void esp8266_connection_test();
@@ -36,6 +42,8 @@ struct ESP8266
 	
 	char F_data_for_advance : 1;
 	char F_data_for_server : 1;
+	
+	char F_reset : 1;
 
 };
 

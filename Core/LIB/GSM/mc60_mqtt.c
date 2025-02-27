@@ -4,29 +4,30 @@
 #include "stdlib.h"
 #include "string.h"
 
-// MODBUS
+//  MODBUS 
 extern struct MODBUS_SLAVE modbus_slave;
 extern struct MODBUS_RTU modbus;
 
-// CPU TIMER
+//  CPU timer 
 extern struct cpu_timer_basic_10bit_auto_reset tbr_g1[def_num_tbr_g1];
 extern struct cpu_timer_8bit_reset_contorol_Seconds tbrc_s1[def_num_tbrc_s1];
 
+//  ESP8266  
 extern struct ESP8266 sim;
 extern struct ESP8266_MANAGE sim_manage;
-
 extern struct UART_DATA sim_uart_buffer;
 
-// ADVANCE
-extern struct ADVANCE  advance;
+//  ADVANCE 
+extern struct ADVANCE advance;
 
-struct SIM800_STATUS mc60_status;
-
+// External GSM structure
 extern struct GSM gsm;
 
-void mc60_mqtt_pub( char *topic , char *data);
-void mc60_mqtt_sub(char *topic);
-	
+// MC60 module status structure
+struct SIM800_STATUS mc60_status;
+
+
+// Function to manage the LED status based on SIM and MQTT states
 void MC60_led_status(){
 	
 	if ( mc60_status.MQTT_READY == 0 && ( mc60_status.SIM_CART_INSERT == 1 ) ) LED_SIM_TOGGLE();
@@ -38,34 +39,31 @@ void MC60_led_status(){
 }
 
 char lost_i=8;
-
+// Function to manage MC60 MQTT connection and SIM status
 void mc60_mqtt_manage(){
 	
+	// Restart module mc60
 	if( lost_i >= 8 ){ lost_i=0; 
 		
-			SIM_ON(0);
-			osDelay(1000);
-			SIM_ON(1);
-			osDelay(1000);
-			SIM_PWR(1);
-			osDelay(1000);
-			SIM_PWR(0);
+      // Restart SIM module
+      SIM_ON(0);
+      osDelay(1000);
+      SIM_ON(1);
+      osDelay(1000);
+      SIM_PWR(1);
+      osDelay(1000);
+      SIM_PWR(0);
 			
 			mc60_status.MQTT_READY=0; mc60_status.SIM_CART_INSERT=0;
 		
-			/*sim_send_str("AT\n");
-			if( wait_to_get_sim("OK",3000) == 1 ){  break;	 }*/
-			//im_send_str("at+cfun=1,1\n");
-			wait_to_get_sim("SMS",20000); 		
-			
-			osDelay(2000);
+      wait_to_get_sim("SMS", 20000);  // Wait for SIM card detection
+      osDelay(2000);
 	}
-
-	sim_send_str("AT\n"); 
-	osDelay(100);
 	
+	// Send initialization AT commands
+	sim_send_str("AT\n"); osDelay(100);
 	sim_send_str("ATE1\n"); osDelay(100);
-	
+	// check sim card intert
 	sim_send_str("AT+CPIN?\n");
 	mc60_status.SIM_CART_INSERT = wait_to_get_sim("READY",5000); 
 	osDelay(100);
@@ -74,7 +72,6 @@ void mc60_mqtt_manage(){
 	if( mc60_status.SIM_CART_INSERT == 1 && advance.READY == 1 ){
 			//sim_send_str("AT+QMTCLOSE=0\n");
 			//osDelay(1000);
-			
 			//sim_send_str("AT+QMTOPEN=0,\"84.47.232.10\",\"1883\"\n");
 			//sim_send_str("AT+QMTOPEN=0,\"109.125.149.108\",\"1883\"\n\r");
 			sim_send_str("AT+QMTOPEN=0,\"ravis-gsm.ir\",\"1883\"\n\r");
@@ -88,7 +85,7 @@ void mc60_mqtt_manage(){
 			if( mc60_status.MQTT_READY ){
 				
 					char buf_tx[100];
-					sprintf(buf_tx,"AT+QMTCONN=0,\"clientExample%d\"\n",lost_i);
+					sprintf(buf_tx,"AT+QMTCONN=0,\"clientExample%d\"\n",gsm.device_serial);
 					sim_send_str(buf_tx);
 					mc60_status.MQTT_READY = wait_to_get_sim("+QMTCONN: 0,0,0",5000);
 					osDelay(1000);		
@@ -97,29 +94,22 @@ void mc60_mqtt_manage(){
 					osDelay(500);	
 				
 					sprintf(buf_tx,"server/%d",advance.SERIAL);
-				
 					mc60_mqtt_sub(buf_tx);				
 			}
 
 			int num=0;
 			while( mc60_status.MQTT_READY == 1 ){
 						
-
-				/*char buf_tx[100];
-				sprintf(buf_tx,"rafiee/%d\n",num);
-				num++;
-				
-				//+QMTPUB
-				mc60_mqtt_pub("top_test",buf_tx);					
-				osDelay(1000);*/
+				// send to mqtt
 				if( sim.F_data_for_server ){ sim.F_data_for_server=0;	
-					mc60_mqtt_pub("gsm",modbus_slave.buf);
+					
+					char topic[50];
+					sprintf(topic,"gsm/%d",advance.SERIAL);
+					
+					mc60_mqtt_pub(topic,modbus_slave.buf);
 					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
 					osDelay(100);
 
-					/*mc60_mqtt_pub("gsm",modbus_slave.buf);
-					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
-					osDelay(100);*/
 				}
 				
 				osDelay(1);
@@ -132,12 +122,16 @@ void mc60_mqtt_manage(){
 					tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
 				}
 				
+				// test_connection
 				if( tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end ){ tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
+					
+						char topic[50];
+						sprintf(topic,"gsm/%d",advance.SERIAL);
 					
 						char str[100];
 						sprintf(str,"{\"serial\":\"%d\"}",advance.SERIAL);
 										
-						mc60_mqtt_pub("gsm",str);
+						mc60_mqtt_pub(topic,str);
 				}
 				
 				if( gsm.F_send_EN_USER ){ gsm.F_send_EN_USER=0;
