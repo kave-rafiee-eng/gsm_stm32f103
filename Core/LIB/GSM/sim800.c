@@ -115,15 +115,7 @@ void clear_sim_buffer(){
 	sim_uart_buffer.BUF_I=0;
 }
 
-void clear_sim_buffer_json(){
-	
-	memset(sim.BUF_JSON,0,UART_BUF_SIZE);
-	
-	sim_manage.json_level=0;
-	sim.F_json_get=0;
-	sim.BUF_JSON_index=0;
-	
-}
+
 
 
 

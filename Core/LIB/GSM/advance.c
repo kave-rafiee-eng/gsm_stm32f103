@@ -30,7 +30,7 @@ struct ADVANCE  advance;
 
 void ADVANCE_led_status(){
 	
-	if ( advance.READY ) LED_ADVANCE(1);
+	if ( advance.READY ) { LED_ADVANCE_TOGGLE(); }
 	else LED_ADVANCE(0);
 
 }

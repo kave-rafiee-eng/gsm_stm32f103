@@ -34,3 +34,27 @@ void SystemClock_INI(void)
     Error_Handler();
   }
 }
+
+
+// Function to initialize the Watchdog
+void Watchdog_Init(void)
+{
+    // Enable access to the IWDG_PR and IWDG_RLR registers by writing 0x5555 to the KR register
+    IWDG->KR = 0x5555;
+    
+    // Set the prescaler: divide by 64 (value 4 in the PR register)
+    IWDG->PR = 4;
+    
+    // Set the reload value: 1249 (for a timeout of approximately 2 seconds)
+    IWDG->RLR = 4000;
+    
+    // Start the Watchdog by writing 0xCCCC to the KR register
+    IWDG->KR = 0xCCCC;
+}
+
+// Function to refresh (reset) the Watchdog
+void Watchdog_Refresh(void)
+{
+    // Write 0xAAAA to the KR register to refresh the Watchdog
+    IWDG->KR = 0xAAAA;
+}

@@ -1,7 +1,7 @@
 Dependencies for Project 'GSM_STM32F103', Target 'GSM_STM32F103': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f103xb.s)(0x66C470A2)(--cpu Cortex-M3 -g --apcs=interwork -I ../Core/Inc-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 534" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o gsm_stm32f103\startup_stm32f103xb.o --depend gsm_stm32f103\startup_stm32f103xb.d)
-F (../Core/Src/main.c)(0x67BF0CE6)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\main.o --omf_browse gsm_stm32f103\main.crf --depend gsm_stm32f103\main.d)
+F (../Core/Src/main.c)(0x67C435F2)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\main.o --omf_browse gsm_stm32f103\main.crf --depend gsm_stm32f103\main.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -39,8 +39,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -52,13 +52,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -119,8 +119,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -132,13 +132,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -181,8 +181,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -194,13 +194,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -253,8 +253,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -266,13 +266,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -315,8 +315,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -328,13 +328,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1112,8 +1112,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1125,13 +1125,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1174,8 +1174,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1187,13 +1187,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1236,8 +1236,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1249,13 +1249,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1298,8 +1298,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1311,13 +1311,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1360,8 +1360,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1373,18 +1373,18 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
-F (..\Core\LIB\STM32f1_Peripheral\Clock.C)(0x66C47961)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\clock.o --omf_browse gsm_stm32f103\clock.crf --depend gsm_stm32f103\clock.d)
+F (..\Core\LIB\STM32f1_Peripheral\Clock.C)(0x67C446D2)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\clock.o --omf_browse gsm_stm32f103\clock.crf --depend gsm_stm32f103\clock.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -1422,8 +1422,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1435,18 +1435,18 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
-F (..\Core\LIB\STM32f1_Peripheral\GPIO.C)(0x67233E24)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\gpio.o --omf_browse gsm_stm32f103\gpio.crf --depend gsm_stm32f103\gpio.d)
+F (..\Core\LIB\STM32f1_Peripheral\GPIO.C)(0x67C433DF)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\gpio.o --omf_browse gsm_stm32f103\gpio.crf --depend gsm_stm32f103\gpio.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -1484,8 +1484,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1497,13 +1497,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1546,8 +1546,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1559,13 +1559,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1608,8 +1608,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1621,13 +1621,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1672,8 +1672,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1685,18 +1685,18 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
-F (..\Core\LIB\GSM\Initialization.C)(0x672EF859)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\initialization.o --omf_browse gsm_stm32f103\initialization.crf --depend gsm_stm32f103\initialization.d)
+F (..\Core\LIB\GSM\Initialization.C)(0x67C44333)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\initialization.o --omf_browse gsm_stm32f103\initialization.crf --depend gsm_stm32f103\initialization.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -1734,8 +1734,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1747,18 +1747,18 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
-F (..\Core\LIB\GSM\test.c)(0x67C00BCD)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\test.o --omf_browse gsm_stm32f103\test.crf --depend gsm_stm32f103\test.d)
+F (..\Core\LIB\GSM\test.c)(0x67C446E4)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\test.o --omf_browse gsm_stm32f103\test.crf --depend gsm_stm32f103\test.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -1796,8 +1796,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1809,13 +1809,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1859,8 +1859,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1872,20 +1872,20 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8F1DC2)
-F (..\Core\LIB\GSM\esp8266.c)(0x67C00B37)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\esp8266.o --omf_browse gsm_stm32f103\esp8266.crf --depend gsm_stm32f103\esp8266.d)
+F (..\Core\LIB\GSM\esp8266.c)(0x67C29F53)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\esp8266.o --omf_browse gsm_stm32f103\esp8266.crf --depend gsm_stm32f103\esp8266.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -1923,8 +1923,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1936,13 +1936,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -1985,8 +1985,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -1998,18 +1998,18 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
-F (..\Core\LIB\GSM\advance.c)(0x67BEF7A6)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\advance.o --omf_browse gsm_stm32f103\advance.crf --depend gsm_stm32f103\advance.d)
+F (..\Core\LIB\GSM\advance.c)(0x67C4341C)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\advance.o --omf_browse gsm_stm32f103\advance.crf --depend gsm_stm32f103\advance.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -2047,8 +2047,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2060,18 +2060,18 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
-F (..\Core\LIB\GSM\sim800.c)(0x66F93571)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\sim800.o --omf_browse gsm_stm32f103\sim800.crf --depend gsm_stm32f103\sim800.d)
+F (..\Core\LIB\GSM\sim800.c)(0x67C2A546)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\sim800.o --omf_browse gsm_stm32f103\sim800.crf --depend gsm_stm32f103\sim800.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -2109,8 +2109,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2122,13 +2122,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -2171,8 +2171,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2184,20 +2184,20 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 F (..\Core\LIB\GSM\sim800_http.c)(0x66F3A774)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\sim800_http.o --omf_browse gsm_stm32f103\sim800_http.crf --depend gsm_stm32f103\sim800_http.d)
 F (..\Core\LIB\GSM\sim800_at_command.txt)(0x66F3A7B5)()
-F (..\Core\LIB\GSM\mc60_mqtt.c)(0x67BF0AF0)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\mc60_mqtt.o --omf_browse gsm_stm32f103\mc60_mqtt.crf --depend gsm_stm32f103\mc60_mqtt.d)
+F (..\Core\LIB\GSM\mc60_mqtt.c)(0x67C442B3)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\mc60_mqtt.o --omf_browse gsm_stm32f103\mc60_mqtt.crf --depend gsm_stm32f103\mc60_mqtt.d)
 I (../Core/Inc/main.h)(0x67667632)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5D10AE78)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x66C4709E)
@@ -2235,8 +2235,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2248,13 +2248,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -2299,8 +2299,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2312,13 +2312,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -2362,8 +2362,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2375,13 +2375,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -2424,8 +2424,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2437,13 +2437,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
@@ -2489,8 +2489,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2502,13 +2502,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 F (..\Core\LIB\SHASI\SHASI.C)(0x6766B601)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_GSM_STM32F103-IC:\Users\kave\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\kave\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o gsm_stm32f103\shasi.o --omf_browse gsm_stm32f103\shasi.crf --depend gsm_stm32f103\shasi.d)
@@ -2549,8 +2549,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h)(0x6428707E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h)(0x66C480E3)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67233E64)
-I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x66567864)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/GPIO.h)(0x67C42BE9)
+I (../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h)(0x67C435C5)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/USART.h)(0x67667DDE)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/CAN.h)(0x66569594)
 I (../Core/Inc/../LIB/STM32f1_Peripheral/TIMER.h)(0x665787BA)
@@ -2562,13 +2562,13 @@ I (../Core/Inc/../LIB/GSM/modbus_gsm.H)(0x66DD5E46)
 I (../Core/Inc/../LIB/GSM/advance.h)(0x67BEBEC0)
 I (../Core/Inc/../LIB/GSM/sim800.h)(0x66F401BE)
 I (../Core/Inc/../LIB/GSM/mqtt_tcp.h)(0x66F3AF40)
-I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67BF0D3A)
+I (../Core/Inc/../LIB/GSM/mc60_mqtt.h)(0x67C2B254)
 I (../Core/Inc/../LIB/expansion_card/expansion.H)(0x672F001B)
 I (../Core/Inc/../LIB/expansion_card/ex_serial.H)(0x6731B4A2)
 I (../Core/Inc/../LIB/GSM/JSON/json.H)(0x67BFFF36)
 I (../Core/Inc/../LIB/MODBUS/CRC.h)(0x66553E28)
 I (../Core/Inc/../LIB/MODBUS/modbus.h)(0x67667D03)
-I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C0094B)
+I (../Core/Inc/../LIB/SOFT_WARE_TIMER/CPU_TIMER.H)(0x67C29DC9)
 I (../Core/Inc/../LIB/SHASI/modbus_rtu_8bit.H)(0x67667D03)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8F1DC2)
 I (../Core/Inc/../LIB/SHASI/SHASI.H)(0x676675B0)

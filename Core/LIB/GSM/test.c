@@ -39,7 +39,7 @@ extern struct SIM800_STATUS mc60_status;
 void MAIN_communication(){
 	
 	if( !HAL_GPIO_ReadPin(SW_EN_GPIO,SW_EN_PIN) ){ 
-		for(char i=0; i<10; i++ ){
+		for(char i=0; i<5; i++ ){
 			LED_ESP(i%2);
 			LED_SIM(i%2);   
 			LED_ADVANCE(i%2); 	
@@ -92,7 +92,7 @@ void MAIN_communication(){
 		esp.F_data_for_advance=0;
 	}
 	
-	if( sim.F_json_get && esp_status.READY == 0 ){  //SEND DATA_JSON mc60 TO ADVANCE	
+	if( sim.F_data_for_advance && esp_status.READY == 0 ){  //SEND DATA_JSON mc60 TO ADVANCE	
 		
 		tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].I_time=0;
 		tbrc_s1[tbrc_s1_MC60_CONECTION_TEST].F_end=0;
@@ -117,12 +117,12 @@ void MAIN_communication(){
         if (modbus_slave.F_new_data) break;
     }
 		
-		clear_sim_buffer_json();
-		sim.F_json_get=0;
+		clear_mc60_buffer();
+		sim.F_data_for_advance=0;
 	}
 	
-	if( sim.F_json_get && esp_status.READY == 1 ){
-		clear_sim_buffer_json();
+	if( sim.F_data_for_advance && esp_status.READY == 1 ){
+		clear_mc60_buffer();
 		sim.F_json_get=0;
 	}
 

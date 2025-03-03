@@ -15,6 +15,7 @@ void Hardware_init( void ){
 	HAL_CAN_Start(&hcan);
   HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
 
+	Watchdog_Init();
 }
 
 

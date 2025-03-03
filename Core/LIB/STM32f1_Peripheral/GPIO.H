@@ -6,10 +6,12 @@
 #define SW_EN_GPIO GPIOB
 #define SW_EN_PIN GPIO_PIN_2
 
+#define	LED_SYSTEM(x)     ( HAL_GPIO_WritePin(GPIOD,GPIO_PIN_0,x) ) //D0
 #define	LED_ESP(x)     ( HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,x) ) //C13
 #define	LED_SIM(x)     ( HAL_GPIO_WritePin(GPIOC,GPIO_PIN_14,x) ) //C14
 #define	LED_ADVANCE(x)     ( HAL_GPIO_WritePin(GPIOC,GPIO_PIN_15,x) ) //C15
 
+#define	LED_SYSTEM_TOGGLE()     ( HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_0) ) //D0
 #define	LED_ESP_TOGGLE()     ( HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13) ) //C13
 #define	LED_SIM_TOGGLE()     ( HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_14) ) //C14
 #define	LED_ADVANCE_TOGGLE()     ( HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_15) ) //C15

@@ -15,6 +15,10 @@ void Vtask_advance( void *pvParameters ){
 					ESP_led_status();
 					ADVANCE_led_status();
 					MC60_led_status();
+					LED_SYSTEM(1);
+				
+					Watchdog_Refresh();
+				
 			}
 			
 			advance_manager();
@@ -36,7 +40,7 @@ void Vtask_sim( void *pvParameters ){
 	
 	 for( ;; ){	 
 		
-			//mc60_mqtt_manage();
+			mc60_mqtt_manage();
 			osDelay(1);
 	 }
 }

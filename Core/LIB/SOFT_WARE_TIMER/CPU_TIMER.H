@@ -17,6 +17,8 @@
 #define tbrc_s1_ESP_SERVER_CHECK_TX 3
 #define tbrc_s1_ESP_SERVER_CHECK_RX 4
 #define tbrc_s1_ESP_EN_USER 5
+#define tbrc_s1_MC60_SERVER_CHECK_TX 6
+#define tbrc_s1_MC60_SERVER_CHECK_RX 7
 
 //-------------------------------------------CPU_TIMER_CONFIG
 

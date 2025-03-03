@@ -4,5 +4,8 @@
 #include "main.h"
 
 void SystemClock_INI(void);
-	
+
+void Watchdog_Init(void);
+void Watchdog_Refresh(void);
+
 #endif
