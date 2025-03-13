@@ -94,13 +94,7 @@ void ESP_manager(){
 			esp8266_connection_test();
 			osDelay(1000);
 	}
-	
-	if( esp_status.READY == 0 ){
-		tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].EN=1;
-		tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].I_time=0;
-		tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].F_end=0;
-	}
-	
+		
 	
 	//---------------------------- SERVER TSET reset
 	tbrc_s1[tbrc_s1_ESP_SERVER_CHECK_RX].EN=1;

@@ -27,7 +27,7 @@ Project File Date:  12/21/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'GSM_STM32F103'
-compiling test.c...
+compiling USART.C...
 ../Core/Inc/../LIB/STM32f1_Peripheral/Clock.h(11): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Core/Inc/../LIB/STM32f1_Peripheral/USART.h(27): warning:  #1-D: last line of file ends without a newline
@@ -142,43 +142,15 @@ compiling test.c...
   	void timer_basic_manager();
 ../Core/Inc/../LIB/SHASI/SHASI.H(8): warning:  #1295-D: Deprecated declaration test_shasi - give arg types
   void test_shasi();
-..\Core\LIB\GSM\test.c(43): warning:  #188-D: enumerated type mixed with another type
-  			LED_ESP(i%2);
-..\Core\LIB\GSM\test.c(44): warning:  #188-D: enumerated type mixed with another type
-  			LED_SIM(i%2);   
-..\Core\LIB\GSM\test.c(45): warning:  #188-D: enumerated type mixed with another type
-  			LED_ADVANCE(i%2); 	
-..\Core\LIB\GSM\test.c(46): warning:  #223-D: function "osDelay" declared implicitly
-  			osDelay(300);			
-..\Core\LIB\GSM\test.c(69): warning:  #188-D: enumerated type mixed with another type
-  	MODBUS_ADVANCE_RS(0);
-..\Core\LIB\GSM\test.c(72): warning:  #223-D: function "strlen" declared implicitly
-  		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
-..\Core\LIB\GSM\test.c(72): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
-  		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
-..\Core\LIB\GSM\test.c(79): warning:  #223-D: function "osDelay" declared implicitly
-  					osDelay(1);
-..\Core\LIB\GSM\test.c(83): warning:  #223-D: function "strlen" declared implicitly
-  							modbus_master_write_register_MULTI(SLAVE_ADD, FC_WRITE_TO_SLAVE_MULTI, 2, strlen(esp.BUF_JSON), esp.BUF_JSON);
-..\Core\LIB\GSM\test.c(83): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
-  							modbus_master_write_register_MULTI(SLAVE_ADD, FC_WRITE_TO_SLAVE_MULTI, 2, strlen(esp.BUF_JSON), esp.BUF_JSON);
-..\Core\LIB\GSM\test.c(100): warning:  #223-D: function "strlen" declared implicitly
-  		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
-..\Core\LIB\GSM\test.c(100): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
-  		if( sim.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(sim.BUF_JSON),sim.BUF_JSON);
-..\Core\LIB\GSM\test.c(108): warning:  #223-D: function "osDelay" declared implicitly
-          osDelay(1);
-..\Core\LIB\GSM\test.c(112): warning:  #223-D: function "strlen" declared implicitly
-              modbus_master_write_register_MULTI(SLAVE_ADD, FC_WRITE_TO_SLAVE_MULTI, 2, strlen(sim.BUF_JSON), sim.BUF_JSON);
-..\Core\LIB\GSM\test.c(112): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
-              modbus_master_write_register_MULTI(SLAVE_ADD, FC_WRITE_TO_SLAVE_MULTI, 2, strlen(sim.BUF_JSON), sim.BUF_JSON);
-..\Core\LIB\GSM\test.c(140): warning:  #223-D: function "strncpy" declared implicitly
-  			strncpy(json.document, (const char *)modbus_slave.buf, sizeof(json.document) - 1);
-..\Core\LIB\GSM\test.c: 73 warnings, 0 errors
+..\Core\LIB\STM32f1_Peripheral\USART.C(129): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\LIB\STM32f1_Peripheral\USART.C(129): warning:  #940-D: missing return statement at end of non-void function "UART_PUT_CHAR" 
+  }
+..\Core\LIB\STM32f1_Peripheral\USART.C: 59 warnings, 0 errors
 linking...
-Program Size: Code=27244 RO-data=564 RW-data=228 ZI-data=11900  
+Program Size: Code=27196 RO-data=564 RW-data=228 ZI-data=11900  
 FromELF: creating hex file...
-"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 73 Warning(s).
+"GSM_STM32F103\GSM_STM32F103.axf" - 0 Error(s), 59 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -209,11 +181,11 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
-      Source file:   Template\stdout_user.c
+      Source file:   Template\stdout_display.c
       Source file:   Source\retarget_io.c
       Source file:   Template\stdout_USART.c
-      Source file:   Template\stdout_display.c
-Build Time Elapsed:  00:00:03
+      Source file:   Template\stdout_user.c
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>
