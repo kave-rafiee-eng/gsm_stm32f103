@@ -4,7 +4,7 @@
 
 #include "main.h"
 
-#define TIME_ESP_RANDOM_CONNECT 3
+#define TIME_ESP_RANDOM_CONNECT 20
 #define TIME_ESP_SERVER_CHECK_TX 30
 #define TIME_ESP_SERVER_CHECK_RX 90
 
