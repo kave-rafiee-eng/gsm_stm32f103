@@ -6,9 +6,12 @@ struct MODBUS_SLAVE modbus_slave;
 
 extern struct 	UART_DATA esp_data;
  uint16_t tx_crc=0;
+ 
+ uint8_t tx_buf[1000]; 
+ 
 char modbus_master_write_register_MULTI( uint8_t slave_addres , uint8_t fc_code , uint16_t start_addres , uint16_t world_count , uint8_t *data ){
 	
-	uint8_t tx_buf[world_count+20]; 
+	//uint8_t tx_buf[world_count+20]; 
 	int i=0;
 	
 	tx_buf[0] = slave_addres;

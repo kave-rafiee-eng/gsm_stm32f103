@@ -13,7 +13,7 @@ void modbus_it_uart_manage( char data ){
 	
 		modbus.buf_rx[modbus.buf_rx_index]=data;
 		modbus.buf_rx_index++;
-		if( modbus.buf_rx_index > 200 )modbus.buf_rx_index=0;
+		if( modbus.buf_rx_index > UART_BUF_SIZE )modbus.buf_rx_index=0;
 		
 		tbr_g1[tbr_g1_MODBUS_SLAVE_RX].I_time=0;	
 	

@@ -68,8 +68,8 @@ void MAIN_communication(){
 	
 	MODBUS_ADVANCE_RS(0);
 
-	if( esp.F_data_for_advance  ){  //SEND DATA_JSON ESP TO ADVANCE
-		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,strlen(esp.BUF_JSON),esp.BUF_JSON);
+	if( esp.F_data_for_advance  ){  //SEND DATA_JSON ESP TO ADVANCE strlen(esp.BUF_JSON)
+		if( esp.BUF_JSON_index>3) modbus_master_write_register_MULTI(SLAVE_ADD,FC_WRITE_TO_SLAVE_MULTI,2,esp.BUF_JSON_index,esp.BUF_JSON);
 		int time=0;
 		
 			while (time <= TIMEOUT_LIMIT) {

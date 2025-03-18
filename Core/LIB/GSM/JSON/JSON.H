@@ -19,7 +19,7 @@ void server_protocol_json();
 
 struct JSON_OUT 
 {
-	char document[301];
+	char document[UART_BUF_SIZE];
   char str_data[100];
 	int data;
 };

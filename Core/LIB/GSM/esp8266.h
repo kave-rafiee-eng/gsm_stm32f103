@@ -29,7 +29,6 @@ struct ESP8266_STATUS
 	char ERROR_MQTT : 1;
 	
 	char READY : 1;
-	
 
 };
 
@@ -38,7 +37,7 @@ struct ESP8266
 	char F_json_get : 1;
 	
 	volatile unsigned char BUF_JSON[UART_BUF_SIZE];
-	volatile unsigned char BUF_JSON_index;
+	volatile unsigned int BUF_JSON_index;
 	
 	char F_data_for_advance : 1;
 	char F_data_for_server : 1;

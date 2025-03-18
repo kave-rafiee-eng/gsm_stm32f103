@@ -43,11 +43,14 @@ void advance_manager(){
 	
 	tbrc_s1[tbrc_s1_ADVANCE_CONNECTION_TEST].EN=1;
 	tbrc_s1[tbrc_s1_ADVANCE_CONNECTION_TEST].AUTO=1;
-	tbrc_s1[tbrc_s1_ADVANCE_CONNECTION_TEST].C_set_time=1;
+	tbrc_s1[tbrc_s1_ADVANCE_CONNECTION_TEST].C_set_time=10;
 	
 	if( tbrc_s1[tbrc_s1_ADVANCE_CONNECTION_TEST].F_end ){ tbrc_s1[tbrc_s1_ADVANCE_CONNECTION_TEST].F_end=0;
 			advance_connection_test();			
 	}
+	
+	/*advance.READY=1;
+	advance.SERIAL=834;*/
 			
 }
 

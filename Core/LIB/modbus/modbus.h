@@ -26,7 +26,7 @@ struct MODBUS_RTU {
 	uint8_t TIME_OUT;
 	
 	volatile uint8_t buf_rx[UART_BUF_SIZE];
-	volatile uint8_t buf_rx_index;
+	volatile uint16_t buf_rx_index;
 	
 	int16_t buf_data[10];
 	
